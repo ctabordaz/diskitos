@@ -14,15 +14,15 @@
     <body>
      <div class="container">
      <div class="row">
-         <div class="col-md-offset-5 col-md-3 ">
+         <div class="col-md-offset-5 col-md-4 ">
              <div class="form-login ">
-             <h4>Bienvenido a Diskitos S.A</h4>
+             <h4 class="machete">Bienvenido a Diskitos S.A</h4>
              <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="Identificación" />
              </br>
              <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Contraseña" />
              </br>
              <div class="wrapper">
-                 <button type="submit" class="btn btn-primary btn-sm">
+                 <button type="submit" class="btn  btn-sm">
                      <span class="glyphicon glyphicon-log-in "></span> Ingresar
                  </button>
              

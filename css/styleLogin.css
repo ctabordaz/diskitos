@@ -12,7 +12,7 @@ body {
     background: #f8f8f8;
     font-family: 'PT Sans', Helvetica, Arial, sans-serif;
     text-align: center;
-    color: #fff;
+    color: #e44e2d;
 }
 
 .page-container {
@@ -77,10 +77,10 @@ input:focus {
 button {
     cursor: pointer;
     width: 300px;
-    height: 44px;
+    height: 32px;
     margin-top: 25px;
     padding: 0;
-    background: #ef4300;
+    background: #94BF6E;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
