@@ -15,9 +15,9 @@
  * @version 1.2
  */
 
-define('C_FULL_PATH', 'C:/wamp/www/glight/'); //full path
+define('C_FULL_PATH', 'C:/wamp/www/diskitos/'); //full path
 
-define('C_L_GLOBAL', 'http://localhost/glight/'); //application global link
+define('C_L_GLOBAL', 'http://localhost/diskitos/'); //application global link
 define('C_N_GLOBAL', 'Framework G - glight'); //application global title
 
 define('C_DB_SERVER', 'localhost'); //DB server
