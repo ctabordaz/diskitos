@@ -1,3 +1,22 @@
+<?php /* Smarty version Smarty-3.0.9, created on 2015-03-22 23:28:14
+         compiled from "C:/xampp/htdocs/diskitos/templates\iniciarsesion.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:30260550f41fe2df191-50608443%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'c62f8998bcd507cb3168f8dc9cad5a5735d79f8b' => 
+    array (
+      0 => 'C:/xampp/htdocs/diskitos/templates\\iniciarsesion.tpl',
+      1 => 1427063210,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '30260550f41fe2df191-50608443',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
 <html>
     <head>
         <title>Incio Sesion</title>
