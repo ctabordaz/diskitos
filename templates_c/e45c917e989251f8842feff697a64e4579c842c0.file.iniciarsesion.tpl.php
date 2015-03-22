@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-03-22 23:01:16
+<?php /* Smarty version Smarty-3.0.9, created on 2015-03-22 23:40:58
          compiled from "C:/wamp/www/diskitos/templates\iniciarsesion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:27134550f49bc839804-58884221%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:18842550f530ac1ebe1-16191344%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e45c917e989251f8842feff697a64e4579c842c0' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\iniciarsesion.tpl',
-      1 => 1427065274,
+      1 => 1427067640,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '27134550f49bc839804-58884221',
+  'nocache_hash' => '18842550f530ac1ebe1-16191344',
   'function' => 
   array (
   ),
@@ -41,8 +41,8 @@ $_smarty_tpl->decodeProperties(array (
              <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Contraseña" />
              </br>
              <div class="wrapper">
-                 <button type="submit" class="btn  btn-sm">
-                     <span class="glyphicon glyphicon-log-in "></span> Ingresar
+                 <button type="submit" class="btn  btn-sm btn-login">
+                     <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Ingresar 
                  </button>
              
              </div>

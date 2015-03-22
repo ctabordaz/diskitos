@@ -22,8 +22,8 @@
              <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Contraseña" />
              </br>
              <div class="wrapper">
-                 <button type="submit" class="btn  btn-sm">
-                     <span class="glyphicon glyphicon-log-in "></span> Ingresar
+                 <button type="submit" class="btn  btn-sm btn-login">
+                     <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Ingresar 
                  </button>
              
              </div>
