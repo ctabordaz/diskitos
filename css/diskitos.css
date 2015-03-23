@@ -5,19 +5,18 @@ body {
   font: normal 14px Roboto,arial,sans-serif;
 }
 
-.container {
-    
+.container {    
     padding: 25px;
     position: fixed;
-    
 }
 
 
 .form-login {
     
-    margin-top: 50%;
-   // background-color: #EDEDED;
-   background-color:rgba(0, 197, 166,0.6);
+    width: 350px;
+    margin-top: 55%;
+    // background-color: #EDEDED;
+    background-color:rgba(0, 197, 166,0.6);
     padding-top: 10px;
     padding-bottom: 20px;
     padding-left: 20px;
@@ -29,7 +28,7 @@ body {
     
 }
 .machete{
-    color: #fff;
+     color: #fff;
      text-shadow:2px 2px 3px black;
      font-weight: bold;
      font-size: x-large;
@@ -37,16 +36,14 @@ body {
 
 .btn-login{
     font-weight: bold;
-    width: 260px;
+    width: 310px;
 }
 h4 { 
- 
- 
- color: #e44e2d;
- border:0 solid #fff; 
- border-bottom-width:1px;
- padding-bottom:10px;
- text-align: center;
+    color: #e44e2d;
+    border:0 solid #fff; 
+    border-bottom-width:1px;
+    padding-bottom:10px;
+    text-align: center;
 }
 
 .form-control {

@@ -1,0 +1,70 @@
+#content { 
+    width: 880px; 
+    margin: 0 auto; padding: 10px 40px 20px 40px;
+    background: #FFF;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+img {
+    width: 96%;
+    height: 20%;
+    padding-left: 33px;
+}
+
+#ie {
+    padding-top: 15px;
+    padding-bottom: 4px;
+    font-size: 150%; 
+    text-align: center;
+    color: #0044cc;
+    
+}
+.form-control {
+    width: 120px;
+    height: 30px;
+    direction: ltr;
+    font-size: small;
+}
+
+p { 
+    padding-top: 7px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 12;
+    text-align: left;
+    font-size: small;
+}
+
+#precio {
+    width: 120px;
+    height: 30px;
+    direction: ltr;
+    font-size: small;
+}
+
+#exampleInputFile {
+    font-size: small;
+    
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.atralbum {
+    width: 160px;
+    height: 30px;
+    
+    padding-top: 20px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    direction: ltr;
+    font-size: small;
+}
+
+.ing {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
