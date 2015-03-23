@@ -137,29 +137,30 @@ class db
 		switch($option['lvl1'])
 		{																																																																																																										
 			case "user":
-			switch($option['lvl2'])
-			{
-				case "all": 
-					//
-					break;
-			}
-			break;
-                                case "empleado":
-                                    switch ($option['lvl2'])
-                                {
-                                case "all" :
-						$info=$this->get_data("SELECT * FROM empleado;");
-						 break;
-                                case "login":
-                                    $id=mysqli_real_escape_string($this->cn,$data['cedula']);              
-                                    $info=$this->get_data("SELECT * FROM empleado WHERE  cedula='$id';");
+                            switch($option['lvl2'])
+                            {
+                                case "all": 
+                                    //
                                     break;
+                            }
+			break;
+                    
+                        case "empleado":
+                            switch ($option['lvl2'])
+                            {
+                                case "all" :
+                                    $info=$this->get_data("SELECT * FROM empleado;");
+                                     break;
+                                case "login":
+                                    $id=mysqli_real_escape_string($this->cn,$data['cedula']); 
                                     
+                                    //$password=mysqli_real_escape_string($this->cn,$data['contraseña']);
+                                    //$info=$this->get_data("SELECT * FROM empleado WHERE cedula='$id' AND contraseña='$password';");
                                     
-                                    }
-                                    
-                                  break;
-                                    
+                                    $info=$this->get_data("SELECT * FROM empleado WHERE cedula='$id';");
+                                    break;
+                            }
+                        break;                                    
 			
 			default: break;
 		}
