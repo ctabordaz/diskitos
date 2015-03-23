@@ -2,7 +2,8 @@
     <head>
         <title>Incio Sesion</title>
         
-        <script src="./js/diskitos.js"></script>
+        
+        <script src="./js/diskitos2.js"></script>
         <!-- CSS -->
         <link rel="stylesheet" href="./css/resetLogin.css">
         <link rel="stylesheet" href="./css/supersizedLogin.css">
@@ -12,7 +13,7 @@
         <link rel="stylesheet"  href="./css/diskitos.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     </head>
-    <body onload="cargar()">
+    <body onload="ms.cargar()" >
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-5 col-md-4 ">
@@ -24,7 +25,7 @@
                         <input type="hidden" name="option" value="login"/></br>
                         
                         <div class="wrapper">
-                            <button type="submit" class="btn  btn-sm btn-login" onclick="ms.validar()" >
+                            <button type="submit" class="btn  btn-sm btn-login">
                                 <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Ingresar 
                             </button>
                         </div>

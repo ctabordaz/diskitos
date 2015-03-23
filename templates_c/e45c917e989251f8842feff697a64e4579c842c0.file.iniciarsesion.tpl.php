@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-03-23 15:22:04
+<?php /* Smarty version Smarty-3.0.9, created on 2015-03-23 15:35:12
          compiled from "C:/wamp/www/diskitos/templates\iniciarsesion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2440255102f9ca7a579-06958303%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:800551032b0400fe8-01026407%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e45c917e989251f8842feff697a64e4579c842c0' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\iniciarsesion.tpl',
-      1 => 1427124120,
+      1 => 1427124909,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2440255102f9ca7a579-06958303',
+  'nocache_hash' => '800551032b0400fe8-01026407',
   'function' => 
   array (
   ),
@@ -21,7 +21,8 @@ $_smarty_tpl->decodeProperties(array (
     <head>
         <title>Incio Sesion</title>
         
-        <script src="./js/diskitos.js"></script>
+        
+        <script src="./js/diskitos2.js"></script>
         <!-- CSS -->
         <link rel="stylesheet" href="./css/resetLogin.css">
         <link rel="stylesheet" href="./css/supersizedLogin.css">
@@ -31,7 +32,7 @@ $_smarty_tpl->decodeProperties(array (
         <link rel="stylesheet"  href="./css/diskitos.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     </head>
-    <body onload="cargar()">
+    <body onload="ms.cargar()" >
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-5 col-md-4 ">
@@ -45,7 +46,7 @@ iniciarsesion.php" method="post">
                         <input type="hidden" name="option" value="login"/></br>
                         
                         <div class="wrapper">
-                            <button type="submit" class="btn  btn-sm btn-login" onclick="ms.validar()" >
+                            <button type="submit" class="btn  btn-sm btn-login">
                                 <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Ingresar 
                             </button>
                         </div>
