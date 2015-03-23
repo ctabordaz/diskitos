@@ -11,12 +11,10 @@ body {
     position: fixed;
     
 }
-.login{
-    color: #000;
-    font-weight: bold;
-}
+
 
 .form-login {
+    
     margin-top: 50%;
    // background-color: #EDEDED;
    background-color:rgba(0, 197, 166,0.6);
@@ -39,6 +37,7 @@ body {
 
 .btn-login{
     font-weight: bold;
+    width: 260px;
 }
 h4 { 
  

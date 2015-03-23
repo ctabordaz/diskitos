@@ -7,20 +7,7 @@
 
 var managerScreen = managerScreen || {};
 managerScreen = {
-    validar : function(){
-        var id = document.getElementById("identificacion").value;
-        var pass = document.getElementById("contraseña").value;
-        if(id.length === 0 && pass.length === 0){
-            alert("Identificación y contraseña vacias");
-        }else{
-             if(id.length === 0){
-            alert("Identificación vacia");
-              }
-        if(pass.length === 0){
-            alert("Contraseña vacia");
-        }
-        }
-    }
+  
     
 };
 
