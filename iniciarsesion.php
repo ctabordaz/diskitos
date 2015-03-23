@@ -45,7 +45,7 @@ class c_iniciarsesion extends super_controller {
 			
 		}
 		else {
-                    $this->engine->assign('id',  $this->post->identificacion);
+                    $this->engine->assign('id',  $this->post->cedula);
                     $this->engine->display('iniciarsesion.tpl');
 	    }
 	    
