@@ -7,8 +7,15 @@
 
 var managerScreen = managerScreen || {};
 managerScreen = {
+    cargar: function(){
+        alert("hola");
+    }
   
     
 };
 
 var ms = managerScreen;
+
+function cargar(){
+    alert("hola");
+}

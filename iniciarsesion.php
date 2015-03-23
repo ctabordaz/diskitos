@@ -5,7 +5,9 @@ require('configs/include.php');
 class c_iniciarsesion extends super_controller {
 
         protected $empleado;
-        
+        protected $temp;
+
+
         public function login(){
            
                 
@@ -14,13 +16,24 @@ class c_iniciarsesion extends super_controller {
 		$options['empleado']['lvl2']= "login";
 		$this->orm->connect();
 		$this->orm->read_data(array("empleado"), $options,$cod);
-		$empleado = $this->orm->get_objects("empleado");
-                $this->engine->assign('emp',$empleado[0]);
-                
-
-		$this->orm->close();
+		$this->empleado = $this->orm->get_objects("empleado");
+                $this->engine->assign('emp',$this->empleado[0]);
+                $this->orm->close();
 		
-		
+                if (empty($this->user[0])){
+                        $this->engine->assign('id',  $this->post->cedula);
+			throw_exception($this->gvar['m_incorrect_login']);
+		}
+                else{
+                if($this->empleado[0]->get('tipo')=='C') {
+			$this->temp='footer.tpl';
+			//echo'Cliente';
+		}
+		else if ($this->empleado[0]->get('tipo')=='A'){
+			$this->temp='header.tpl';
+			//echo'Admin';
+		}
+                }
 
         }
 
@@ -28,18 +41,28 @@ class c_iniciarsesion extends super_controller {
 	{		
 		
 			
-		$this->engine->display('iniciarsesion.tpl');
+		if(is_object($this->empleado[0])){
+			$this->engine->display($this->temp);
+			
+		}
+		else {
+                    
+                    $this->engine->display('iniciarsesion.tpl');
+                  }
 	    
 	}
 	
 	public function run()
 	{
-           if(isset($this->post->option)){
-               $this->{$this->post->option}();
-               
-              
-           }
-           $this->display();
+           try{
+			if (isset($this->post->option)){
+				$this->{$this->post->option}();
+			}
+		}
+		catch (Exception $e){
+			$this->error=1; $this->msg_warning=$e->getMessage(); $this->temp_aux = 'message.tpl';
+		    $this->engine->assign('type_warning',$this->type_warning); $this->engine->assign('msg_warning',$this->msg_warning);}
+		    $this->display();
 		
 	}
 }
