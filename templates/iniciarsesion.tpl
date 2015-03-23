@@ -18,11 +18,11 @@
                 <div class="col-md-offset-5 col-md-4 ">
              
                     <form class="form-login " action="{$gvar.l_global}iniciarsesion.php" method="post">
-                        <h4 class="machete">Bienvenido a Diskitos S.A {$emp->get('nombre')}</h4>
-                        
-                        <input type="text" id="identificacion" class="form-control input-sm chat-input" placeholder="Identificación" required/></br>
-                        <input type="password" id="contraseña" class="form-control input-sm chat-input" placeholder="Contraseña" required/>
-                        <input type="hidden" name="option" value="validar"/></br>
+                        {if isset($emp)}<h4 class="machete">Bienvenido a Diskitos S.A {$emp->get('nombre')}</h4>
+                        {/if}
+                        <input type="text" name="cedula" id="cedula" class="form-control input-sm chat-input" placeholder="Identificación" required/></br>
+                        <input type="password" name="contraseña" id="contraseña" class="form-control input-sm chat-input" placeholder="Contraseña" required/>
+                        <input type="hidden" name="option" value="login"/></br>
                         
                         <div class="wrapper">
                             <button type="submit" class="btn  btn-sm btn-login" onclick="ms.validar()" >
