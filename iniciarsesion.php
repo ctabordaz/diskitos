@@ -20,11 +20,9 @@ class c_iniciarsesion extends super_controller {
                 $this->engine->assign('emp',$this->empleado[0]);
                 $this->orm->close();
 		
-                if (empty($this->user[0])){
-                        $this->engine->assign('id',  $this->post->cedula);
+                if (empty($this->empleado[0])){
 			throw_exception($this->gvar['m_incorrect_login']);
-		}
-                else{
+		}else{
                 if($this->empleado[0]->get('tipo')=='C') {
 			$this->temp='footer.tpl';
 			//echo'Cliente';
@@ -34,6 +32,7 @@ class c_iniciarsesion extends super_controller {
 			//echo'Admin';
 		}
                 }
+		
 
         }
 
@@ -46,15 +45,15 @@ class c_iniciarsesion extends super_controller {
 			
 		}
 		else {
-                    
+                    $this->engine->assign('id',  $this->post->identificacion);
                     $this->engine->display('iniciarsesion.tpl');
-                  }
+	    }
 	    
 	}
 	
 	public function run()
 	{
-           try{
+          	try{
 			if (isset($this->post->option)){
 				$this->{$this->post->option}();
 			}

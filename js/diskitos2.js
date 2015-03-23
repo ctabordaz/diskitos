@@ -1,5 +1,4 @@
 
-
 var managerScreen = managerScreen || {};
 managerScreen = {
     cargar: function(){
