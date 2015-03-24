@@ -24,11 +24,11 @@ class c_iniciarsesion extends super_controller {
                     @throw_exception($this->gvar['m_incorrect_login']);
 		}else{
                     if($this->empleado[0]->get('tipo')=='C') {
-                        $this->temp='footer.tpl';
+                        $this->temp='header.tpl';
                         //echo'Cliente';
                     }
                     else if ($this->empleado[0]->get('tipo')=='A'){
-                        $this->temp='ingresarediciones.tpl';
+                        $this->temp='ingresar.tpl';
                         //echo'Admin';
                     }
                 }
@@ -37,7 +37,9 @@ class c_iniciarsesion extends super_controller {
         public function display()
 	{		
             if(is_object($this->empleado[0])){
-                $this->engine->display($this->temp);
+                $this->engine->display('headerd.tpl');
+              //  $this->engine->display($this->temp);
+                $this->engine->display('footerd.tpl');
             }
             else {
                 @$this->engine->assign('id', $this->post->cedula);

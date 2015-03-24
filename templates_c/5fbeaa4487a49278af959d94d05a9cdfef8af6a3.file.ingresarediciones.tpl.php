@@ -1,3 +1,22 @@
+<?php /* Smarty version Smarty-3.0.9, created on 2015-03-24 02:38:07
+         compiled from "C:/wamp/www/diskitos/templates\ingresarediciones.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:44805510ce0f1f43d8-27557862%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '5fbeaa4487a49278af959d94d05a9cdfef8af6a3' => 
+    array (
+      0 => 'C:/wamp/www/diskitos/templates\\ingresarediciones.tpl',
+      1 => 1427164684,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '44805510ce0f1f43d8-27557862',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
 <div id="content">
         
             <div class="row">

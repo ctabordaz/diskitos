@@ -35,6 +35,19 @@ p {
     text-align: left;
     font-size: small;
 }
+.cabeza{
+    background-color:rgba(0, 197, 166,0.6);
+    
+   
+   
+}
+span{
+    margin-right: 5px;
+}
+.c {
+    color: #FFF;
+}
+
 
 #precio {
     width: 120px;

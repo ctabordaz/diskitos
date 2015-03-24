@@ -9,7 +9,7 @@ class c_contact extends super_controller {
 		$this->engine->assign('title',$this->gvar['n_contact']);
 		
 		$this->engine->display('header.tpl');
-		$this->engine->display('contact.tpl');
+		$this->engine->display('.tpl');
 		$this->engine->display('footer.tpl');
 	}
 	

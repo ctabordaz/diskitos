@@ -1,5 +1,23 @@
+<?php /* Smarty version Smarty-3.0.9, created on 2015-03-24 00:29:06
+         compiled from "C:/wamp/www/diskitos/templates\ingresar.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:239355510afd21b4db9-35751779%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '00761dc6b8d0a7fcce1cb41188778f4ef5b2e589' => 
+    array (
+      0 => 'C:/wamp/www/diskitos/templates\\ingresar.tpl',
+      1 => 1427156899,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '239355510afd21b4db9-35751779',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
 <div id="content">
-        
             <div class="row">
                 <img src="./images/Admin/d.jpg" />
             </div>
@@ -112,6 +130,4 @@
                     </ul>
                 </nav>
             </div>
-                </div>
-
-
+        </div>
