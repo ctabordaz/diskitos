@@ -16,7 +16,6 @@
         <li role="presentation"><a class="c" href="ingresarediciones.php">Registrar Cliente</a></li>
         <li role="presentation"><a class="c" href="#">Buscar Ediciones</a></li>
         <li role="presentation"><a class="c" href="#">Generar Factura</a></li>
-        <li role="presentation"><a class="c" href="#">Buscar Ediciones</a></li>
         <li role="presentation" class=" active navbar-right"><a class="bl"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>Cajero</a></li>
         </ul>
               

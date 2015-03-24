@@ -25,6 +25,9 @@ img {
     direction: ltr;
     font-size: small;
 }
+.duracion{
+    width: 50px;
+}
 
 p { 
     padding-top: 7px;
