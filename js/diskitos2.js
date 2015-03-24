@@ -5,9 +5,9 @@ managerScreen = {
         var id=document.getElementById("cedula").value;
         var pass=document.getElementById("contraseña").value;
         if(id.length !== 0){
-            if(pass.legth === 0){
+           // if(pass.legth === 0){
                 alert("Identificación o contraseña son incorrectas");
-            }
+            //}
         }
     }
   
