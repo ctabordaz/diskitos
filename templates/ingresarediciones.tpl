@@ -1,11 +1,11 @@
 <div id="content">
-        
+            
             <div class="row">
                 <img src="./images/Admin/d.jpg" />
             </div>
             
             <hr />
-            
+            <form>
             <div class="row">
                 <div class="col-md-3">
                     <div class="col-md-4">
@@ -124,13 +124,22 @@
                             <p>Duración: </p>
                         </div>
                         <div class="col-md-offset-1 col-md-2">
-                            <input  type="text" class="duracion" name="ccancion1" id="ccancion1" required/>
+                            <input  type="text" class="duracion" name="ccancion1" id="ccancion1" required/> <p>:</p>
                         </div>
+                        
                         <div class="col-md-2">
                             <input  type="text" class="duracion" name="ccancion1" id="ccancion1" required/>
                         </div>
                         
 
+                    </div>
+                    <div class="row">
+                          
+                        <div class="col-md-1 col-md-2">
+                              
+                              <a><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Ingresar</a>
+                        </div>
+                           
                     </div>
                     
                 </div>
@@ -141,10 +150,11 @@
             <div class="row">
                 <nav>
                     <ul class="pager">
-                        <li><a class="ing" href="#">Ingresar</a></li>
+                        <li><a type="submit" class="ing" href="#">Ingresar</a></li>
                     </ul>
                 </nav>
             </div>
+            </form>
                 </div>
 
 

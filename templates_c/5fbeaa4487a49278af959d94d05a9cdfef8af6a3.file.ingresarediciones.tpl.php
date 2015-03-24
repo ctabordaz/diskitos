@@ -1,30 +1,30 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-03-24 14:14:53
+<?php /* Smarty version Smarty-3.0.9, created on 2015-03-24 14:38:43
          compiled from "C:/wamp/www/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:5255511715d13a731-19559591%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:24281551176f36313f9-07673006%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5fbeaa4487a49278af959d94d05a9cdfef8af6a3' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1427206490,
+      1 => 1427207920,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '5255511715d13a731-19559591',
+  'nocache_hash' => '24281551176f36313f9-07673006',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
 <div id="content">
-        
+            
             <div class="row">
                 <img src="./images/Admin/d.jpg" />
             </div>
             
             <hr />
-            
+            <form>
             <div class="row">
                 <div class="col-md-3">
                     <div class="col-md-4">
@@ -143,13 +143,22 @@ $_smarty_tpl->decodeProperties(array (
                             <p>Duración: </p>
                         </div>
                         <div class="col-md-offset-1 col-md-2">
-                            <input  type="text" class="duracion" name="ccancion1" id="ccancion1" required/>
+                            <input  type="text" class="duracion" name="ccancion1" id="ccancion1" required/> <p>:</p>
                         </div>
+                        
                         <div class="col-md-2">
                             <input  type="text" class="duracion" name="ccancion1" id="ccancion1" required/>
                         </div>
                         
 
+                    </div>
+                    <div class="row">
+                          
+                        <div class="col-md-1 col-md-2">
+                              
+                              <a><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Ingresar</a>
+                        </div>
+                           
                     </div>
                     
                 </div>
@@ -160,10 +169,11 @@ $_smarty_tpl->decodeProperties(array (
             <div class="row">
                 <nav>
                     <ul class="pager">
-                        <li><a class="ing" href="#">Ingresar</a></li>
+                        <li><a type="submit" class="ing" href="#">Ingresar</a></li>
                     </ul>
                 </nav>
             </div>
+            </form>
                 </div>
 
 
