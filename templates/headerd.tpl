@@ -11,10 +11,10 @@
        
        
             
-        <ul class="nav nav-tabs cabeza ">
+        <ul class="nav nav-tabs cabeza navbar-fixed-top">
         <li role="presentation"  ><a class="c" href="#">Registrar Cajero</a></li>
         <li role="presentation"><a class="c" href="ingresarediciones.php">Ingresar Ediciones</a></li>
-        <li role="presentation"><a class="c" href="#">Actializar Cantidad</a></li>
+        <li role="presentation"><a class="c" href="#">Actualizar Cantidad</a></li>
         <li role="presentation"><a class="c" href="#">Realizar Pedido</a></li>
         <li role="presentation"><a class="c" href="#">Buscar Ediciones</a></li>
         <li role="presentation" class=" active navbar-right"><a class="bl"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>Administrador</a></li>
