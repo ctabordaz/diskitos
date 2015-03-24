@@ -8,7 +8,7 @@ class c_ingresarediciones extends super_controller {
 	{		
 		$this->engine->assign('title',"Ingresar Ediciones");
 		
-		$this->engine->display('headerd.tpl');
+		$this->engine->display('headera.tpl');
 		$this->engine->display('ingresarediciones.tpl');
 		$this->engine->display('footerd.tpl');
 	}

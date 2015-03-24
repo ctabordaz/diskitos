@@ -14,21 +14,21 @@ class c_iniciarsesion extends super_controller {
                 $cod['empleado']['contraseña']= $this->post->contraseña;
 		$options['empleado']['lvl2']= "login";
 		
-                @$this->orm->connect();
-		@$this->orm->read_data(array("empleado"), $options,$cod);
-		@$this->empleado = $this->orm->get_objects("empleado");
-                @$this->engine->assign('emp',$this->empleado[0]);
+                $this->orm->connect();
+		$this->orm->read_data(array("empleado"), $options,$cod);
+		$this->empleado = $this->orm->get_objects("empleado");
+                $this->engine->assign('emp',$this->empleado[0]);
                 $this->orm->close();
 		
                 if (empty($this->empleado[0])){
-                    @throw_exception($this->gvar['m_incorrect_login']);
+                    throw_exception($this->gvar['m_incorrect_login']);
 		}else{
                     if($this->empleado[0]->get('tipo')=='C') {
-                        $this->temp='header.tpl';
+                        $this->temp='headerc.tpl';
                         //echo'Cliente';
                     }
                     else if ($this->empleado[0]->get('tipo')=='A'){
-                        $this->temp='ingresar.tpl';
+                        $this->temp='headera.tpl';
                         //echo'Admin';
                     }
                 }
@@ -37,12 +37,11 @@ class c_iniciarsesion extends super_controller {
         public function display()
 	{		
             if(is_object($this->empleado[0])){
-                $this->engine->display('headerd.tpl');
-              //  $this->engine->display($this->temp);
+                $this->engine->display($this->temp);
                 $this->engine->display('footerd.tpl');
             }
             else {
-                @$this->engine->assign('id', $this->post->cedula);
+                $this->engine->assign('id', $this->post->cedula);
                 $this->engine->display('iniciarsesion.tpl');
             }
 
