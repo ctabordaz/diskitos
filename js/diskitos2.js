@@ -6,7 +6,7 @@ managerScreen = {
         var pass=document.getElementById("contraseña").value;
         if(id.length !== 0){
             if(pass.legth === 0){
-                alert("Identificación o contraseña invalidas");
+                alert("Identificación o contraseña son incorrectas");
             }
         }
     }
