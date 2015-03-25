@@ -46,7 +46,7 @@
                             <p>Título:</p>
                         </div>
                         <div class="col-md-8">
-                            <input class="atralbum" type="text" name="titulo" id="titulo" required/>
+                            <input  type="text" name="titulo" id="titulo" required/>
                         </div>
                     </div>
                     <div class="row">
@@ -54,7 +54,7 @@
                             <p>Intérprete:</p>
                         </div>
                         <div class="col-md-8">
-                            <input class="atralbum" type="text" name="interprete" id="interprete" required/>
+                            <input  type="text" name="interprete" id="interprete" required/>
                         </div>
                     </div>
                     <div class="row">
@@ -62,7 +62,7 @@
                             <p>Nro Catálogo:</p>
                         </div>
                         <div class="col-md-8">
-                            <input class="atralbum" type="text" name="catalogo" id="catalogo" required/>
+                            <input  type="text" name="catalogo" id="catalogo" required/>
                         </div>
                     </div>
                     <div class="row">
@@ -70,7 +70,7 @@
                             <p>País de Origen:</p>
                         </div>
                         <div class="col-md-8">
-                            <input class="atralbum" type="text" name="paisorigen" id="paisorigen" required/>
+                            <input  type="text" name="paisorigen" id="paisorigen" required/>
                         </div>
                     </div>
                     <div class="row">
@@ -78,7 +78,7 @@
                             <p>Disquera:</p>
                         </div>
                         <div class="col-md-8">
-                            <input class="atralbum" type="text" name="disquera" id="disquera" required/>
+                            <input  type="text" name="disquera" id="disquera" required/>
                         </div>
                     </div>
                     <div class="row">
@@ -86,7 +86,7 @@
                             <p>Año de publicación:</p>
                         </div>
                         <div class="col-md-8">
-                            <input class="atralbum" type="text" name="agepublicacion" id="agepublicacion" required/>
+                            <input  type="text" name="agepublicacion" id="agepublicacion" required/>
                         </div>
                     </div>
                     <div class="row">
@@ -94,7 +94,7 @@
                             <p>Género:</p>
                         </div>
                         <div class="col-md-8">
-                            <input class="atralbum" type="text" name="genero" id="genero" required/>
+                            <input  type="text" name="genero" id="genero" required/>
                         </div>
                     </div>
                 </div>
@@ -136,8 +136,9 @@
                     <div class="row">
                           
                         <div class="col-md-1 col-md-2">
-                              
+                            <p>
                               <a><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Ingresar</a>
+                            </p>
                         </div>
                            
                     </div>
