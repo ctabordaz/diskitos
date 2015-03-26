@@ -99,6 +99,7 @@
                     </div>
                 </div>
                 <div class="col-md-7">
+                   
                     <h4>Canciones</h4>
                     <div class="row">
                         <div class="col-md-2">
@@ -136,9 +137,13 @@
                     <div class="row">
                           
                         <div class="col-md-1 col-md-2">
-                            <p>
-                              <a><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Ingresar</a>
-                            </p>
+                            
+                               <p>
+                                <button type="button" class="btn btn-default btn-sm">
+                                  <span class="glyphicon glyphicon-plus-sign"></span>Agregar
+                                </button>
+                               </p>
+                           
                         </div>
                            
                     </div>

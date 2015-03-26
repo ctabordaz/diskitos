@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-03-25 14:40:45
+<?php /* Smarty version Smarty-3.0.9, created on 2015-03-26 14:21:29
          compiled from "C:/wamp/www/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:209375512c8ed9351b3-50946012%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:25819551415e9eb8603-40607208%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5fbeaa4487a49278af959d94d05a9cdfef8af6a3' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1427294443,
+      1 => 1427379687,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '209375512c8ed9351b3-50946012',
+  'nocache_hash' => '25819551415e9eb8603-40607208',
   'function' => 
   array (
   ),
@@ -118,6 +118,8 @@ $_smarty_tpl->decodeProperties(array (
                     </div>
                 </div>
                 <div class="col-md-7">
+                    <div class="canciones">
+
                     <h4>Canciones</h4>
                     <div class="row">
                         <div class="col-md-2">
@@ -155,14 +157,20 @@ $_smarty_tpl->decodeProperties(array (
                     <div class="row">
                           
                         <div class="col-md-1 col-md-2">
-                            <p>
-                              <a><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Ingresar</a>
-                            </p>
+                            
+                               <p>
+                                <button type="button" class="btn btn-default btn-sm">
+                                  <span class="glyphicon glyphicon-plus-sign"></span>Agregar
+                                </button>
+                               </p>
+                           
                         </div>
                            
                     </div>
                     
                 </div>
+                                        </div>
+
             </div>
             
             <hr />
