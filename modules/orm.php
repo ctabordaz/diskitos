@@ -59,7 +59,7 @@ class orm
 	//return data
 	public function get_data($class,$pos)
 	{
-		$data = $this->data[$class][$pos];
+		@$data = $this->data[$class][$pos];
 		return $data;
 	}
 	

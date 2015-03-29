@@ -41,7 +41,7 @@ class c_iniciarsesion extends super_controller {
                 $this->engine->display('footerd.tpl');
             }
             else {
-                $this->engine->assign('id', $this->post->cedula);
+                @$this->engine->assign('id', $this->post->cedula);
                 $this->engine->display('iniciarsesion.tpl');
             }
 

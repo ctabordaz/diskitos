@@ -23,7 +23,10 @@ jQuery(function($){
                                  {image : './images/backgrounds/A.jpg'},
                                  {image : './images/backgrounds/B.jpg'},
                                  {image : './images/backgrounds/C.jpg'},
-                                 {image : './images/backgrounds/D.jpg'}
+                                 {image : './images/backgrounds/D.jpg'},
+                                 {image : './images/backgrounds/E.jpg'},
+                                 {image : './images/backgrounds/F.jpg'},
+                                 {image : './images/backgrounds/G.jpg'}
                              ]
 
     });

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-03-23 18:38:20
+<?php /* Smarty version Smarty-3.0.9, created on 2015-03-30 00:45:28
          compiled from "C:/xampp/htdocs/diskitos/templates\iniciarsesion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2645655104f8ce40901-91495424%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:198455188088896674-50747605%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'c62f8998bcd507cb3168f8dc9cad5a5735d79f8b' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\iniciarsesion.tpl',
-      1 => 1427132284,
+      1 => 1427667729,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2645655104f8ce40901-91495424',
+  'nocache_hash' => '198455188088896674-50747605',
   'function' => 
   array (
   ),
@@ -42,7 +42,7 @@ iniciarsesion.php" method="post">
                         <h4 class="machete">Bienvenido a Diskitos S.A</h4>
                         <input type="text" name="cedula" id="cedula" class="form-control input-sm chat-input" placeholder="Identificación" value="<?php echo $_smarty_tpl->getVariable('id')->value;?>
 " required/></br>
-                        <input type="password" name="contraseña" id="contraseña" class="form-control input-sm chat-input" placeholder="Contraseña" required/>
+                        <input type="password" name="contraseña" id="contraseña" class="form-control input-sm chat-input"value="" placeholder="Contraseña" required/>
                         <input type="hidden" name="option" value="login"/></br>
                         
                         <div class="wrapper">
