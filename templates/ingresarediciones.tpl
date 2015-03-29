@@ -101,6 +101,7 @@
                 <div class="col-md-7">
                    
                     <h4>Canciones</h4>
+                    <div id="cancion">
                     <div class="row">
                         <div class="col-md-2">
                             <p>Nombre: </p>
@@ -134,12 +135,13 @@
                         
 
                     </div>
+                    </div>
                     <div class="row">
                           
                         <div class="col-md-1 col-md-2">
                             
                                <p>
-                                <button type="button" class="btn btn-default btn-sm">
+                                   <button type="button" class="btn btn-default btn-sm" onclick="ms.agregar()">
                                   <span class="glyphicon glyphicon-plus-sign"></span>Agregar
                                 </button>
                                </p>

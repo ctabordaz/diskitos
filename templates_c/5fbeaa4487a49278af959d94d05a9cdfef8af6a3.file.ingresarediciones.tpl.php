@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-03-26 14:21:29
+<?php /* Smarty version Smarty-3.0.9, created on 2015-03-29 16:04:48
          compiled from "C:/wamp/www/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:25819551415e9eb8603-40607208%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:31885551822a0703481-69173458%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5fbeaa4487a49278af959d94d05a9cdfef8af6a3' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1427379687,
+      1 => 1427645073,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '25819551415e9eb8603-40607208',
+  'nocache_hash' => '31885551822a0703481-69173458',
   'function' => 
   array (
   ),
@@ -118,9 +118,9 @@ $_smarty_tpl->decodeProperties(array (
                     </div>
                 </div>
                 <div class="col-md-7">
-                    <div class="canciones">
-
+                   
                     <h4>Canciones</h4>
+                    <div id="cancion">
                     <div class="row">
                         <div class="col-md-2">
                             <p>Nombre: </p>
@@ -154,12 +154,13 @@ $_smarty_tpl->decodeProperties(array (
                         
 
                     </div>
+                    </div>
                     <div class="row">
                           
                         <div class="col-md-1 col-md-2">
                             
                                <p>
-                                <button type="button" class="btn btn-default btn-sm">
+                                   <button type="button" class="btn btn-default btn-sm" onclick="ms.agregar()">
                                   <span class="glyphicon glyphicon-plus-sign"></span>Agregar
                                 </button>
                                </p>
@@ -169,8 +170,6 @@ $_smarty_tpl->decodeProperties(array (
                     </div>
                     
                 </div>
-                                        </div>
-
             </div>
             
             <hr />
