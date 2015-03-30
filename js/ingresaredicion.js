@@ -10,6 +10,10 @@ var managerScreen = managerScreen || {};
 managerScreen = {
     agregar: function(){
         $("<div>",{
+            class: "sings"
+        }).appendTo("#cancion");
+        
+        $("<div>",{
             class: "row"
         }).append($("<div>",{
             class: "col-md-2"

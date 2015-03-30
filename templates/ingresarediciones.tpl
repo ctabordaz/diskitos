@@ -101,8 +101,10 @@
                 <div class="col-md-7">
                    
                     <h4>Canciones</h4>
-                    <div id="cancion">
-                    <div class="row">
+                    <div id="cancion" >
+                     
+                        <div class="sings">
+                            <div class="row">
                         <div class="col-md-2">
                             <p>Nombre: </p>
                         </div>
@@ -126,7 +128,7 @@
                             <p>Duración: </p>
                         </div>
                         <div class="col-md-offset-1 col-md-2">
-                            <input  type="text" class="duracion" name="ccancion1" id="ccancion1" required/> <p>:</p>
+                            <input  type="text" class="duracion" name="ccancion1" id="ccancion1" required/>
                         </div>
                         
                         <div class="col-md-2">
@@ -135,7 +137,12 @@
                         
 
                     </div>
+
+                        </div>
+                       
+                            
                     </div>
+                    
                     <div class="row">
                           
                         <div class="col-md-1 col-md-2">

@@ -74,3 +74,22 @@ span{
     padding-top: 0px;
     padding-bottom: 0px;
 }
+
+.sings{
+    
+    
+    // background-color: #EDEDED;
+    width: 420px;
+    background-color:rgba(0, 197, 166,0.6);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 2px;
+    box-shadow:0 1px 0 #cfcfcf;
+    border-style: solid;
+    border-color: #000;
+    
+}

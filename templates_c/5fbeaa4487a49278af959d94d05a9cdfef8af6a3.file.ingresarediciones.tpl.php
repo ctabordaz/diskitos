@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-03-29 16:04:48
+<?php /* Smarty version Smarty-3.0.9, created on 2015-03-30 16:52:38
          compiled from "C:/wamp/www/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:31885551822a0703481-69173458%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2393955197f5628a861-14072216%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5fbeaa4487a49278af959d94d05a9cdfef8af6a3' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1427645073,
+      1 => 1427734355,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '31885551822a0703481-69173458',
+  'nocache_hash' => '2393955197f5628a861-14072216',
   'function' => 
   array (
   ),
@@ -120,8 +120,10 @@ $_smarty_tpl->decodeProperties(array (
                 <div class="col-md-7">
                    
                     <h4>Canciones</h4>
-                    <div id="cancion">
-                    <div class="row">
+                    <div id="cancion" >
+                     
+                        <div class="sings">
+                            <div class="row">
                         <div class="col-md-2">
                             <p>Nombre: </p>
                         </div>
@@ -145,7 +147,7 @@ $_smarty_tpl->decodeProperties(array (
                             <p>Duración: </p>
                         </div>
                         <div class="col-md-offset-1 col-md-2">
-                            <input  type="text" class="duracion" name="ccancion1" id="ccancion1" required/> <p>:</p>
+                            <input  type="text" class="duracion" name="ccancion1" id="ccancion1" required/>
                         </div>
                         
                         <div class="col-md-2">
@@ -154,7 +156,12 @@ $_smarty_tpl->decodeProperties(array (
                         
 
                     </div>
+
+                        </div>
+                       
+                            
                     </div>
+                    
                     <div class="row">
                           
                         <div class="col-md-1 col-md-2">
