@@ -5,9 +5,9 @@
             </div>
             
             <hr />
-            <form action="ingresarediciones.php" method="GET">
+            <form action="{$gvar.l_global}ingresarediciones.php?option=ingresar" method="POST">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="col-md-4">
                         <p id="formato">Formato:</p>
                     </div>
@@ -19,7 +19,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="col-md-4">
                         <p id="formato">Precio:</p>
                     </div>
@@ -27,12 +27,12 @@
                         <input type="number" name="precio" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="col-md-2">
-                        <p id="formato">Carátula:</p>
+                <div class="col-md-4">
+                    <div class="col-md-4">
+                        <p id="formato">Cantidad:</p>
                     </div>
-                    <div class="col-md-10">
-                        <input type="file" id="caratula">
+                    <div class="col-md-8">
+                        <input type="number" name="cantidad" id="cantidad" class="form-control input-md chat-input" placeholder="0" required/>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                             <p>Nro Catálogo:</p>
                         </div>
                         <div class="col-md-8">
-                            <input  type="text" name="catalogo" id="catalogo" required/>
+                            <input  type="text" name="nro_catalogo" id="catalogo" required/>
                         </div>
                     </div>
                     <div class="row">
@@ -71,7 +71,7 @@
                             <p>País de Origen:</p>
                         </div>
                         <div class="col-md-8">
-                            <input  type="text" name="paisorigen" id="paisorigen" required/>
+                            <input  type="text" name="pais_origen" id="paisorigen" required/>
                         </div>
                     </div>
                     <div class="row">
@@ -87,7 +87,7 @@
                             <p>Año de publicación:</p>
                         </div>
                         <div class="col-md-8">
-                            <input  type="text" name="agepublicacion" id="agepublicacion" required/>
+                            <input  type="text" name="ano_publicacion" id="agepublicacion" required/>
                         </div>
                     </div>
                     <div class="row">
@@ -97,6 +97,12 @@
                         <div class="col-md-8">
                             <input  type="text" name="genero" id="genero" required/>
                         </div>
+                    </div>
+                    <div class="row">
+                        <p id="formato">Carátula:</p>
+                    </div>
+                    <div class="row">
+                        <input type="file" name="caratula">
                     </div>
                 </div>
                 <div class="col-md-7">
@@ -121,8 +127,6 @@
                         <div class="col-md-2">
                             <input  type="text" name="ccancion1" id="ccancion1" required/>
                         </div>
-                       
-
                     </div>
                     <div class="row">
                          <div class=" col-md-1 ">

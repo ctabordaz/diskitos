@@ -89,6 +89,24 @@ class db
 					break;
 			}
 			break;
+                        case "album":
+				switch($options['lvl2'])
+				{
+					case "album":
+						$titulo=mysqli_real_escape_string($this->cn,$object->get('titulo'));
+						$interprete=mysqli_real_escape_string($this->cn,$object->get('interprete'));
+						$nro_catalogo=mysqli_real_escape_string($this->cn, $object->get('nro_catalogo'));
+						$pais_origen=mysqli_real_escape_string($this->cn, $object->get('pais_origen'));
+                                                $disquera=mysqli_real_escape_string($this->cn, $object->get('disquera'));
+                                                $ano_publicacion=mysqli_real_escape_string($this->cn, $object->get('ano_publicacion'));
+                                                $genero=mysqli_real_escape_string($this->cn, $object->get('genero'));
+                                                
+                                                
+                                                
+						$this->do_operation("INSERT INTO album (titulo, interprete, nro_catalogo, pais_origen, disquera, ano_publicacion,genero ) VALUES ('$titulo', '$interprete', '$nro_catalogo', '$pais_origen','$disquera', '$ano_publicacion', '$genero' );");
+						break;
+				}
+				break;
 			
 			default: break;
 		}

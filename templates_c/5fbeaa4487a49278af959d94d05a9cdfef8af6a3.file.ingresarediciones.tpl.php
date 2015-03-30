@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-03-30 17:41:44
+<?php /* Smarty version Smarty-3.0.9, created on 2015-03-30 19:47:10
          compiled from "C:/wamp/www/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1235755198ad83bef76-85177005%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:314775519a83ef18732-79882768%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5fbeaa4487a49278af959d94d05a9cdfef8af6a3' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1427737294,
+      1 => 1427744825,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1235755198ad83bef76-85177005',
+  'nocache_hash' => '314775519a83ef18732-79882768',
   'function' => 
   array (
   ),
@@ -24,9 +24,10 @@ $_smarty_tpl->decodeProperties(array (
             </div>
             
             <hr />
-            <form action="ingresarediciones.php" method="GET">
+            <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
+ingresarediciones.php?option=ingresar" method="POST">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="col-md-4">
                         <p id="formato">Formato:</p>
                     </div>
@@ -38,7 +39,7 @@ $_smarty_tpl->decodeProperties(array (
                         </select>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="col-md-4">
                         <p id="formato">Precio:</p>
                     </div>
@@ -46,12 +47,12 @@ $_smarty_tpl->decodeProperties(array (
                         <input type="number" name="precio" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="col-md-2">
-                        <p id="formato">Carátula:</p>
+                <div class="col-md-4">
+                    <div class="col-md-4">
+                        <p id="formato">Cantidad:</p>
                     </div>
-                    <div class="col-md-10">
-                        <input type="file" id="caratula">
+                    <div class="col-md-8">
+                        <input type="number" name="cantidad" id="cantidad" class="form-control input-md chat-input" placeholder="0" required/>
                     </div>
                 </div>
             </div>
@@ -82,7 +83,7 @@ $_smarty_tpl->decodeProperties(array (
                             <p>Nro Catálogo:</p>
                         </div>
                         <div class="col-md-8">
-                            <input  type="text" name="catalogo" id="catalogo" required/>
+                            <input  type="text" name="nro_catalogo" id="catalogo" required/>
                         </div>
                     </div>
                     <div class="row">
@@ -90,7 +91,7 @@ $_smarty_tpl->decodeProperties(array (
                             <p>País de Origen:</p>
                         </div>
                         <div class="col-md-8">
-                            <input  type="text" name="paisorigen" id="paisorigen" required/>
+                            <input  type="text" name="pais_origen" id="paisorigen" required/>
                         </div>
                     </div>
                     <div class="row">
@@ -106,7 +107,7 @@ $_smarty_tpl->decodeProperties(array (
                             <p>Año de publicación:</p>
                         </div>
                         <div class="col-md-8">
-                            <input  type="text" name="agepublicacion" id="agepublicacion" required/>
+                            <input  type="text" name="ano_publicacion" id="agepublicacion" required/>
                         </div>
                     </div>
                     <div class="row">
@@ -116,6 +117,12 @@ $_smarty_tpl->decodeProperties(array (
                         <div class="col-md-8">
                             <input  type="text" name="genero" id="genero" required/>
                         </div>
+                    </div>
+                    <div class="row">
+                        <p id="formato">Carátula:</p>
+                    </div>
+                    <div class="row">
+                        <input type="file" name="caratula">
                     </div>
                 </div>
                 <div class="col-md-7">
@@ -140,8 +147,6 @@ $_smarty_tpl->decodeProperties(array (
                         <div class="col-md-2">
                             <input  type="text" name="ccancion1" id="ccancion1" required/>
                         </div>
-                       
-
                     </div>
                     <div class="row">
                          <div class=" col-md-1 ">
