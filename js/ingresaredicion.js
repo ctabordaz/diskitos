@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+var n = 2;
 
 
 var managerScreen = managerScreen || {};
@@ -11,9 +12,8 @@ managerScreen = {
     agregar: function(){
         $("<div>",{
             class: "sings"
-        }).appendTo("#cancion");
-        
-        $("<div>",{
+        }).append(
+                $("<div>",{
             class: "row"
         }).append($("<div>",{
             class: "col-md-2"
@@ -21,11 +21,11 @@ managerScreen = {
         $("<div>",{
             class: "col-md-2"
         }).append($("<input>",{
+            name: "ncancion" + n,
+            id: "ncancion" + n ,
             type: "text",
             required: "true"
-        }))).appendTo("#cancion");
-        
-        $("<div>",{
+        }))), $("<div>",{
             class: "row"
         }).append($("<div>",{
             class: "col-md-2"
@@ -33,11 +33,11 @@ managerScreen = {
         $("<div>",{
             class: "col-md-2"
         }).append($("<input>",{
+            name: "ccancion" + n,
+            id: "ccancion" + n ,
             type: "text",
             required: "true"
-        }))).appendTo("#cancion");
-        
-        $("<div>",{
+        }))),$("<div>",{
             class: "row"
         }).append($("<div>",{
             class: " col-md-1"
@@ -45,6 +45,8 @@ managerScreen = {
         $("<div>",{
             class: "col-md-offset-1 col-md-2"
         }).append($("<input>", {
+            name: "duraciona" + n,
+            id: "duraciona" + n ,
             class: "duracion",
             type: "text",
             required: "true"
@@ -52,10 +54,19 @@ managerScreen = {
         $("<div>",{
             class: "col-md-2"
         }).append($("<input>",{
+            name: "duracionb" + n,
+            id: "duracionb" + n ,
             class: "duracion",
             type: "text",
             required: "true"
-        }))).appendTo("#cancion");
+        })))
+        
+                ).appendTo("#cancion");
+        
+        
+        n = n+1;
+       
+       
     }
   
     

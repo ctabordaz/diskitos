@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-03-30 16:52:38
+<?php /* Smarty version Smarty-3.0.9, created on 2015-03-30 17:41:44
          compiled from "C:/wamp/www/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2393955197f5628a861-14072216%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1235755198ad83bef76-85177005%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5fbeaa4487a49278af959d94d05a9cdfef8af6a3' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1427734355,
+      1 => 1427737294,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2393955197f5628a861-14072216',
+  'nocache_hash' => '1235755198ad83bef76-85177005',
   'function' => 
   array (
   ),
@@ -24,7 +24,7 @@ $_smarty_tpl->decodeProperties(array (
             </div>
             
             <hr />
-            <form>
+            <form action="ingresarediciones.php" method="GET">
             <div class="row">
                 <div class="col-md-3">
                     <div class="col-md-4">
@@ -51,7 +51,7 @@ $_smarty_tpl->decodeProperties(array (
                         <p id="formato">Carátula:</p>
                     </div>
                     <div class="col-md-10">
-                        <input type="file" id="exampleInputFile">
+                        <input type="file" id="caratula">
                     </div>
                 </div>
             </div>
@@ -61,6 +61,7 @@ $_smarty_tpl->decodeProperties(array (
             <div class="row">
                 <div class="col-md-5">
                     <div class="row">
+                        <h4>Álbum</h4>
                         <div class="col-md-4">
                             <p>Título:</p>
                         </div>
@@ -147,11 +148,11 @@ $_smarty_tpl->decodeProperties(array (
                             <p>Duración: </p>
                         </div>
                         <div class="col-md-offset-1 col-md-2">
-                            <input  type="text" class="duracion" name="ccancion1" id="ccancion1" required/>
+                            <input  type="text" class="duracion" name="duraciona1" id="duraciona1" required/>
                         </div>
                         
                         <div class="col-md-2">
-                            <input  type="text" class="duracion" name="ccancion1" id="ccancion1" required/>
+                            <input  type="text" class="duracion" name="duracionb1" id="duracionb1" required/>
                         </div>
                         
 
@@ -182,11 +183,9 @@ $_smarty_tpl->decodeProperties(array (
             <hr />
             
             <div class="row">
-                <nav>
-                    <ul class="pager">
-                        <li><a type="submit" class="ing" href="#">Ingresar</a></li>
-                    </ul>
-                </nav>
+                <button type="submit" class="btn  btn-sm btn-login">
+                                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Ingresar 
+                </button>
             </div>
             </form>
                 </div>

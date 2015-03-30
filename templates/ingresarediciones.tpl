@@ -5,7 +5,7 @@
             </div>
             
             <hr />
-            <form>
+            <form action="ingresarediciones.php" method="GET">
             <div class="row">
                 <div class="col-md-3">
                     <div class="col-md-4">
@@ -32,7 +32,7 @@
                         <p id="formato">Carátula:</p>
                     </div>
                     <div class="col-md-10">
-                        <input type="file" id="exampleInputFile">
+                        <input type="file" id="caratula">
                     </div>
                 </div>
             </div>
@@ -42,6 +42,7 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="row">
+                        <h4>Álbum</h4>
                         <div class="col-md-4">
                             <p>Título:</p>
                         </div>
@@ -128,11 +129,11 @@
                             <p>Duración: </p>
                         </div>
                         <div class="col-md-offset-1 col-md-2">
-                            <input  type="text" class="duracion" name="ccancion1" id="ccancion1" required/>
+                            <input  type="text" class="duracion" name="duraciona1" id="duraciona1" required/>
                         </div>
                         
                         <div class="col-md-2">
-                            <input  type="text" class="duracion" name="ccancion1" id="ccancion1" required/>
+                            <input  type="text" class="duracion" name="duracionb1" id="duracionb1" required/>
                         </div>
                         
 
@@ -163,11 +164,9 @@
             <hr />
             
             <div class="row">
-                <nav>
-                    <ul class="pager">
-                        <li><a type="submit" class="ing" href="#">Ingresar</a></li>
-                    </ul>
-                </nav>
+                <button type="submit" class="btn  btn-sm btn-login">
+                                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Ingresar 
+                </button>
             </div>
             </form>
                 </div>
