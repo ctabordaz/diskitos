@@ -6,6 +6,8 @@ class c_ingresarediciones extends super_controller {
 
         public function ingresar(){
             
+            //print_r2($this->post);
+            
             $nueva_dir = C_FULL_PATH . "images/caratulas/";
             $nueva_ruta = $nueva_dir . basename($_FILES["caratula"]["name"]);
             $imageFileType = pathinfo($nueva_ruta,PATHINFO_EXTENSION);
@@ -22,11 +24,57 @@ class c_ingresarediciones extends super_controller {
             // ---------------------------------------------------------------------------------------
             
             $this->post->caratula = $nueva_ruta;
+            
             $album = new album($this->post);
+         
             
             $this->orm->connect();
             $this->orm->insert_data("album",$album);
-            $this->orm->close();   
+            $this->orm->close(); 
+            
+            settype($data,'object');
+            $data->codigo_de_barras= "a1";
+            $data->formato= $this->post->formato;
+            $data->cantidad= $this->post->cantidad;
+            $data->precio= $this->post->precio;
+            $data->album= $this->post->nro_catalogo;
+            $edicion = new edicion($data);
+            
+            
+            $this->orm->connect();
+            $this->orm->insert_data("edicion",$edicion);
+            $this->orm->close(); 
+            
+             for($n =1;$n<=$this->post->nca;$n++){
+                  
+                settype($data,'object');
+             
+                
+                $data->consecutivo= "1";
+                $nombre = "ncancion$n";
+                $data->nombre= $this->post->$nombre;
+                $compositor = "ccancion$n";
+                $data->compositor= $this->post->$compositor;
+                $da = "duraciona$n";
+                $db = "duracionb$n";
+                $d = $this->post->$da.":".$this->post->$db;
+                $data->duracion = $d;
+                $data->album= $this->post->nro_catalogo;
+                $cancion = new cancion($data);
+
+
+
+                $this->orm->connect();
+                $this->orm->insert_data("cancion",$cancion);
+                $this->orm->close();
+                                
+                  
+             }
+            
+            
+            
+            
+            
         }
     
 	public function display()                

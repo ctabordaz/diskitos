@@ -12,7 +12,7 @@
                     <p id="formato">Formato:</p>
                 </div>
                 <div class="col-md-8">
-                    <select class="form-control" type="text" placeholder="Formato">
+                    <select class="form-control" name="formato" type="text" placeholder="Formato">
                         <option value ="cd">CD</option>
                         <option value ="dvd">DVD</option>
                         <option value ="lp">LP</option>
@@ -24,7 +24,7 @@
                     <p id="formato">Precio:</p>
                 </div>
                 <div class="col-md-8">
-                    <input type="number" name="precio" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
+                    <input type="number" name="precio" min="0" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
                 </div>
             </div>
             <div class="col-md-4">
@@ -32,7 +32,7 @@
                     <p id="formato">Cantidad:</p>
                 </div>
                 <div class="col-md-8">
-                    <input type="number" name="cantidad" id="cantidad" class="form-control input-md chat-input" placeholder="0" required/>
+                    <input type="number" min="0" name="cantidad" id="cantidad" class="form-control input-md chat-input" placeholder="0" required/>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                         <p>Nro Catálogo:</p>
                     </div>
                     <div class="col-md-8">
-                        <input  type="text" name="nro_catalogo" id="catalogo" required/>
+                        <input  type="number" name="nro_catalogo" min="0" id="catalogo" required/>
                     </div>
                 </div>
                 <div class="row">
@@ -87,7 +87,7 @@
                         <p>Año de publicación:</p>
                     </div>
                     <div class="col-md-8">
-                        <input  type="text" name="ano_publicacion" id="agepublicacion" required/>
+                        <input  type="number" min="0" max="2020" name="ano_publicacion" id="agepublicacion" required/>
                     </div>
                 </div>
                 <div class="row">
@@ -108,6 +108,7 @@
             <div class="col-md-7">
 
                 <h4>Canciones</h4>
+                <input type="hidden" id="nca" name="nca" value="1">
                 <div id="cancion" >
 
                     <div class="sings">
@@ -132,11 +133,11 @@
                                 <p>Duración: </p>
                             </div>
                             <div class="col-md-offset-1 col-md-2">
-                                <input  type="text" class="duracion" name="duraciona1" id="duraciona1" required/>
+                                <input  type="number" class="duracion" min="0" max="10" name="duraciona1" id="duraciona1" required/>
                             </div>
 
                             <div class="col-md-2">
-                                <input  type="text" class="duracion" name="duracionb1" id="duracionb1" required/>
+                                <input  type="number" class="duracion" min="0" max="59" name="duracionb1" id="duracionb1" required/>
                             </div>
                         </div>
                     </div>

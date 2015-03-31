@@ -47,8 +47,10 @@ managerScreen = {
         }).append($("<input>", {
             name: "duraciona" + n,
             id: "duraciona" + n ,
+            min: "0",
+            max: "10",
             class: "duracion",
-            type: "text",
+            type: "number",
             required: "true"
         }).append($("<p>:</p>"))),
         $("<div>",{
@@ -56,14 +58,16 @@ managerScreen = {
         }).append($("<input>",{
             name: "duracionb" + n,
             id: "duracionb" + n ,
+            min: "0",
+            max: "59",
             class: "duracion",
-            type: "text",
+            type: "number",
             required: "true"
         })))
         
                 ).appendTo("#cancion");
         
-        
+        $("#nca").val(n);
         n = n+1;
        
        

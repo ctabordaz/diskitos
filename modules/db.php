@@ -106,6 +106,34 @@ class db
                                         break;
 				}
 				break;
+                        case "edicion":
+				switch($options['lvl2'])
+				{
+                                    case "edicion":
+                                       
+                                        $formato=mysqli_real_escape_string($this->cn,$object->get('formato'));
+                                        $cantidad=mysqli_real_escape_string($this->cn, $object->get('precio'));
+                                        $precio=mysqli_real_escape_string($this->cn, $object->get('cantidad'));
+                                        $album =mysqli_real_escape_string($this->cn,$object->get('album'));
+
+                                        $this->do_operation("INSERT INTO edicion (formato, cantidad, precio, album) VALUES ('$formato', '$cantidad', '$precio', '$album' );");
+                                        break;
+				}
+				break;
+                        case "cancion":
+				switch($options['lvl2'])
+				{
+                                    case "cancion":
+                                       
+                                        $nombre=mysqli_real_escape_string($this->cn,$object->get('nombre'));
+                                        $compositor=mysqli_real_escape_string($this->cn, $object->get('compositor'));
+                                        $duracion=mysqli_real_escape_string($this->cn, $object->get('duracion'));
+                                        $album =mysqli_real_escape_string($this->cn,$object->get('album'));
+
+                                        $this->do_operation("INSERT INTO cancion (nombre, compositor, duracion, album) VALUES ('$nombre', '$compositor', '$duracion', '$album' );");
+                                        break;
+				}
+				break;
 			
 			default: break;
 		}
