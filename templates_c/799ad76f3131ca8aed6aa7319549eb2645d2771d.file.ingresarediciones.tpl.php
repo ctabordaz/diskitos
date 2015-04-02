@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-03-31 01:51:38
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-02 01:29:59
          compiled from "C:/xampp/htdocs/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:206375519e18ae605f3-83368531%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:28419551c7f77dc7d30-75807094%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '799ad76f3131ca8aed6aa7319549eb2645d2771d' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1427759493,
+      1 => 1427930986,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '206375519e18ae605f3-83368531',
+  'nocache_hash' => '28419551c7f77dc7d30-75807094',
   'function' => 
   array (
   ),
@@ -28,31 +28,39 @@ $_smarty_tpl->decodeProperties(array (
 ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-4">
+                <div class="col-md-5">
+                    <p id="formato">Código de Barras:</p>
+                </div>
+                <div class="col-md-7">
+                    <input type="text" name="codigo_de_barras" id="codigo_de_barras" class="form-control input-md chat-input" required/>
+                </div>
+            </div>
+            <div class="col-md-3">
                 <div class="col-md-4">
-                    <p id="formato">Formato:</p>
+                    <p id="formato" class="atredi">Formato:</p>
                 </div>
                 <div class="col-md-8">
-                    <select class="form-control" type="text" placeholder="Formato">
+                    <select class="form-control" name="formato" type="text" id="formatot" placeholder="Formato">
                         <option value ="cd">CD</option>
                         <option value ="dvd">DVD</option>
                         <option value ="lp">LP</option>
                     </select>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="col-md-4">
-                    <p id="formato">Precio:</p>
+                    <p id="formato" class="atredi">Precio:</p>
                 </div>
                 <div class="col-md-8">
-                    <input type="number" name="precio" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
+                    <input type="number" name="precio" min="0" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div class="col-md-4">
-                    <p id="formato">Cantidad:</p>
+                    <p id="formato" class="atredi2">Cantidad:</p>
                 </div>
                 <div class="col-md-8">
-                    <input type="number" name="cantidad" id="cantidad" class="form-control input-md chat-input" placeholder="0" required/>
+                    <input type="number" min="0" name="cantidad" id="cantidad" class="form-control input-md chat-input" placeholder="0" required/>
                 </div>
             </div>
         </div>
@@ -62,7 +70,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
         <div class="row">
             <div class="col-md-5">
                 <div class="row">
-                    <h4>Álbum</h4>
+                    <h4 id="caratula1">Álbum</h4>
                     <div class="col-md-4">
                         <p>Título:</p>
                     </div>
@@ -83,7 +91,8 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                         <p>Nro Catálogo:</p>
                     </div>
                     <div class="col-md-8">
-                        <input  type="text" name="nro_catalogo" id="catalogo" required/>
+                        <input  type="number" name="nro_catalogo" min="0" id="catalogo" required/>
+                        <input  type="hidden" name="album"/>
                     </div>
                 </div>
                 <div class="row">
@@ -107,7 +116,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                         <p>Año de publicación:</p>
                     </div>
                     <div class="col-md-8">
-                        <input  type="text" name="ano_publicacion" id="agepublicacion" required/>
+                        <input  type="number" min="0" max="2020" name="ano_publicacion" id="agepublicacion" required/>
                     </div>
                 </div>
                 <div class="row">
@@ -119,17 +128,17 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                     </div>
                 </div>
                 <div class="row">
-                    <p id="formato">Carátula:</p>
+                    <p id="caratula1">Carátula:</p>
                 </div>
                 <div class="row">
-                    <input type="file" name="caratula">
+                    <input id="caratula2" type="file" name="caratula">
                 </div>
             </div>
             <div class="col-md-7">
 
                 <h4>Canciones</h4>
-                <div id="cancion" >
-
+                <input type="hidden" id="nca" name="nca" value="1">
+                <div id="cancion">
                     <div class="sings">
                         <div class="row">
                             <div class="col-md-2">
@@ -152,11 +161,11 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                                 <p>Duración: </p>
                             </div>
                             <div class="col-md-offset-1 col-md-2">
-                                <input  type="text" class="duracion" name="duraciona1" id="duraciona1" required/>
+                                <input  type="number" class="duracion" min="0" max="10" name="duraciona1" id="duraciona1" required/>
                             </div>
 
                             <div class="col-md-2">
-                                <input  type="text" class="duracion" name="duracionb1" id="duracionb1" required/>
+                                <input  type="number" class="duracion" min="0" max="59" name="duracionb1" id="duracionb1" required/>
                             </div>
                         </div>
                     </div>
@@ -177,7 +186,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
         <hr />
 
         <div class="row">
-            <button type="submit" class="btn  btn-sm btn-login">
+            <button id="ingresar" type="submit" class="btn  btn-sm btn-login">
                 <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Ingresar 
             </button>
         </div>

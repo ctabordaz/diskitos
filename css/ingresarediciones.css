@@ -101,3 +101,39 @@ span{
     height: 360px;
     overflow-y: scroll;
 }
+
+#cantidad { 
+    width: 150%;
+    margin-left: -25px;
+}
+
+.atredi { 
+    margin-left: -25px;
+}
+
+.atredi2 { 
+    margin-left: -50px;
+}
+
+#precio { 
+    width: 90%;
+    margin-left: -25px;
+}
+
+#formatot { 
+    margin-left: -25px;
+}
+
+#ingresar { 
+    margin-left: 360px;
+    color: #0077b3;
+}
+
+#caratula1 { 
+    margin-left: 15px;
+}
+
+#caratula2 { 
+    margin-left: 15px;
+    font-size: 90%;
+}

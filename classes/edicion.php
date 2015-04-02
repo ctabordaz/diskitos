@@ -16,8 +16,6 @@
 		
 		//data about the attributes
 
-		
-
 		public function metadata()
 		{
 			return array(

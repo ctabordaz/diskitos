@@ -8,28 +8,36 @@
     <form action="{$gvar.l_global}ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-4">
+                <div class="col-md-5">
+                    <p id="formato">Código de Barras:</p>
+                </div>
+                <div class="col-md-7">
+                    <input type="text" name="codigo_de_barras" id="codigo_de_barras" class="form-control input-md chat-input" required/>
+                </div>
+            </div>
+            <div class="col-md-3">
                 <div class="col-md-4">
-                    <p id="formato">Formato:</p>
+                    <p id="formato" class="atredi">Formato:</p>
                 </div>
                 <div class="col-md-8">
-                    <select class="form-control" name="formato" type="text" placeholder="Formato">
+                    <select class="form-control" name="formato" type="text" id="formatot" placeholder="Formato">
                         <option value ="cd">CD</option>
                         <option value ="dvd">DVD</option>
                         <option value ="lp">LP</option>
                     </select>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="col-md-4">
-                    <p id="formato">Precio:</p>
+                    <p id="formato" class="atredi">Precio:</p>
                 </div>
                 <div class="col-md-8">
                     <input type="number" name="precio" min="0" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div class="col-md-4">
-                    <p id="formato">Cantidad:</p>
+                    <p id="formato" class="atredi2">Cantidad:</p>
                 </div>
                 <div class="col-md-8">
                     <input type="number" min="0" name="cantidad" id="cantidad" class="form-control input-md chat-input" placeholder="0" required/>
@@ -42,7 +50,7 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="row">
-                    <h4>Álbum</h4>
+                    <h4 id="caratula1">Álbum</h4>
                     <div class="col-md-4">
                         <p>Título:</p>
                     </div>
@@ -64,6 +72,7 @@
                     </div>
                     <div class="col-md-8">
                         <input  type="number" name="nro_catalogo" min="0" id="catalogo" required/>
+                        <input  type="hidden" name="album"/>
                     </div>
                 </div>
                 <div class="row">
@@ -99,18 +108,17 @@
                     </div>
                 </div>
                 <div class="row">
-                    <p id="formato">Carátula:</p>
+                    <p id="caratula1">Carátula:</p>
                 </div>
                 <div class="row">
-                    <input type="file" name="caratula">
+                    <input id="caratula2" type="file" name="caratula">
                 </div>
             </div>
             <div class="col-md-7">
 
                 <h4>Canciones</h4>
                 <input type="hidden" id="nca" name="nca" value="1">
-                <div id="cancion" >
-
+                <div id="cancion">
                     <div class="sings">
                         <div class="row">
                             <div class="col-md-2">
@@ -158,7 +166,7 @@
         <hr />
 
         <div class="row">
-            <button type="submit" class="btn  btn-sm btn-login">
+            <button id="ingresar" type="submit" class="btn  btn-sm btn-login">
                 <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Ingresar 
             </button>
         </div>

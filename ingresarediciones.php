@@ -6,75 +6,51 @@ class c_ingresarediciones extends super_controller {
 
         public function ingresar(){
             
-            //print_r2($this->post);
-            
             $nueva_dir = C_FULL_PATH . "images/caratulas/";
             $nueva_ruta = $nueva_dir . basename($_FILES["caratula"]["name"]);
             $imageFileType = pathinfo($nueva_ruta,PATHINFO_EXTENSION);
 
             if(! ($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "jpeg"
             || $imageFileType == "gif" )) {
-                echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                $nueva_ruta = $nueva_dir . "sin_caratula.gif";
+                $imageFileType = "gif";
+            } else {
+                $ruta_temporal = $_FILES['caratula']['tmp_name'];                
+                move_uploaded_file($ruta_temporal,  $nueva_ruta);
             }
-
-            $ruta_temporal = $_FILES['caratula']['tmp_name'];
-
-            move_uploaded_file($ruta_temporal,  $nueva_ruta);
 
             // ---------------------------------------------------------------------------------------
             
             $this->post->caratula = $nueva_ruta;
+            $this->post->album = $this->post->nro_catalogo;
             
-            $album = new album($this->post);
-         
+            $album = new album($this->post);         
+            $edicion = new edicion($this->post);
             
             $this->orm->connect();
             $this->orm->insert_data("album",$album);
-            $this->orm->close(); 
-            
-            settype($data,'object');
-            $data->codigo_de_barras= "a1";
-            $data->formato= $this->post->formato;
-            $data->cantidad= $this->post->cantidad;
-            $data->precio= $this->post->precio;
-            $data->album= $this->post->nro_catalogo;
-            $edicion = new edicion($data);
-            
-            
-            $this->orm->connect();
             $this->orm->insert_data("edicion",$edicion);
-            $this->orm->close(); 
             
-             for($n =1;$n<=$this->post->nca;$n++){
+            for($n=1;$n<=$this->post->nca;$n++){
                   
                 settype($data,'object');
-             
-                
-                $data->consecutivo= "1";
-                $nombre = "ncancion$n";
+                             
+                $data->consecutivo= $n;
+                $nombre = "ncancion".$n;
                 $data->nombre= $this->post->$nombre;
-                $compositor = "ccancion$n";
+                $compositor = "ccancion".$n;
                 $data->compositor= $this->post->$compositor;
-                $da = "duraciona$n";
-                $db = "duracionb$n";
+                $da = "duraciona".$n;
+                $db = "duracionb".$n;
                 $d = $this->post->$da.":".$this->post->$db;
                 $data->duracion = $d;
                 $data->album= $this->post->nro_catalogo;
                 $cancion = new cancion($data);
-
-
-
-                $this->orm->connect();
+                
                 $this->orm->insert_data("cancion",$cancion);
-                $this->orm->close();
-                                
-                  
-             }
-            
-            
-            
-            
-            
+            }   
+            $this->orm->close();
         }
     
 	public function display()                
