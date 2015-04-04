@@ -207,7 +207,17 @@ class db
                                     $info=$this->get_data("SELECT * FROM empleado WHERE cedula='$cc' AND contraseña='$pw';");
                                     break;
                             }
-                        break;                                    
+                        break;    
+                    
+                        case "album":
+                            switch ($option['lvl2'])
+                            {
+                                case "count_by_ncatalogo" :
+                                    $nro = mysqli_real_escape_string($this->cn,$data['nro_catalogo']);                            
+                                    $info = $this->get_data("SELECT COUNT(*) AS contador FROM album WHERE nro_catalogo='$nro';");
+                                    break;
+                            }
+                        break;    
 			
 			default: break;
 		}

@@ -6,13 +6,36 @@ class c_ingresarediciones extends super_controller {
 
         public function ingresar(){
             
+            function verificarClaves($objeto, $nc)
+            {
+                $objeto->orm->connect();
+
+                $cod['album']['nro_catalogo'] = $nc;
+                $options['album']['lvl2']="count_by_ncatalogo";
+                $objeto->orm->read_data(array("album"),$options,$cod);
+
+                $datos = $objeto->orm->data;
+                $resultado = $datos['album'][0];
+                $contador = $resultado->contador;
+                
+                $objeto->orm->close();
+
+                if($contador ==  1)
+                {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+            
+            // ---------------------------------------------------------------------------------------
+                        
             $nueva_dir = C_FULL_PATH . "images/caratulas/";
             $nueva_ruta = $nueva_dir . basename($_FILES["caratula"]["name"]);
             $imageFileType = pathinfo($nueva_ruta,PATHINFO_EXTENSION);
 
             if(! ($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "jpeg"
             || $imageFileType == "gif" )) {
-                //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                 $nueva_ruta = $nueva_dir . "sin_caratula.gif";
                 $imageFileType = "gif";
             } else {
@@ -21,6 +44,12 @@ class c_ingresarediciones extends super_controller {
             }
 
             // ---------------------------------------------------------------------------------------
+            
+            if(verificarClaves($this, $this->post->nro_catalogo) == 1){
+                $nc = $this->post->nro_catalogo; 
+                echo "<script languaje='javascript'>alert('Ya existe un album con número de catalogo = ' + $nc)</script>";
+                // no ejecutar el resto y recargar la pagina con todos los valores
+            }
             
             $this->post->caratula = $nueva_ruta;
             $this->post->album = $this->post->nro_catalogo;

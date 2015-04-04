@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-02 01:29:59
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-04 05:25:28
          compiled from "C:/xampp/htdocs/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:28419551c7f77dc7d30-75807094%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:21912551f59a8aa00b6-10418658%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '799ad76f3131ca8aed6aa7319549eb2645d2771d' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1427930986,
+      1 => 1428117919,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '28419551c7f77dc7d30-75807094',
+  'nocache_hash' => '21912551f59a8aa00b6-10418658',
   'function' => 
   array (
   ),
@@ -32,7 +32,8 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                     <p id="formato">Código de Barras:</p>
                 </div>
                 <div class="col-md-7">
-                    <input type="text" name="codigo_de_barras" id="codigo_de_barras" class="form-control input-md chat-input" required/>
+                    <input type="text" name="codigo_de_barras" id="codigo_de_barras" class="form-control input-md chat-input" value="<?php echo $_smarty_tpl->getVariable('codigo_de_barras')->value;?>
+" required/>
                 </div>
             </div>
             <div class="col-md-3">
