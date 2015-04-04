@@ -53,7 +53,7 @@ class orm
 			$pos++;
 			$data = $this->get_data($class,$pos);
 		}
-		return $this->objects_to_return;
+		return @$this->objects_to_return;
 	}
 	
 	//return data

@@ -2,7 +2,6 @@
     <head>
         <title>Incio Sesion</title>
         
-        
         <script src="./js/diskitos2.js"></script>
         <!-- CSS -->
         <link rel="stylesheet" href="./css/resetLogin.css">
