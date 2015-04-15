@@ -1,6 +1,8 @@
 ﻿<?php
 
+require('modules/m_phpass/PasswordHash.php');
 require('configs/include.php');
+
 
 class c_iniciarsesion extends super_controller {
 
@@ -8,11 +10,15 @@ class c_iniciarsesion extends super_controller {
         protected $temp;
 
         public function login(){
-                
+             $hasher = new PasswordHash(8, FALSE);   
             $cod['empleado']['cedula']= $this->post->cedula;
             $cod['empleado']['contraseña']= $this->post->contraseña;
             $options['empleado']['lvl2']= "login";
-
+            
+            
+           
+            
+            
             $this->orm->connect();
             @$this->orm->read_data(array("empleado"), $options,$cod);
             $this->empleado = $this->orm->get_objects("empleado");
@@ -23,6 +29,10 @@ class c_iniciarsesion extends super_controller {
                 // Esto no sirve para nada ¬¬
                 @throw_exception($this->gvar['m_incorrect_login']);
             }else{
+                $_SESSION['empleado']['cedula'] = $this->empleado[0]->get('cedula');
+                $_SESSION['empleado']['tipo'] = $this->empleado[0]->get('tipo');
+                $this->session = $_SESSION;
+                
                 if($this->empleado[0]->get('tipo')=='C') {
                     $this->temp='headerc.tpl';
                     //echo'Cliente';
