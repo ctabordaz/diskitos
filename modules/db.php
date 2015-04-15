@@ -190,6 +190,14 @@ class db
                                     break;
                             }
 			break;
+			case "edicion":
+                            switch($option['lvl2'])
+                            {
+                                case "all": 
+                                     $info=$this->get_data("select e.*,a.* from edicion e, album a where a.nro_catalogo = e.album;");
+                                    break;
+                            }
+			break;
                     
                         case "empleado":
                             switch ($option['lvl2'])
