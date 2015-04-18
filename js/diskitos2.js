@@ -7,7 +7,7 @@ managerScreen = {
         var pass=document.getElementById("contraseña").value;
         
         if(id.length !== 0){
-            alert("Identificación o contraseña son incorrectas");
+            alert("Identificación o contraseña son incorrectas ");
         }
     }
 };

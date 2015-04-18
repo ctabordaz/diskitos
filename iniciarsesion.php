@@ -45,7 +45,9 @@ class c_iniciarsesion extends super_controller {
         }
 
         public function display()
-	{		
+	{	
+            
+           
             if(is_object($this->empleado[0])){
                 $this->engine->display($this->temp);
                 $this->engine->display('footerd.tpl');

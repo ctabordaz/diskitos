@@ -113,8 +113,8 @@ class db
                                        
                                         $codigo_de_barras=mysqli_real_escape_string($this->cn,$object->get('codigo_de_barras'));
                                         $formato=mysqli_real_escape_string($this->cn,$object->get('formato'));
-                                        $cantidad=mysqli_real_escape_string($this->cn, $object->get('precio'));
-                                        $precio=mysqli_real_escape_string($this->cn, $object->get('cantidad'));
+                                        $cantidad=mysqli_real_escape_string($this->cn, $object->get('cantidad'));
+                                        $precio=mysqli_real_escape_string($this->cn, $object->get('precio'));
                                         $album =mysqli_real_escape_string($this->cn,$object->get('album'));
 
                                         $this->do_operation("INSERT INTO edicion (codigo_de_barras, formato, cantidad, precio, album) VALUES ('$codigo_de_barras', '$formato', '$cantidad', '$precio', '$album' );");
@@ -125,13 +125,13 @@ class db
 				switch($options['lvl2'])
 				{
                                     case "cancion":
-                                        $consecutivo=mysqli_real_escape_string($this->cn,$object->get('consecutivo'));
+                                       
                                         $nombre=mysqli_real_escape_string($this->cn,$object->get('nombre'));
                                         $compositor=mysqli_real_escape_string($this->cn, $object->get('compositor'));
                                         $duracion=mysqli_real_escape_string($this->cn, $object->get('duracion'));
                                         $album =mysqli_real_escape_string($this->cn,$object->get('album'));
 
-                                        $this->do_operation("INSERT INTO cancion (consecutivo, nombre, compositor, duracion, album) VALUES ('$consecutivo', '$nombre', '$compositor', '$duracion', '$album' );");
+                                        $this->do_operation("INSERT INTO cancion (nombre, compositor, duracion, album) VALUES ('$nombre', '$compositor', '$duracion', '$album' );");
                                         break;
 				}
 				break;

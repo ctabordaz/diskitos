@@ -30,7 +30,8 @@ class c_ingresarediciones extends super_controller {
             
             // ---------------------------------------------------------------------------------------
                         
-            $nueva_dir = C_FULL_PATH . "images/caratulas/";
+            // $nueva_dir = C_FULL_PATH . "images/caratulas/";
+            $nueva_dir = "./images/caratulas/";
             $nueva_ruta = $nueva_dir . basename($_FILES["caratula"]["name"]);
             $imageFileType = pathinfo($nueva_ruta,PATHINFO_EXTENSION);
 

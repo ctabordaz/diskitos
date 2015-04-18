@@ -27,20 +27,20 @@
                     </select>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="col-md-4">
-                    <p id="formato" class="atredi">Precio:</p>
-                </div>
-                <div class="col-md-8">
-                    <input type="number" name="precio" min="0" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
-                </div>
-            </div>
             <div class="col-md-2">
                 <div class="col-md-4">
                     <p id="formato" class="atredi2">Cantidad:</p>
                 </div>
                 <div class="col-md-8">
                     <input type="number" min="0" name="cantidad" id="cantidad" class="form-control input-md chat-input" placeholder="0" required/>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-4">
+                    <p id="formato" class="atredi">Precio:</p>
+                </div>
+                <div class="col-md-8">
+                    <input type="number" name="precio" min="0" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
                 </div>
             </div>
         </div>

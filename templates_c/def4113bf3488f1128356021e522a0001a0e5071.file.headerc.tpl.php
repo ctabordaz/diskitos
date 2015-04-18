@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-03-24 13:33:02
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-17 15:12:58
          compiled from "C:/wamp/www/diskitos/templates\headerc.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:214485511678e2588a9-98518590%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:24520553122fa611e09-10429644%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'def4113bf3488f1128356021e522a0001a0e5071' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\headerc.tpl',
-      1 => 1427203961,
+      1 => 1429278183,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '214485511678e2588a9-98518590',
+  'nocache_hash' => '24520553122fa611e09-10429644',
   'function' => 
   array (
   ),
@@ -33,7 +33,7 @@ disk.ico" />
             
         <ul class="nav nav-tabs cabeza navbar-fixed-top">
         <li role="presentation"  ><a class="c" href="#">Registrar Encargo</a></li>
-        <li role="presentation"><a class="c" href="ingresarediciones.php">Registrar Cliente</a></li>
+        <li role="presentation"><a class="c" href="#">Registrar Cliente</a></li>
         <li role="presentation"><a class="c" href="#">Buscar Ediciones</a></li>
         <li role="presentation"><a class="c" href="#">Generar Factura</a></li>
         <li role="presentation" class=" active navbar-right"><a class="bl"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>Cajero</a></li>

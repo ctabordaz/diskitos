@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-15 15:09:41
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-17 14:19:41
          compiled from "C:/wamp/www/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:31133552e7f35553e77-86606431%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:43435531167d2d55a8-24691740%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5fbeaa4487a49278af959d94d05a9cdfef8af6a3' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1429110416,
+      1 => 1429280373,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '31133552e7f35553e77-86606431',
+  'nocache_hash' => '43435531167d2d55a8-24691740',
   'function' => 
   array (
   ),
@@ -47,20 +47,20 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                     </select>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="col-md-4">
-                    <p id="formato" class="atredi">Precio:</p>
-                </div>
-                <div class="col-md-8">
-                    <input type="number" name="precio" min="0" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
-                </div>
-            </div>
             <div class="col-md-2">
                 <div class="col-md-4">
                     <p id="formato" class="atredi2">Cantidad:</p>
                 </div>
                 <div class="col-md-8">
                     <input type="number" min="0" name="cantidad" id="cantidad" class="form-control input-md chat-input" placeholder="0" required/>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-4">
+                    <p id="formato" class="atredi">Precio:</p>
+                </div>
+                <div class="col-md-8">
+                    <input type="number" name="precio" min="0" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
                 </div>
             </div>
         </div>
