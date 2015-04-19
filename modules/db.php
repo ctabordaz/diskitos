@@ -207,12 +207,12 @@ class db
                                      break;
                                 case "login":
                                     $cc=mysqli_real_escape_string($this->cn,$data['cedula']);
-                                    $pw=mysqli_real_escape_string($this->cn,$data['contraseña']);
+                                    
                                     
                                     //$password=mysqli_real_escape_string($this->cn,$data['contraseña']);
                                     //$info=$this->get_data("SELECT * FROM empleado WHERE cedula='$id' AND contraseña='$password';");
                                     
-                                    $info=$this->get_data("SELECT * FROM empleado WHERE cedula='$cc' AND contraseña='$pw';");
+                                    $info=$this->get_data("SELECT * FROM empleado WHERE cedula='$cc';");
                                     break;
                             }
                         break;    

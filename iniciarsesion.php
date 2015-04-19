@@ -8,17 +8,14 @@ class c_iniciarsesion extends super_controller {
 
         protected $empleado;
         protected $temp;
-
+        // pass de camilo $2a$08$7zPX/ikmIGASDAaZvs.2mu.ON62ogVhxtambvgJDTm60X29IE2xi2
         public function login(){
              $hasher = new PasswordHash(8, FALSE);   
             $cod['empleado']['cedula']= $this->post->cedula;
             $cod['empleado']['contraseña']= $this->post->contraseña;
             $options['empleado']['lvl2']= "login";
             
-            
-           
-            
-            
+                      
             $this->orm->connect();
             @$this->orm->read_data(array("empleado"), $options,$cod);
             $this->empleado = $this->orm->get_objects("empleado");
@@ -29,6 +26,8 @@ class c_iniciarsesion extends super_controller {
                 // Esto no sirve para nada ¬¬
                 @throw_exception($this->gvar['m_incorrect_login']);
             }else{
+                
+                if($hasher->CheckPassword($this->post->contraseña, $this->empleado[0]->get('contraseña'))){
                 $_SESSION['empleado']['cedula'] = $this->empleado[0]->get('cedula');
                 $_SESSION['empleado']['tipo'] = $this->empleado[0]->get('tipo');
                 $this->session = $_SESSION;
@@ -40,22 +39,30 @@ class c_iniciarsesion extends super_controller {
                 else if ($this->empleado[0]->get('tipo')=='A'){
                     $this->temp='headera.tpl';
                     //echo'Admin';
+                } 
+               
+                }else{
+                     @throw_exception($this->gvar['m_incorrect_login']);
+                     unset($hasher);
                 }
+                
+                            
             }
         }
 
         public function display()
 	{	
-            
+             $hasher = new PasswordHash(8, FALSE);  
            
-            if(is_object($this->empleado[0])){
+            if(is_object($this->empleado[0]) && $hasher->CheckPassword($this->post->contraseña, $this->empleado[0]->get('contraseña'))){
                 $this->engine->display($this->temp);
                 $this->engine->display('footerd.tpl');
             }
             else {
-                @$this->engine->assign('id', $this->post->cedula);
+                $this->engine->assign('id', $this->post->cedula);
                 $this->engine->display('iniciarsesion.tpl');
             }
+                                 unset($hasher);
 
 	}
 	
