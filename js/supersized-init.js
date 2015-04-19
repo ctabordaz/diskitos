@@ -26,7 +26,8 @@ jQuery(function($){
                                  {image : './images/backgrounds/D.jpg'},
                                  {image : './images/backgrounds/E.jpg'},
                                  {image : './images/backgrounds/F.jpg'},
-                                 {image : './images/backgrounds/G.jpg'}
+                                 {image : './images/backgrounds/G.jpg'},
+                                 {image : './images/backgrounds/H.jpg'}
                              ]
 
     });

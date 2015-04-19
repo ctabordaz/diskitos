@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-04 05:25:28
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-19 17:20:26
          compiled from "C:/xampp/htdocs/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:21912551f59a8aa00b6-10418658%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:122205533c7ba52d428-26266722%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '799ad76f3131ca8aed6aa7319549eb2645d2771d' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1428117919,
+      1 => 1429455269,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '21912551f59a8aa00b6-10418658',
+  'nocache_hash' => '122205533c7ba52d428-26266722',
   'function' => 
   array (
   ),
@@ -32,8 +32,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                     <p id="formato">Código de Barras:</p>
                 </div>
                 <div class="col-md-7">
-                    <input type="text" name="codigo_de_barras" id="codigo_de_barras" class="form-control input-md chat-input" value="<?php echo $_smarty_tpl->getVariable('codigo_de_barras')->value;?>
-" required/>
+                    <input type="text" name="codigo_de_barras" id="codigo_de_barras" class="form-control input-md chat-input" required/>
                 </div>
             </div>
             <div class="col-md-3">
@@ -48,20 +47,20 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                     </select>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="col-md-4">
-                    <p id="formato" class="atredi">Precio:</p>
-                </div>
-                <div class="col-md-8">
-                    <input type="number" name="precio" min="0" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
-                </div>
-            </div>
             <div class="col-md-2">
                 <div class="col-md-4">
                     <p id="formato" class="atredi2">Cantidad:</p>
                 </div>
                 <div class="col-md-8">
                     <input type="number" min="0" name="cantidad" id="cantidad" class="form-control input-md chat-input" placeholder="0" required/>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-4">
+                    <p id="formato" class="atredi">Precio:</p>
+                </div>
+                <div class="col-md-8">
+                    <input type="number" name="precio" min="0" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
                 </div>
             </div>
         </div>

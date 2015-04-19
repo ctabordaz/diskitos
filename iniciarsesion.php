@@ -1,69 +1,70 @@
-﻿<?php
+<?php
 
 require('modules/m_phpass/PasswordHash.php');
 require('configs/include.php');
 
 
-class c_iniciarsesion extends super_controller {
+class c_iniciarsesion2 extends super_controller {
 
         protected $empleado;
         protected $temp;
-        // pass de camilo $2a$08$7zPX/ikmIGASDAaZvs.2mu.ON62ogVhxtambvgJDTm60X29IE2xi2
+        protected $menu;
+        
         public function login(){
-             $hasher = new PasswordHash(8, FALSE);   
+            $hasher = new PasswordHash(8, FALSE);   
+            
             $cod['empleado']['cedula']= $this->post->cedula;
             $cod['empleado']['contraseña']= $this->post->contraseña;
             $options['empleado']['lvl2']= "login";
-            
-                      
+                                  
             $this->orm->connect();
             @$this->orm->read_data(array("empleado"), $options,$cod);
             $this->empleado = $this->orm->get_objects("empleado");
-            $this->engine->assign('emp',$this->empleado[0]);
+            
             $this->orm->close();
             
-            if (empty($this->empleado[0])){
-                // Esto no sirve para nada ¬¬
-                @throw_exception($this->gvar['m_incorrect_login']);
-            }else{
-                
+            if (! empty($this->empleado[0])){
                 if($hasher->CheckPassword($this->post->contraseña, $this->empleado[0]->get('contraseña'))){
+                
+                $this->engine->assign('emp',$this->empleado[0]);
+                
                 $_SESSION['empleado']['cedula'] = $this->empleado[0]->get('cedula');
                 $_SESSION['empleado']['tipo'] = $this->empleado[0]->get('tipo');
+                
+                // La barra debe ocntener un Volver y un Cerrar Cesión
                 $this->session = $_SESSION;
                 
-                if($this->empleado[0]->get('tipo')=='C') {
-                    $this->temp='headerc.tpl';
-                    //echo'Cliente';
-                }
-                else if ($this->empleado[0]->get('tipo')=='A'){
-                    $this->temp='headera.tpl';
-                    //echo'Admin';
+                    if($this->empleado[0]->get('tipo')=='C') {
+                        $this->temp='header_funcionC.tpl';
+                        $this->menu='funcionC.tpl';
+                        //echo'Cliente';
+                    }
+                    else if ($this->empleado[0]->get('tipo')=='A'){
+                        $this->temp='header_funcionA.tpl';
+                        $this->menu='funcionA.tpl';
+                        //echo'Admin';
+                    } 
                 } 
-               
-                }else{
+                else{
                      @throw_exception($this->gvar['m_incorrect_login']);
                      unset($hasher);
-                }
-                
-                            
+                }           
             }
         }
 
         public function display()
 	{	
-             $hasher = new PasswordHash(8, FALSE);  
+            $hasher = new PasswordHash(8, FALSE);  
            
             if(is_object($this->empleado[0]) && $hasher->CheckPassword($this->post->contraseña, $this->empleado[0]->get('contraseña'))){
                 $this->engine->display($this->temp);
-                $this->engine->display('footerd.tpl');
+                $this->engine->display($this->menu);
             }
             else {
-                $this->engine->assign('id', $this->post->cedula);
+                @$this->engine->assign('id', $this->post->cedula);
                 $this->engine->display('iniciarsesion.tpl');
             }
-                                 unset($hasher);
-
+            unset($hasher);
 	}
 	
 	public function run()
@@ -80,6 +81,6 @@ class c_iniciarsesion extends super_controller {
 	}
 }
 
-$call = new c_iniciarsesion();
+$call = new c_iniciarsesion2();
 $call->run();
 
