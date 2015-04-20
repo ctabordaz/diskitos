@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-17 14:10:23
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-20 17:25:39
          compiled from "C:/wamp/www/diskitos/templates\headera.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21555531144f4e3b76-27625845%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_smarty_tpl->decodeProperties(array (
     '96eda0edc772a7f29d6f6675be05284bbdf0ed55' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\headera.tpl',
-      1 => 1429279806,
+      1 => 1429543440,
       2 => 'file',
     ),
   ),
@@ -28,18 +28,14 @@ disk.ico" />
         <link rel="stylesheet"  href="./css/ingresarediciones.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     </head>
-    <body>
-       
-       
-            
+    
+    <body>   
         <ul class="nav nav-tabs cabeza navbar-fixed-top">
-        <li role="presentation"  ><a class="c" href="#">Registrar Cajero</a></li>
-        <li role="presentation"><a class="c" href="ingresarediciones.php">Ingresar Ediciones</a></li>
-        <li role="presentation"><a class="c" href="actualizarcantidad.php">Actualizar Cantidad</a></li>
-        <li role="presentation"><a class="c" href="#">Realizar Pedido</a></li>
-        <li role="presentation"><a class="c" href="#">Buscar Ediciones</a></li>
-        <li role="presentation" class=" active navbar-right"><a class="bl"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>Administrador</a></li>
+            <li role="presentation"  ><a class="c" href="seleccionarfuncion.php?option=admin">Regresar a Menú</a></li>
+            <li role="presentation" class=" active navbar-right"><a class="bl"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>Administrador</a></li>
         </ul>
+    </body>
+</html>
               
          
         

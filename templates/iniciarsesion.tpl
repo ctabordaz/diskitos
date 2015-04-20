@@ -1,6 +1,7 @@
 <html>
     <head>
-        <title>Incio Sesion</title>
+        <meta charset="UTF-8">
+        <title>Inicio Sesion</title>
         
         <script src="./js/diskitos2.js"></script>
         <!-- CSS -->

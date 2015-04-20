@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-19 03:50:26
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-20 17:55:02
          compiled from "C:/wamp/www/diskitos/templates\iniciarsesion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:17634553326028be700-30916934%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1283553521566b3513-08481595%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e45c917e989251f8842feff697a64e4579c842c0' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\iniciarsesion.tpl',
-      1 => 1429415346,
+      1 => 1429545282,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '17634553326028be700-30916934',
+  'nocache_hash' => '1283553521566b3513-08481595',
   'function' => 
   array (
   ),
@@ -19,7 +19,8 @@ $_smarty_tpl->decodeProperties(array (
 )); /*/%%SmartyHeaderCode%%*/?>
 <html>
     <head>
-        <title>Incio Sesion</title>
+        <meta charset="UTF-8">
+        <title>Inicio Sesion</title>
         
         <script src="./js/diskitos2.js"></script>
         <!-- CSS -->
