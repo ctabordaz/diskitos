@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-20 17:25:39
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-21 14:49:23
          compiled from "C:/wamp/www/diskitos/templates\ingresarediciones.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3206655351a73a8e875-45242764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_smarty_tpl->decodeProperties(array (
     '5fbeaa4487a49278af959d94d05a9cdfef8af6a3' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1429543442,
+      1 => 1429622319,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ $_smarty_tpl->decodeProperties(array (
 <div id="content">
             
     <div class="row">
-        <img src="./images/Admin/d.jpg" />
+        <img src="./images/Admin/d2.jpg" />
     </div>
 
     <hr />

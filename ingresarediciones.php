@@ -93,17 +93,24 @@ class c_ingresarediciones extends super_controller {
 	
 	public function run()
 	{
-            try{
+            if($_SESSION['empleado']['tipo'] != 'A'){
+                 header('Location: iniciarsesion.php');
+            }else{
+                
+                try{
                 if (isset($this->get->option)){
                     $this->{$this->get->option}();
+                    }
                 }
+                catch (Exception $e){
+                    $this->error=1; $this->msg_warning=$e->getMessage(); $this->temp_aux = 'message.tpl';
+                    $this->engine->assign('type_warning',$this->type_warning); $this->engine->assign('msg_warning',$this->msg_warning);
+                }
+
+                $this->display();
+                
+                
             }
-            catch (Exception $e){
-                $this->error=1; $this->msg_warning=$e->getMessage(); $this->temp_aux = 'message.tpl';
-                $this->engine->assign('type_warning',$this->type_warning); $this->engine->assign('msg_warning',$this->msg_warning);
-            }
-            
-            $this->display();
 	}
 }
 
