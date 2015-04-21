@@ -54,33 +54,17 @@ class c_iniciarsesion extends super_controller {
 
         public function display()
 	{	
-            if (is_empty(@$this->session)){
-                $hasher = new PasswordHash(8, FALSE);  
+            $hasher = new PasswordHash(8, FALSE);  
 
-                if(is_object($this->empleado[0]) && $hasher->CheckPassword($this->post->contraseña, $this->empleado[0]->get('contraseña'))){
-                    $this->engine->display($this->temp);
-                    $this->engine->display($this->menu);
-                }
-                else {
-                    @$this->engine->assign('id', $this->post->cedula);
-                    $this->engine->display('iniciarsesion.tpl');
-                }
-                unset($hasher);
-            }
-            else{
-                @$usuario = $this->session;
-                
-                if($usuario['empleado']['tipo']=='C'){
-                    $this->temp='header_funcionC.tpl';
-                    $this->menu='funcionC.tpl';
-                }
-                else{
-                    $this->temp='header_funcionA.tpl';
-                    $this->menu='funcionA.tpl';
-                }
+            if(is_object($this->empleado[0]) && $hasher->CheckPassword($this->post->contraseña, $this->empleado[0]->get('contraseña'))){
                 $this->engine->display($this->temp);
-                $this->engine->display($this->menu);                
+                $this->engine->display($this->menu);
             }
+            else {
+                @$this->engine->assign('id', $this->post->cedula);
+                $this->engine->display('iniciarsesion.tpl');
+            }
+            unset($hasher);
 	}
 	
 	public function run()
