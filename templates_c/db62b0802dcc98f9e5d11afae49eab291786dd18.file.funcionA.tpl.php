@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-20 17:51:58
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-21 13:43:22
          compiled from "C:/wamp/www/diskitos/templates\funcionA.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:250105535209e16c299-46703793%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:12891553653fa30dfb4-76560510%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'db62b0802dcc98f9e5d11afae49eab291786dd18' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\funcionA.tpl',
-      1 => 1429545109,
+      1 => 1429623741,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '250105535209e16c299-46703793',
+  'nocache_hash' => '12891553653fa30dfb4-76560510',
   'function' => 
   array (
   ),
@@ -27,7 +27,7 @@ $_smarty_tpl->decodeProperties(array (
         <li class="C"><a href="actualizarcantidad.php">C</a></li>    
         <li class="D"><a href="">D</a></li>
         <li class="E"><a href="buscarediciones.php">E</a></li>
-        <li class="F"><a href="">F</a></li>
+        <li class="F"><a href="iniciarsesion.php?option=logout">F</a></li>
     </ul>
 </div>
 <br style="clear:both"/><br />

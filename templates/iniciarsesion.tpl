@@ -3,6 +3,7 @@
         <meta charset="UTF-8">
         <title>Inicio Sesion</title>
         
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         <script src="./js/diskitos2.js"></script>
         <!-- CSS -->
         <link rel="stylesheet" href="./css/resetLogin.css">
@@ -12,6 +13,7 @@
         
         <link rel="stylesheet"  href="./css/diskitos.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </head>
     <body onload="ms.cargar()" >
         <div class="container">
@@ -34,11 +36,4 @@
             </div>
         </div>
         
-        <!-- Javascript -->
-        <script src="./js/jquery-1.7.2.min.js"></script>
-        <script src="./js/supersized.3.2.7.min.js"></script>
-        <script src="./js/supersized-init.js"></script>
-        <script src="./js/scripts.js"></script>
     
-    </body>
-</html>

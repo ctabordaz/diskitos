@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-21 13:19:53
-         compiled from "C:/wamp/www/diskitos/templates\header_funcionA.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:78855351de15ebb67-32355174%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-21 13:33:25
+         compiled from "C:/wamp/www/diskitos/templates\header_funcionC.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:16213553651a5b8ee70-96227816%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'b6f7d8b03c5be4f125f46cba374d5907a6f7613f' => 
+    '83319509906b88575a99211ba346146692412123' => 
     array (
-      0 => 'C:/wamp/www/diskitos/templates\\header_funcionA.tpl',
+      0 => 'C:/wamp/www/diskitos/templates\\header_funcionC.tpl',
       1 => 1429545442,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '78855351de15ebb67-32355174',
+  'nocache_hash' => '16213553651a5b8ee70-96227816',
   'function' => 
   array (
   ),
@@ -24,7 +24,7 @@ $_smarty_tpl->decodeProperties(array (
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Seleccionar Función</title>
         
-        <link href="./css/jimgMenuA.css" rel="stylesheet" type="text/css" />
+        <link href="./css/jimgMenuC.css" rel="stylesheet" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css' />
             
         <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
@@ -40,7 +40,7 @@ $_smarty_tpl->decodeProperties(array (
                     color: #333;
                     font: normal 0.6em sans-serif,Arial;
                     background-color: #EDEDED;
-                    background-image: url(./images/menuadmin/musicaa.jpg);
+                    background-image: url(./images/menucajero/musicam.jpg);
                     width: 100%;
                     overflow: hidden;
             }
