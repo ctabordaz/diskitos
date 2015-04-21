@@ -1,4 +1,23 @@
-<?php
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-21 05:36:06
+         compiled from "iniciarsesion.php" */ ?>
+<?php /*%%SmartyHeaderCode:183975535c5a67d6576-36079505%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '1bd42e5f836e4ba469643dc7c6f37c154acc0eed' => 
+    array (
+      0 => 'iniciarsesion.php',
+      1 => 1429587113,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '183975535c5a67d6576-36079505',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
+<<?php ?>?php
 
 require('modules/m_phpass/PasswordHash.php');
 require('configs/include.php');
@@ -54,7 +73,20 @@ class c_iniciarsesion extends super_controller {
 
         public function display()
 	{	
-            if (is_empty(@$this->session)){
+            if(is_empty(@$this->sesion) == 1){
+                
+                if(@$this->sesion['empleado']['tipo']=='C'){
+                    $this->temp='header_funcionC.tpl';
+                    $this->menu='funcionC.tpl';
+                }
+                else{
+                    $this->temp='header_funcionA.tpl';
+                    $this->menu='funcionA.tpl';
+                }
+                $this->engine->display($this->temp);
+                $this->engine->display($this->menu);
+            }
+            else{
                 $hasher = new PasswordHash(8, FALSE);  
 
                 if(is_object($this->empleado[0]) && $hasher->CheckPassword($this->post->contraseña, $this->empleado[0]->get('contraseña'))){
@@ -67,27 +99,14 @@ class c_iniciarsesion extends super_controller {
                 }
                 unset($hasher);
             }
-            else{
-                @$usuario = $this->session;
-                
-                if($usuario['empleado']['tipo']=='C'){
-                    $this->temp='header_funcionC.tpl';
-                    $this->menu='funcionC.tpl';
-                }
-                else{
-                    $this->temp='header_funcionA.tpl';
-                    $this->menu='funcionA.tpl';
-                }
-                $this->engine->display($this->temp);
-                $this->engine->display($this->menu);                
-            }
 	}
 	
 	public function run()
 	{
             try{
                 if (isset($this->post->option)){
-                    $this->{$this->post->option}();
+                    $this-><?php echo $_smarty_tpl->getVariable('this')->value->post->option;?>
+();
                 }
             }
             catch (Exception $e){

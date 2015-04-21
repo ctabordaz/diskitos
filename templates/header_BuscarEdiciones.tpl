@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="shortcut icon" href="{$gvar.l_global}disk.ico" />
         <link rel="stylesheet"  href="./css/bootstrap.min.css">
-        <link rel="stylesheet"  href="./css/ingresarediciones.css">
+        <link rel="stylesheet"  href="./css/buscarediciones.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     </head>
     
@@ -18,5 +18,3 @@
               
          
         
-        
-    

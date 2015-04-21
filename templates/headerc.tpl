@@ -9,7 +9,7 @@
     </head>
     <body>  
         <ul class="nav nav-tabs cabeza navbar-fixed-top">
-            <li role="presentation"  ><a class="c" href="seleccionarfuncion.php?option=cajero">Regresar a Menú</a></li>
+            <li role="presentation"  ><a class="c" href="inciarsesion.php">Regresar a Menú</a></li>
             <li role="presentation" class=" active navbar-right"><a class="bl"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>Cajero</a></li>
         </ul>
     </body>

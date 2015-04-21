@@ -1,3 +1,22 @@
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-21 05:01:03
+         compiled from "C:/xampp/htdocs/diskitos/templates\buscarediciones.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:224545535bd6fe17193-42142286%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '33df546d76293be7772084a3fb6c4791cc43ec36' => 
+    array (
+      0 => 'C:/xampp/htdocs/diskitos/templates\\buscarediciones.tpl',
+      1 => 1429585261,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '224545535bd6fe17193-42142286',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
             
 <div class="container">    
     <br><br><br><br>    
@@ -20,7 +39,8 @@
 
             <div class="panel-body" >
 
-                <form name="form" id="form" class="form-horizontal" enctype="multipart/form-data" action="{$gvar.l_global}buscarediciones.php?option=consultar" method="POST">
+                <form name="form" id="form" class="form-horizontal" enctype="multipart/form-data" action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
+buscarediciones.php?option=consultar" method="POST">
                    
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-text-size"></i></span>

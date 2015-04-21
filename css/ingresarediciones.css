@@ -39,14 +39,13 @@ p {
     font-size: small;
 }
 .cabeza{
-    background-color:rgba(0, 197, 166,0.8);
-    
-   
-   
+    background-color:rgba(0, 197, 166,0.8);  
 }
+
 span{
     margin-right: 5px;
 }
+
 .c {
     color: #FFF;
 }

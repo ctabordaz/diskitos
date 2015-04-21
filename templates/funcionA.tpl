@@ -8,7 +8,7 @@
         <li class="C"><a href="actualizarcantidad.php">C</a></li>    
         <li class="D"><a href="">D</a></li>
         <li class="E"><a href="buscarediciones.php">E</a></li>
-        <li class="F"><a href="">F</a></li>
+        <li class="F"><a href="cerrarsesion.php">F</a></li>
     </ul>
 </div>
 <br style="clear:both"/><br />

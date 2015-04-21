@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-19 17:20:26
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-21 03:23:53
          compiled from "C:/xampp/htdocs/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:122205533c7ba52d428-26266722%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:104115535a6a92be6c6-56583728%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '799ad76f3131ca8aed6aa7319549eb2645d2771d' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1429455269,
+      1 => 1429579428,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '122205533c7ba52d428-26266722',
+  'nocache_hash' => '104115535a6a92be6c6-56583728',
   'function' => 
   array (
   ),
@@ -20,7 +20,7 @@ $_smarty_tpl->decodeProperties(array (
 <div id="content">
             
     <div class="row">
-        <img src="./images/Admin/d.jpg" />
+        <img src="./images/Admin/d2.jpg" />
     </div>
 
     <hr />

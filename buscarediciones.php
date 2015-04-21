@@ -6,27 +6,23 @@ class c_buscarediciones extends super_controller {
 
     public function consultar(){
         
+        //  $options['album']['lvl2']= "all";
+        //  $auxiliars['edicion']=array("titulo","interprete","genero","ano_publicacion","caratula");  
+        //  $this->orm->connect();
+        //  $this->orm->read_data(array("edicion"), $options);
+        //  $this->edicion = $this->orm->get_objects("edicion",null,$auxiliars);
+        //  $this->orm->close();
+        //
+        //  $this->engine->assign('edicion',  $this->edicion);
         
-        
-//        	$options['album']['lvl2']= "all";
-//                $auxiliars['edicion']=array("titulo","interprete","genero","ano_publicacion","caratula");  
-//		$this->orm->connect();
-//		$this->orm->read_data(array("edicion"), $options);
-//		$this->edicion = $this->orm->get_objects("edicion",null,$auxiliars);
-//		$this->orm->close();
-//		
-//		$this->engine->assign('edicion',  $this->edicion);
-
-    }
-
-      
+    }      
 
     public function display()
 	{		                
             $this->engine->assign('title',"Buscar Ediciones");
-            $this->engine->display('headera.tpl');
+            $this->engine->display('header_BuscarEdiciones.tpl');
             $this->engine->display('buscarediciones.tpl');
-            $this->engine->display('footerd.tpl');
+            $this->engine->display('footer_BuscarEdiciones.tpl');
 
 	}
 	

@@ -1,7 +1,7 @@
 <div id="content">
             
     <div class="row">
-        <img src="./images/Admin/d.jpg" />
+        <img src="./images/Admin/d2.jpg" />
     </div>
 
     <hr />
