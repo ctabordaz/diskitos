@@ -5,7 +5,7 @@ managerScreen = {
    
     incompletos: function(){
             alertify.set('notifier','position', 'top-right');
-            alertify.error("Identificación o Contraseña incompletos",60);    
+            alertify.error("Identificación o Contraseña vacios",60);    
     },
     incorrectos: function(){
            alertify.set('notifier','position', 'top-right');
