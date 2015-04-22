@@ -52,12 +52,13 @@ class c_iniciarsesion extends super_controller {
                  $this->session = $_SESSION;
                 } 
                 else{
-                   
+                     $this->engine->assign("cargar","ms.incorrectos()");    
                      unset($hasher);
                 }           
             }else{
                 
-                $this->engine->assign("cargar","ms.incorrectos()");            }
+                $this->engine->assign("cargar","ms.incorrectos()");         
+                }
         }
         }
         

@@ -5,9 +5,9 @@
         
         <script src="./js/diskitos2.js"></script>
         <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script src="./js/alertify/lib/alertify.min.js"></script>
-        <link rel="stylesheet" href="./js/alertify/themes/alertify.default.css"/>
-        <link rel="stylesheet" href="./js/alertify/themes/alertify.core.css"/>
+        <script src="./js/alertifyjs/alertify.min.js"></script>
+        <link rel="stylesheet" href="./js/alertifyjs/css/alertify.min.css"/>
+        <link rel="stylesheet" href="./js/alertifyjs/css/themes/default.min.css"/>
         <!-- CSS -->
         <link rel="stylesheet" href="./css/resetLogin.css">
         <link rel="stylesheet" href="./css/supersizedLogin.css">
