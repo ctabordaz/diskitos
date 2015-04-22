@@ -2,20 +2,12 @@
 var managerScreen = managerScreen || {};
 managerScreen = {
     
-    cargardon: function(){
-        var id=document.getElementById("cedula").value;
-        var pass=document.getElementById("contraseña").value;
-        
-        if(id.length !== 0){
-            alert("Identificación o contraseña son incorrectas ");
-        }
+   
+    incompletos: function(){
+            alertify.error("Identificación o Contraseña incompletos");    
     },
-      cargar: function(){
-        
-
-
-  $('#basicModal').modal('show');
-    
+    incorrectos: function(){
+            alertify.error("Identificacion o Contraseña incorrectos");    
     }
 };
 

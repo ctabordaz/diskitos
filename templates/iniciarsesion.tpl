@@ -3,8 +3,11 @@
         <meta charset="UTF-8">
         <title>Inicio Sesion</title>
         
-        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         <script src="./js/diskitos2.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="./js/alertify/lib/alertify.min.js"></script>
+        <link rel="stylesheet" href="./js/alertify/themes/alertify.default.css"/>
+        <link rel="stylesheet" href="./js/alertify/themes/alertify.core.css"/>
         <!-- CSS -->
         <link rel="stylesheet" href="./css/resetLogin.css">
         <link rel="stylesheet" href="./css/supersizedLogin.css">
@@ -15,7 +18,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </head>
-    <body onload="ms.cargar()" >
+    <body {if isset($cargar)}onload="{$cargar}"{/if}>
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-5 col-md-4 ">
@@ -35,5 +38,12 @@
                 </div>
             </div>
         </div>
+        <script src="./js/supersized.3.2.7.min.js"></script>
+        <script src="./js/supersized-init.js"></script>
+        <script src="./js/scripts.js"></script>
+    
+    </body>
+</html>
+
         
     

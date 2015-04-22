@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-21 14:14:56
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-22 00:52:12
          compiled from "C:/wamp/www/diskitos/templates\iniciarsesion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1975855365b60d2bae9-23590383%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:50365536f0bc0ec2b1-05918769%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e45c917e989251f8842feff697a64e4579c842c0' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\iniciarsesion.tpl',
-      1 => 1429625638,
+      1 => 1429663876,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1975855365b60d2bae9-23590383',
+  'nocache_hash' => '50365536f0bc0ec2b1-05918769',
   'function' => 
   array (
   ),
@@ -22,8 +22,11 @@ $_smarty_tpl->decodeProperties(array (
         <meta charset="UTF-8">
         <title>Inicio Sesion</title>
         
-        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         <script src="./js/diskitos2.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="./js/alertify/lib/alertify.min.js"></script>
+        <link rel="stylesheet" href="./js/alertify/themes/alertify.default.css"/>
+        <link rel="stylesheet" href="./js/alertify/themes/alertify.core.css"/>
         <!-- CSS -->
         <link rel="stylesheet" href="./css/resetLogin.css">
         <link rel="stylesheet" href="./css/supersizedLogin.css">
@@ -34,7 +37,8 @@ $_smarty_tpl->decodeProperties(array (
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </head>
-    <body onload="ms.cargar()" >
+    <body <?php if (isset($_smarty_tpl->getVariable('cargar',null,true,false)->value)){?>onload="<?php echo $_smarty_tpl->getVariable('cargar')->value;?>
+"<?php }?>>
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-5 col-md-4 ">
@@ -56,5 +60,12 @@ iniciarsesion.php" method="post">
                 </div>
             </div>
         </div>
+        <script src="./js/supersized.3.2.7.min.js"></script>
+        <script src="./js/supersized-init.js"></script>
+        <script src="./js/scripts.js"></script>
+    
+    </body>
+</html>
+
         
     

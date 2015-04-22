@@ -10,6 +10,11 @@ class c_iniciarsesion extends super_controller {
 
     
     public function login(){
+        
+        if($this->post->cedula == "" || $this->post->contraseña ==""){
+            $this->engine->assign("cargar","ms.incompletos()");
+        }else{
+        
             $hasher = new PasswordHash(8, FALSE);   
             
             $cod['empleado']['cedula']= $this->post->cedula;
@@ -52,8 +57,8 @@ class c_iniciarsesion extends super_controller {
                 }           
             }else{
                 
-                 $this->temp_aux = 'modal.tpl';
-            }
+                $this->engine->assign("cargar","ms.incorrectos()");            }
+        }
         }
         
         public function logout(){
@@ -72,14 +77,9 @@ class c_iniciarsesion extends super_controller {
                 $this->engine->display($_SESSION['empleado']['funcion']);
             }
             else {
-                $this->engine->assign('id', $this->post->cedula);
-                
+                $this->engine->assign('id', $this->post->cedula);                
                 $this->engine->display('iniciarsesion.tpl');
-                   if($this->temp_aux != 'empy.tpl'){
-                       $this->engine->display($this->temp_aux);
-                    }
-               
-                $this->engine->display('footer_iniciarsesion.tpl');
+                 
             }
             unset($hasher);
 	}
