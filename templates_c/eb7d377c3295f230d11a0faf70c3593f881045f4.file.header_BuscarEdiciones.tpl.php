@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-22 21:28:34
-         compiled from "C:/wamp/www/diskitos/templates\headera.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:21555531144f4e3b76-27625845%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-22 20:21:39
+         compiled from "C:/wamp/www/diskitos/templates\header_BuscarEdiciones.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:8171553802d382c846-48982637%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '96eda0edc772a7f29d6f6675be05284bbdf0ed55' => 
+    'eb7d377c3295f230d11a0faf70c3593f881045f4' => 
     array (
-      0 => 'C:/wamp/www/diskitos/templates\\headera.tpl',
-      1 => 1429662650,
+      0 => 'C:/wamp/www/diskitos/templates\\header_BuscarEdiciones.tpl',
+      1 => 1429662651,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '21555531144f4e3b76-27625845',
+  'nocache_hash' => '8171553802d382c846-48982637',
   'function' => 
   array (
   ),
@@ -25,7 +25,7 @@ $_smarty_tpl->decodeProperties(array (
         <link rel="shortcut icon" href="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
 disk.ico" />
         <link rel="stylesheet"  href="./css/bootstrap.min.css">
-        <link rel="stylesheet"  href="./css/ingresarediciones.css">
+        <link rel="stylesheet"  href="./css/buscarediciones.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     </head>
     
@@ -39,5 +39,3 @@ disk.ico" />
               
          
         
-        
-    

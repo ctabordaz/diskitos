@@ -224,8 +224,48 @@ class db
                                     $nro = mysqli_real_escape_string($this->cn,$data['nro_catalogo']);                            
                                     $info = $this->get_data("SELECT COUNT(*) AS contador FROM album WHERE nro_catalogo='$nro';");
                                     break;
+                                case "buscar_ediciones_titulo":
+                                    //print_r2($data);
+                                    $texto = mysqli_real_escape_string($this->cn,$data['titulo']); 
+                                        $txt1 = strtolower($texto);
+                                        $txt2 = ucfirst($txt1);
+                                        $txt3 = strtoupper($texto);
+                                        $info = $this->get_data("SELECT DISTINCT a.titulo, e.formato, e.precio, e.cantidad, a.ano_publicacion,  a.caratula
+                                                                 FROM album a, edicion e
+                                                                 WHERE (INSTR(a.titulo,'$txt1') >0 OR INSTR(a.titulo,'$txt2')>0 OR INSTR(a.titulo,'$txt3')>0)
+                                                                 AND e.album=a.nro_catalogo;");
+                                    break;
+                                case "buscar_ediciones_interprete":
+                                    print_r2($data);
+                                    $texto = mysqli_real_escape_string($this->cn,$data['interprete']); 
+                                    print_r2($texto);
+                                        $txt1 = strtolower($texto);
+                                        $txt2 = ucfirst($txt1);
+                                        $txt3 = strtoupper($texto);
+                                        $info = $this->get_data("SELECT  a.titulo, e.formato, e.precio, e.cantidad, a.ano_publicacion,  a.caratula
+                                                                 FROM album a, edicion e
+                                                                 WHERE (INSTR(a.interprete,'$txt1') >0 OR INSTR(a.interprete,'$txt2')>0 OR INSTR(a.interprete,'$txt3')>0)
+                                                                 AND e.album=a.nro_catalogo;");
+                                    break;
+                                
                             }
-                        break;    
+                        break;
+                        case "cancion":
+                                switch ($option['lvl2'])
+                                {
+                                    case "buscar_ediciones" :
+                                        
+                                        $texto = mysqli_real_escape_string($this->cn,$data['nombre']); 
+                                        $txt1 = strtolower($texto);
+                                        $txt2 = ucfirst($txt1);
+                                        $txt3 = strtoupper($texto);
+                                        $info = $this->get_data("SELECT DISTINCT a.titulo, e.formato, e.precio, e.cantidad, a.ano_publicacion,  a.caratula
+                                                                 FROM cancion c, album a, edicion e
+                                                                 WHERE (INSTR(c.nombre,'$txt1') >0 OR INSTR(c.nombre,'$txt2')>0 OR INSTR(c.nombre,'$txt3')>0)
+                                                                 AND c.album=a.nro_catalogo AND e.album=a.nro_catalogo;");
+                                        break;
+                                }
+                        break;
 			
 			default: break;
 		}

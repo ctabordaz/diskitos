@@ -6,11 +6,23 @@ class c_buscarediciones extends super_controller {
 
     public function consultar(){
         
-        //  $options['album']['lvl2']= "all";
-        //  $auxiliars['edicion']=array("titulo","interprete","genero","ano_publicacion","caratula");  
-        //  $this->orm->connect();
-        //  $this->orm->read_data(array("edicion"), $options);
-        //  $this->edicion = $this->orm->get_objects("edicion",null,$auxiliars);
+        $aconsultar['cancion']['nombre'] = $this->post->palabra;
+        $options['cancion']['lvl2']= "buscar_ediciones";
+        $this->orm->connect();
+        $this->orm->read_data(array("cancion"), $options,$aconsultar);
+        $bxcancion = $this->orm->data['cancion'];
+        //print_r2($bxcancion);
+        $aconsultar['album']['titulo'] = $this->post->palabra;
+        $options['album']['lvl2']= "buscar_ediciones_titulo";
+        $this->orm->read_data(array("album"), $options,$aconsultar);
+        $bxtitulo = $this->orm->data['album'];
+        //print_r2($bxtitulo);
+        $aconsultar['album']['interprete'] = $this->post->palabra;
+        $options['album']['lvl2']= "buscar_ediciones_interprete";
+        $this->orm->read_data(array("album"), $options,$aconsultar);
+        print_r2($this->orm->data);
+        $bxinterprete = $this->orm->data['album'];
+        print_r2($bxinterprete);
         //  $this->orm->close();
         //
         //  $this->engine->assign('edicion',  $this->edicion);

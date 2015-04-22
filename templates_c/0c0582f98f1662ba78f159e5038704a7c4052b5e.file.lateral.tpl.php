@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-03-22 20:28:26
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-22 21:28:25
          compiled from "C:/wamp/www/diskitos/templates\lateral.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:4884550f25ea0bb9a2-47963608%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:537255381279ae1710-78605358%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '0c0582f98f1662ba78f159e5038704a7c4052b5e' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\lateral.tpl',
-      1 => 1360268758,
+      1 => 1429662652,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '4884550f25ea0bb9a2-47963608',
+  'nocache_hash' => '537255381279ae1710-78605358',
   'function' => 
   array (
   ),
