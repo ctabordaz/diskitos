@@ -1,30 +1,30 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-22 21:30:13
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-23 03:20:20
          compiled from "C:/wamp/www/diskitos/templates\actualizarcantidad.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:10662553812e58837c6-22614087%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:20661553864f4e38ad6-23404828%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9fa4e5e1c9270fa697cfccefaa25a06eeca03ef3' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\actualizarcantidad.tpl',
-      1 => 1429662652,
+      1 => 1429759217,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '10662553812e58837c6-22614087',
+  'nocache_hash' => '20661553864f4e38ad6-23404828',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
-<div id="content">
-            
-    <div class="row">
-        <img class="img" src="./images/Admin/d.jpg" />
-    </div>
 
-    <hr />
-    <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
+	<div id="content">
+		  <div class="row">
+                        <img class="img" src="./images/Admin/d.jpg" />
+                  </div>
+            
+            <hr />
+        <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
 actualizarcantidad.php?option=actualizar" method="post" enctype="multipart/form-data">
         <div class="row">
            
@@ -33,19 +33,28 @@ actualizarcantidad.php?option=actualizar" method="post" enctype="multipart/form-
                     <p id="formato">Edición:</p>
                 </div>
                 <div class="col-md-7">
-                    <select name="edicion">
-                        <option>Seleccionar</option>
-                       <?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable;
+            
+		<div class="side-by-side clearfix">
+		
+				<select data-placeholder="Choose a madafaka..." class="chzn-select" style="width:350px;" tabindex="2">
+					<option value=""></option>
+					<?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable;
  $_from = $_smarty_tpl->getVariable('edicion')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 if ($_smarty_tpl->_count($_from) > 0){
     foreach ($_from as $_smarty_tpl->tpl_vars['e']->key => $_smarty_tpl->tpl_vars['e']->value){
 ?>
-                           <option value="<?php echo $_smarty_tpl->getVariable('e')->value->get('codigo_de_barras');?>
+                                            <option value="<?php echo $_smarty_tpl->getVariable('e')->value->get('codigo_de_barras');?>
 "><?php echo $_smarty_tpl->getVariable('e')->value->auxiliars['titulo'];?>
 -<?php echo $_smarty_tpl->getVariable('e')->value->get('formato');?>
 </option>
-                       <?php }} ?>
-                    </select>
+                                        <?php }} ?>
+					
+				</select>
+			
+		</div>
+
+                                        
+             </select>
                 </div>
             </div>
             
@@ -78,6 +87,20 @@ if ($_smarty_tpl->_count($_from) > 0){
             </button>
         </div>
     </form>
+                
+                
 </div>
+		
+                
+		
 
+		
 
+		
+
+		
+
+		
+
+	
+	

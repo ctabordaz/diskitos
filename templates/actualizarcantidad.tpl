@@ -1,11 +1,11 @@
-<div id="content">
-            
-    <div class="row">
-        <img class="img" src="./images/Admin/d.jpg" />
-    </div>
 
-    <hr />
-    <form action="{$gvar.l_global}actualizarcantidad.php?option=actualizar" method="post" enctype="multipart/form-data">
+	<div id="content">
+		  <div class="row">
+                        <img class="img" src="./images/Admin/d.jpg" />
+                  </div>
+            
+            <hr />
+        <form action="{$gvar.l_global}actualizarcantidad.php?option=actualizar" method="post" enctype="multipart/form-data">
         <div class="row">
            
             <div class="col-md-4">
@@ -13,12 +13,21 @@
                     <p id="formato">Edición:</p>
                 </div>
                 <div class="col-md-7">
-                    <select name="edicion">
-                        <option>Seleccionar</option>
-                       {foreach $edicion as $e}
-                           <option value="{$e->get('codigo_de_barras')}">{$e->auxiliars['titulo']}-{$e->get('formato')}</option>
-                       {/foreach}
-                    </select>
+            
+		<div class="side-by-side clearfix">
+		
+				<select data-placeholder="Choose a madafaka..." class="chzn-select" style="width:350px;" tabindex="2">
+					<option value=""></option>
+					{foreach $edicion as $e}
+                                            <option value="{$e->get('codigo_de_barras')}">{$e->auxiliars['titulo']}-{$e->get('formato')}</option>
+                                        {/foreach}
+					
+				</select>
+			
+		</div>
+
+                                        
+             </select>
                 </div>
             </div>
             
@@ -45,6 +54,20 @@
             </button>
         </div>
     </form>
+                
+                
 </div>
+		
+                
+		
 
+		
 
+		
+
+		
+
+		
+
+	
+	
