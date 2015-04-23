@@ -10,6 +10,10 @@ var n = 2;
 var managerScreen = managerScreen || {};
 managerScreen = {
     agregar: function(){
+        
+        $("<div>",{
+            id : "cancion" + n
+        }).append(
         $("<div>",{
             class: "sings"
         }).append(
@@ -65,12 +69,17 @@ managerScreen = {
             required: "true"
         })))
         
-                ).appendTo("#cancion");
+                )).appendTo("#cancion");
         
         $("#nca").val(n);
         n = n+1;
        
        
+    },
+    eliminar: function(){
+        n = n-1;
+        cancion = "#cancion"+n;
+        $(cancion).remove();
     }
   
     

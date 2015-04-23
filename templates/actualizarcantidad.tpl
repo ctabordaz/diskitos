@@ -16,9 +16,9 @@
             
 		<div class="side-by-side clearfix">
 		
-				<select data-placeholder="Choose a madafaka..." class="chzn-select" style="width:350px;" tabindex="2">
-					<option value=""></option>
-					{foreach $edicion as $e}
+				<select data-placeholder="Seleccione una edición..." class="chosen-select" style="width:350px;" tabindex="2">
+                                         <option value=""></option>
+                                        {foreach $edicion as $e}
                                             <option value="{$e->get('codigo_de_barras')}">{$e->auxiliars['titulo']}-{$e->get('formato')}</option>
                                         {/foreach}
 					
@@ -53,6 +53,25 @@
                 <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Ingresar 
             </button>
         </div>
+        <script src="./js/chosen/chosen.jquery.js" type="text/javascript"></script>
+        <script src="./js/chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+          var config = {
+            '.chosen-select'           : {
+            },
+            '.chosen-select-deselect'  : {
+                allow_single_deselect:true},
+            '.chosen-select-no-single' : {
+                disable_search_threshold:10},
+            '.chosen-select-no-results': {
+                no_results_text:'Oops, nothing found!'},
+            '.chosen-select-width'     : {
+                width:"95%"}
+          }
+          for (var selector in config) {
+            $(selector).chosen(config[selector]);
+          }
+        </script>
     </form>
                 
                 

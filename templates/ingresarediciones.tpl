@@ -159,6 +159,13 @@
                             </button>
                         </p>
                     </div>
+                    <div class="col-md-2 col-md-offset-2">
+                        <p>
+                            <button type="button" class="btn btn-default btn-sm" onclick="ms.eliminar()">
+                                <span class="glyphicon glyphicon-remove-sign"></span>Eliminar
+                            </button>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

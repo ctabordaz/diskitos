@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-23 03:20:20
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-23 13:26:08
          compiled from "C:/wamp/www/diskitos/templates\actualizarcantidad.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:20661553864f4e38ad6-23404828%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:249415538f2f0a4a085-42633781%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9fa4e5e1c9270fa697cfccefaa25a06eeca03ef3' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\actualizarcantidad.tpl',
-      1 => 1429759217,
+      1 => 1429795562,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '20661553864f4e38ad6-23404828',
+  'nocache_hash' => '249415538f2f0a4a085-42633781',
   'function' => 
   array (
   ),
@@ -36,9 +36,9 @@ actualizarcantidad.php?option=actualizar" method="post" enctype="multipart/form-
             
 		<div class="side-by-side clearfix">
 		
-				<select data-placeholder="Choose a madafaka..." class="chzn-select" style="width:350px;" tabindex="2">
-					<option value=""></option>
-					<?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable;
+				<select data-placeholder="Seleccione una edición..." class="chosen-select" style="width:350px;" tabindex="2">
+                                         <option value=""></option>
+                                        <?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable;
  $_from = $_smarty_tpl->getVariable('edicion')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 if ($_smarty_tpl->_count($_from) > 0){
     foreach ($_from as $_smarty_tpl->tpl_vars['e']->key => $_smarty_tpl->tpl_vars['e']->value){
@@ -86,6 +86,25 @@ if ($_smarty_tpl->_count($_from) > 0){
                 <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Ingresar 
             </button>
         </div>
+        <script src="./js/chosen/chosen.jquery.js" type="text/javascript"></script>
+        <script src="./js/chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+          var config = {
+            '.chosen-select'           : {
+            },
+            '.chosen-select-deselect'  : {
+                allow_single_deselect:true},
+            '.chosen-select-no-single' : {
+                disable_search_threshold:10},
+            '.chosen-select-no-results': {
+                no_results_text:'Oops, nothing found!'},
+            '.chosen-select-width'     : {
+                width:"95%"}
+          }
+          for (var selector in config) {
+            $(selector).chosen(config[selector]);
+          }
+        </script>
     </form>
                 
                 
