@@ -162,7 +162,7 @@
                     <div class="col-md-2 col-md-offset-2">
                         <p>
                             <button type="button" class="btn btn-default btn-sm" onclick="ms.eliminar()">
-                                <span class="glyphicon glyphicon-remove-sign"></span>Eliminar
+                                <span class="glyphicon glyphicon-remove-sign"></span>Remover
                             </button>
                         </p>
                     </div>

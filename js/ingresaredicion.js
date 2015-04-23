@@ -77,9 +77,14 @@ managerScreen = {
        
     },
     eliminar: function(){
+       if(n>1){
         n = n-1;
         cancion = "#cancion"+n;
         $(cancion).remove();
+        if(n===1){
+            n = 2;
+        }
+       }
     }
   
     
