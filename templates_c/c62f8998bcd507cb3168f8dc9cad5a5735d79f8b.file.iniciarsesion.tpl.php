@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-21 03:06:58
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-22 18:04:36
          compiled from "C:/xampp/htdocs/diskitos/templates\iniciarsesion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:253685535a2b2cb6de2-91799100%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:208385537c694a08146-33107783%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'c62f8998bcd507cb3168f8dc9cad5a5735d79f8b' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\iniciarsesion.tpl',
-      1 => 1429578068,
+      1 => 1429718433,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '253685535a2b2cb6de2-91799100',
+  'nocache_hash' => '208385537c694a08146-33107783',
   'function' => 
   array (
   ),
@@ -23,6 +23,10 @@ $_smarty_tpl->decodeProperties(array (
         <title>Inicio Sesion</title>
         
         <script src="./js/diskitos2.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="./js/alertifyjs/alertify.min.js"></script>
+        <link rel="stylesheet" href="./js/alertifyjs/css/alertify.min.css"/>
+        <link rel="stylesheet" href="./js/alertifyjs/css/themes/default.min.css"/>
         <!-- CSS -->
         <link rel="stylesheet" href="./css/resetLogin.css">
         <link rel="stylesheet" href="./css/supersizedLogin.css">
@@ -31,8 +35,10 @@ $_smarty_tpl->decodeProperties(array (
         
         <link rel="stylesheet"  href="./css/diskitos.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </head>
-    <body onload="ms.cargar()" >
+    <body <?php if (isset($_smarty_tpl->getVariable('cargar',null,true,false)->value)){?>onload="<?php echo $_smarty_tpl->getVariable('cargar')->value;?>
+"<?php }?>>
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-5 col-md-4 ">
@@ -54,12 +60,12 @@ iniciarsesion.php" method="post">
                 </div>
             </div>
         </div>
-        
-        <!-- Javascript -->
-        <script src="./js/jquery-1.7.2.min.js"></script>
         <script src="./js/supersized.3.2.7.min.js"></script>
         <script src="./js/supersized-init.js"></script>
         <script src="./js/scripts.js"></script>
     
     </body>
 </html>
+
+        
+    

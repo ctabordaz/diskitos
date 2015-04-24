@@ -6,9 +6,6 @@ require('configs/include.php');
 
 class c_iniciarsesion extends super_controller {
 
-       
-
-    
     public function login(){
         
         if($this->post->cedula == "" || $this->post->contraseña ==""){
@@ -35,19 +32,16 @@ class c_iniciarsesion extends super_controller {
                 $_SESSION['empleado']['cedula'] = $this->empleado[0]->get('cedula');
                 $_SESSION['empleado']['tipo'] = $this->empleado[0]->get('tipo');
                 
-                
-               
-                
-                    if($this->empleado[0]->get('tipo')=='C') {
-                        $_SESSION['empleado']['header']='header_funcionC.tpl';
-                        $_SESSION['empleado']['funcion']='funcionC.tpl';
-                        //echo'Cliente';
-                    }
-                    else if ($this->empleado[0]->get('tipo')=='A'){
-                         $_SESSION['empleado']['header']='header_funcionA.tpl';
-                         $_SESSION['empleado']['funcion']='funcionA.tpl';
-                        //echo'Admin';
-                    }
+                if($this->empleado[0]->get('tipo')=='C') {
+                    $_SESSION['empleado']['header']='header_funcionC.tpl';
+                    $_SESSION['empleado']['funcion']='funcionC.tpl';
+                    //echo'Cliente';
+                }
+                else if ($this->empleado[0]->get('tipo')=='A'){
+                     $_SESSION['empleado']['header']='header_funcionA.tpl';
+                     $_SESSION['empleado']['funcion']='funcionA.tpl';
+                    //echo'Admin';
+                }
                     
                  $this->session = $_SESSION;
                 } 
@@ -60,25 +54,23 @@ class c_iniciarsesion extends super_controller {
                 $this->engine->assign("cargar","ms.incorrectos()");         
                 }
         }
-        }
+    }
         
-        public function logout(){
-            
+        public function logout(){            
             session_destroy();
             header('Location: iniciarsesion.php');
-
         }
 
         public function display()
 	{	
             $hasher = new PasswordHash(8, FALSE);  
-
+            
             if($_SESSION){
                 $this->engine->display($_SESSION['empleado']['header']);
                 $this->engine->display($_SESSION['empleado']['funcion']);
             }
             else {
-                $this->engine->assign('id', $this->post->cedula);                
+                @$this->engine->assign('id', $this->post->cedula);                
                 $this->engine->display('iniciarsesion.tpl');
                  
             }
