@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-21 03:23:53
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-25 03:41:44
          compiled from "C:/xampp/htdocs/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:104115535a6a92be6c6-56583728%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:14143553af0d8ad2275-68906493%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '799ad76f3131ca8aed6aa7319549eb2645d2771d' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1429579428,
+      1 => 1429916466,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '104115535a6a92be6c6-56583728',
+  'nocache_hash' => '14143553af0d8ad2275-68906493',
   'function' => 
   array (
   ),
@@ -176,6 +176,13 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                         <p>
                             <button type="button" class="btn btn-default btn-sm" onclick="ms.agregar()">
                                 <span class="glyphicon glyphicon-plus-sign"></span>Agregar
+                            </button>
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-md-offset-2">
+                        <p>
+                            <button type="button" class="btn btn-default btn-sm" onclick="ms.eliminar()">
+                                <span class="glyphicon glyphicon-remove-sign"></span>Remover
                             </button>
                         </p>
                     </div>

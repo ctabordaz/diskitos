@@ -14,9 +14,6 @@
           /* fix rtl for demo */
           .chosen-rtl .chosen-drop { left: -9000px; }
         </style>
-        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-        
-        
         
 </head>
 <body>

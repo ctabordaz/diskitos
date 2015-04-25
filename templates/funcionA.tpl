@@ -3,7 +3,7 @@
 <br>
 <div class="jimgMenu">
     <ul>
-        <li class="A"><a href="">A</a></li>
+        <li class="A"><a href="registrarcajero.php">A</a></li>
         <li class="B"><a href="ingresarediciones.php">B</a></li>
         <li class="C"><a href="actualizarcantidad.php">C</a></li>    
         <li class="D"><a href="">D</a></li>

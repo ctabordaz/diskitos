@@ -135,6 +135,25 @@ class db
                                         break;
 				}
 				break;
+                        
+                        case "empleado":
+				switch($options['lvl2'])
+				{
+                                    case "empleado":
+                                       
+                                        $nombre = mysqli_real_escape_string($this->cn,$object->get('nombre'));
+                                        $cedula = mysqli_real_escape_string($this->cn, $object->get('cedula'));
+                                        $contraseña = mysqli_real_escape_string($this->cn, $object->get('contraseña'));
+                                        $salario = mysqli_real_escape_string($this->cn,$object->get('salario'));
+                                        $telefono = mysqli_real_escape_string($this->cn,$object->get('telefono'));
+                                        $correo = mysqli_real_escape_string($this->cn,$object->get('correo'));
+                                        $tipo = mysqli_real_escape_string($this->cn,$object->get('tipo'));
+                                        
+                                        $this->do_operation("INSERT INTO empleado VALUES ('$cedula', '$contraseña', "
+                                                . "'$correo', '$nombre', '$salario', '$telefono', '$tipo');");
+                                        break;
+				}
+				break;
 			
 			default: break;
 		}
