@@ -18,10 +18,17 @@ class c_registrarcajero extends super_controller {
 
     public function display()
     {		
-        $this->engine->assign('title',"Registrar Cajero");
-        $this->engine->display('header_regcaj.tpl');
-        $this->engine->display('registrarcajero.tpl');
-        $this->engine->display('footer_regcaj.tpl');
+       
+        if(!is_empty($this->session)){
+            $this->engine->assign('title',"Registrar Cajero");
+            $this->engine->display('header_regcaj.tpl');
+            $this->engine->display('registrarcajero.tpl');
+            $this->engine->display('footer_regcaj.tpl');
+        }
+        else{
+            $this->engine->display('noautorizado.tpl');
+        }
+        
     }
 	
     public function run()
