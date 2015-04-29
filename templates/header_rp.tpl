@@ -1,8 +1,8 @@
-<html class="no-js">
+<html lang="en" class="no-js">
     <head>
         <meta charset="UTF-8" />
         <title>Relizar Pedido</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="{$gvar.l_global}disk.ico" />
         
@@ -17,7 +17,7 @@
     <body>   
         <ul class="nav nav-tabs cabeza navbar-fixed-top">
             <li role="presentation"  ><a class="c" href="iniciarsesion.php">Regresar a Menú</a></li>
-            <li role="presentation" class=" active navbar-right"><a class="bl"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>Administrador</a></li>
+            <li role="presentation" class=" active navbar-right"><a class="bl"><span class="c2 glyphicon glyphicon-user" aria-hidden="true"></span> Administrador</a></li>
         </ul>
     </body>
 </html>

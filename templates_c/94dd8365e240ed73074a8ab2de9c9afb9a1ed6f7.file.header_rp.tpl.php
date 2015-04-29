@@ -1,27 +1,27 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-29 22:22:35
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-29 22:44:04
          compiled from "C:/xampp/htdocs/diskitos/templates\header_rp.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1070155413d8b10d2e2-87148213%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2931455414294e07dc8-25426133%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '94dd8365e240ed73074a8ab2de9c9afb9a1ed6f7' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\header_rp.tpl',
-      1 => 1430338952,
+      1 => 1430340242,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1070155413d8b10d2e2-87148213',
+  'nocache_hash' => '2931455414294e07dc8-25426133',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
-<html class="no-js">
+<html lang="en" class="no-js">
     <head>
         <meta charset="UTF-8" />
         <title>Relizar Pedido</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
 disk.ico" />
@@ -37,7 +37,7 @@ disk.ico" />
     <body>   
         <ul class="nav nav-tabs cabeza navbar-fixed-top">
             <li role="presentation"  ><a class="c" href="iniciarsesion.php">Regresar a Menú</a></li>
-            <li role="presentation" class=" active navbar-right"><a class="bl"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>Administrador</a></li>
+            <li role="presentation" class=" active navbar-right"><a class="bl"><span class="c2 glyphicon glyphicon-user" aria-hidden="true"></span> Administrador</a></li>
         </ul>
     </body>
 </html>
