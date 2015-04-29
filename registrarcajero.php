@@ -6,9 +6,20 @@ class c_registrarcajero extends super_controller {
     
     // Contraseñas sin encriptar
     // Faltan comprobaciones del Lado del Servidor
+    var $cedula;
+    
+    public function consultar(){
+        
+        if(is_numeric($this->post->cedula)){
+            $this->cedula = $this->post->cedula; 
+        }else{
+            throw_exception("Debe Ingresar una cedula");
+        }
+    }
     
     public function registrar(){
         $this->post->tipo = "C";
+        $this->post->cedula = $cedula; 
         $emp = new empleado($this->post);
         
         $this->orm->connect();
@@ -20,9 +31,16 @@ class c_registrarcajero extends super_controller {
     {		
        
         if(!is_empty($this->session)){
+            
             $this->engine->assign('title',"Registrar Cajero");
             $this->engine->display('header_regcaj.tpl');
-            $this->engine->display('registrarcajero.tpl');
+            
+            if(!is_numeric($this->cedula)){
+                $this->engine->display('registrarcajero.tpl');            
+            }
+            else{                
+                $this->engine->display('registrarcajero2.tpl');
+            }
             $this->engine->display('footer_regcaj.tpl');
         }
         else{

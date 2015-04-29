@@ -5,6 +5,7 @@ require('configs/include.php');
 class c_registrarcajero extends super_controller {
     
     var $cedula;
+    
     public function registrar(){
         $this->post->tipo = "C";
         $emp = new empleado($this->post);
