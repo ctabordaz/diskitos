@@ -6,7 +6,7 @@
         <li class="A"><a href="registrarcajero.php">A</a></li>
         <li class="B"><a href="ingresarediciones.php">B</a></li>
         <li class="C"><a href="actualizarcantidad.php">C</a></li>    
-        <li class="D"><a href="">D</a></li>
+        <li class="D"><a href="realizarpedido.php">D</a></li>
         <li class="E"><a href="buscarediciones.php">E</a></li>
         <li class="F"><a href="iniciarsesion.php?option=logout">F</a></li>
     </ul>
