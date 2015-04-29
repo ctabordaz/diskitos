@@ -1,25 +1,26 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-25 07:24:11
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-29 18:31:06
          compiled from "C:/xampp/htdocs/diskitos/templates\registrarcajero.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:8597553b24fb93d053-41346354%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:260765541074a3a7887-39220457%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1c51daaf388c1a55baef420e18dfd7fb69e4f7cd' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\registrarcajero.tpl',
-      1 => 1429939448,
+      1 => 1430325063,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '8597553b24fb93d053-41346354',
+  'nocache_hash' => '260765541074a3a7887-39220457',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
+<br><br><br><br>
 <div id="content">
     <div class="container">  
-        <br><br><br><br>
+        <br>
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-1">
                 <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
@@ -67,6 +68,5 @@ registrarcajero.php?option=registrar" method="post">
         </div>
     </div>
     <hr />
-    
-    <br><br>
+    <br>
 </div>

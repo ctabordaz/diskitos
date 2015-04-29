@@ -1,6 +1,7 @@
+<br><br><br><br>
 <div id="content">
     <div class="container">  
-        <br><br><br><br>
+        <br>
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-1">
                 <form action="{$gvar.l_global}registrarcajero.php?option=registrar" method="post">
@@ -47,6 +48,5 @@
         </div>
     </div>
     <hr />
-    
-    <br><br>
+    <br>
 </div>

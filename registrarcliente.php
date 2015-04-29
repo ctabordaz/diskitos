@@ -15,11 +15,9 @@ class c_registrarcajero extends super_controller {
     }
     
     public function consultar(){
-        print_r2($this->post);
+        
         if(is_numeric($this->post->cedula)){
-            $this->cedula = $this->post->cedula;
-            print_r2($this->cedula);
-            
+            $this->cedula = $this->post->cedula;           
             
             
         }else{

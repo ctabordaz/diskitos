@@ -1,10 +1,30 @@
+<?php /* Smarty version Smarty-3.0.9, created on 2015-04-29 18:28:05
+         compiled from "C:/xampp/htdocs/diskitos/templates\registrarcliente2.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1941355410695203f48-89765714%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '9a0e07069462fa1832d75df705fa12830b04ca59' => 
+    array (
+      0 => 'C:/xampp/htdocs/diskitos/templates\\registrarcliente2.tpl',
+      1 => 1430324881,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1941355410695203f48-89765714',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
 <br><br><br><br>
 <div id="content">
     <div class="container">  
         <br><br>
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-1">
-                <form action="{$gvar.l_global}registrarcliente.php?option=registrar" method="post">
+                <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
+registrarcliente.php?option=registrar" method="post">
                     <h2>Registrar Cliente <small>Por favor complete los campos.</small></h2>
                     <hr class="colorgraph">
                     <div class="form-group">
