@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-04 04:04:30
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-04 15:35:14
          compiled from "C:/wamp/www/diskitos/templates\generarfactura.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:107665546efce60a486-50854349%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_smarty_tpl->decodeProperties(array (
     'aec8d670f986095ffac05111879c6beec0e21b72' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\generarfactura.tpl',
-      1 => 1430712265,
+      1 => 1430753512,
       2 => 'file',
     ),
   ),
