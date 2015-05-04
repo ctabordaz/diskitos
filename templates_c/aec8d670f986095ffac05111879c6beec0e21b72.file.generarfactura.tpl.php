@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-04 15:35:14
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-04 16:25:37
          compiled from "C:/wamp/www/diskitos/templates\generarfactura.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:107665546efce60a486-50854349%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:369155479d813bb492-72018344%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'aec8d670f986095ffac05111879c6beec0e21b72' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\generarfactura.tpl',
-      1 => 1430753512,
+      1 => 1430756732,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '107665546efce60a486-50854349',
+  'nocache_hash' => '369155479d813bb492-72018344',
   'function' => 
   array (
   ),
@@ -147,17 +147,29 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 <script type="text/javascript">
     $("#agregar").click(function(){
         
-        var arr =  <?php echo $_smarty_tpl->getVariable('edicion')->value->auxiliars;?>
+        var ediciones = [];
+        <?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('edicion')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['e']->key => $_smarty_tpl->tpl_vars['e']->value){
+?>
+                var edicion = new Object();
+                edicion.cod = <?php echo $_smarty_tpl->getVariable('e')->value->get('codigo_de_barras');?>
 ;
-        
-        
-      
- 
-
-        
-           $("#tabla tr:last").after("<tr><td><?php echo $_smarty_tpl->getVariable('edicion')->value[1]->get('codigo_de_barras');?>
-</td></tr>"); 
-    
+                edicion.cantidad = <?php echo $_smarty_tpl->getVariable('e')->value->get('cantidad');?>
+;
+                edicion.precio = <?php echo $_smarty_tpl->getVariable('e')->value->get('precio');?>
+;
+                edicion.titulo = "<?php echo $_smarty_tpl->getVariable('e')->value->auxiliars['titulo'];?>
+-<?php echo $_smarty_tpl->getVariable('e')->value->get('formato');?>
+";
+                ediciones.push(edicion);
+        <?php }} ?>
+         var n = $("#ediciones option:selected").val();
+         if(n !== ""){
+                 $("#tabla tr:last").after("<tr><td>"+ediciones[n].cod+"</td></tr>");  
+            }
+             
     });
     
     

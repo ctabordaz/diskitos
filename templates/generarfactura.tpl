@@ -94,15 +94,20 @@
 <script type="text/javascript">
     $("#agregar").click(function(){
         
-        var arr =  {$edicion->auxiliars};
-        
-        
-      
- 
-
-        
-        {literal}   $("#tabla tr:last").after("<tr><td>{/literal}{$edicion[1]->get('codigo_de_barras')}{literal}</td></tr>"); {/literal}
-    
+        var ediciones = [];
+        {foreach $edicion as $e}
+                var edicion = new Object();
+                edicion.cod = {$e->get('codigo_de_barras')};
+                edicion.cantidad = {$e->get('cantidad')};
+                edicion.precio = {$e->get('precio')};
+                edicion.titulo = "{$e->auxiliars['titulo']}-{$e->get('formato')}";
+                ediciones.push(edicion);
+        {/foreach}
+         var n = $("#ediciones option:selected").val();
+         if(n !== ""){
+                 $("#tabla tr:last").after("<tr><td>"+ediciones[n].cod+"</td></tr>");  
+            }
+             
     });
     
     
