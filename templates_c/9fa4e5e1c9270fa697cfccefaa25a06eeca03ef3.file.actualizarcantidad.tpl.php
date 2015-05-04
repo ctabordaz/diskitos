@@ -1,23 +1,29 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-23 13:26:08
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-03 18:56:22
          compiled from "C:/wamp/www/diskitos/templates\actualizarcantidad.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:249415538f2f0a4a085-42633781%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:36455466f568728b6-59712595%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9fa4e5e1c9270fa697cfccefaa25a06eeca03ef3' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\actualizarcantidad.tpl',
-      1 => 1429795562,
+      1 => 1430679379,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '249415538f2f0a4a085-42633781',
+  'nocache_hash' => '36455466f568728b6-59712595',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
 
+  <link rel="stylesheet" href="./js/chosen/docsupport/prism.css">
+  <link rel="stylesheet" href="./js/chosen/chosen.css">
+  <style type="text/css" media="all">
+    /* fix rtl for demo */
+    .chosen-rtl .chosen-drop { left: -9000px; }
+  </style>
 	<div id="content">
 		  <div class="row">
                         <img class="img" src="./images/Admin/d.jpg" />

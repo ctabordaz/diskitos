@@ -1,4 +1,10 @@
 
+  <link rel="stylesheet" href="./js/chosen/docsupport/prism.css">
+  <link rel="stylesheet" href="./js/chosen/chosen.css">
+  <style type="text/css" media="all">
+    /* fix rtl for demo */
+    .chosen-rtl .chosen-drop { left: -9000px; }
+  </style>
 	<div id="content">
 		  <div class="row">
                         <img class="img" src="./images/Admin/d.jpg" />

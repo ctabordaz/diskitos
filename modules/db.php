@@ -209,6 +209,14 @@ class db
                                     break;
                             }
 			break;
+			case "cliente":
+                            switch($option['lvl2'])
+                            {
+                                case "all": 
+                                     $info=$this->get_data("SELECT * FROM cliente;");
+                                    break;
+                            }
+			break;
 			case "edicion":
                             switch($option['lvl2'])
                             {

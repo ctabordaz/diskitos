@@ -85,6 +85,13 @@ managerScreen = {
             n = 2;
         }
        }
+    },
+    
+    insertar: function(){
+     
+        
+        
+        
     }
   
     

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-22 15:15:59
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-03 17:50:28
          compiled from "C:/wamp/www/diskitos/templates\funcionC.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:313155537bb2feaeb44-44290848%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1224555465fe4e3bca7-84752626%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '192bc6d7588fec28e31c7ba608c47f51afe63a94' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\funcionC.tpl',
-      1 => 1429662652,
+      1 => 1430675425,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '313155537bb2feaeb44-44290848',
+  'nocache_hash' => '1224555465fe4e3bca7-84752626',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_smarty_tpl->decodeProperties(array (
 <div class="jimgMenu">
     <ul>
         <li class="Z"><a href="">Z</a></li>
-        <li class="Y"><a href="">Y</a></li>
+        <li class="Y"><a href="registrarcliente.php">Y</a></li>
         <li class="X"><a href="buscarediciones.php">X</a></li>    
-        <li class="W"><a href="">W</a></li>
+        <li class="W"><a href="generarfactura.php">W</a></li>
         <li class="V"><a href="iniciarsesion.php?option=logout">V</a></li>
     </ul>
 </div>

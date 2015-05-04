@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-23 13:28:22
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-03 18:55:51
          compiled from "C:/wamp/www/diskitos/templates\headera.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:298695538f376cd6a60-75598940%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2597655466f37f2e537-00327986%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '96eda0edc772a7f29d6f6675be05284bbdf0ed55' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\headera.tpl',
-      1 => 1429795698,
+      1 => 1430679348,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '298695538f376cd6a60-75598940',
+  'nocache_hash' => '2597655466f37f2e537-00327986',
   'function' => 
   array (
   ),
@@ -26,18 +26,12 @@ $_smarty_tpl->decodeProperties(array (
         <link rel="shortcut icon" href="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
 disk.ico" />
         
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         <link rel="stylesheet"  href="./css/bootstrap.min.css">
         <link rel="stylesheet"  href="./css/ingresarediciones.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	
-        <link rel="stylesheet" href="./js/chosen/chosen.css">
-        <style type="text/css" media="all">
-          /* fix rtl for demo */
-          .chosen-rtl .chosen-drop { left: -9000px; }
-        </style>
-        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-        
-        
+     
         
 </head>
 <body>
