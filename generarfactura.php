@@ -33,7 +33,7 @@ class c_generarfactura extends super_controller {
 	
 	public function run()
 	{
-		$this->display();
+            $this->display();
 	}
 }
 
