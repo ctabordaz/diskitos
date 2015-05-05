@@ -67,14 +67,14 @@ class c_ingresarediciones extends super_controller {
             }
         }
 
-        function CamposVacios_PC()
+        function CamposVacios_C($cancion)
         {
-
-        }
-
-        function CamposVacios_RC()
-        {
-
+            if( $cancion->get("nombre") == "" || $cancion->get("compositor") == "" || 
+                $cancion->get("duracion") == ":" ){                
+                return 1;                
+            } else{
+                return 0;
+            }
         }
 
         $extension = extensionFile($_FILES["caratula"]["name"]);
@@ -94,13 +94,14 @@ class c_ingresarediciones extends super_controller {
         $edicion = new edicion($this->post);
 
         if(CamposVacios_EA($album, $edicion) == 1){
-            $this->engine->assign("cargar","ms.faltantes()");
+            $this->engine->assign("cargar","faltanteEA()");
         } else{
         
-            $this->orm->connect();
-            $this->orm->insert_data("album",$album);
-            $this->orm->insert_data("edicion",$edicion);
-
+            $this->orm->connect();            
+            
+            $flag = 1;
+            $song = array(); 
+            
             for($n=1;$n<=$this->post->nca;$n++){
 
                 settype($data,'object');
@@ -116,9 +117,32 @@ class c_ingresarediciones extends super_controller {
                 $data->duracion = $d;
                 $data->album= $this->post->nro_catalogo;
                 $cancion = new cancion($data);
-
-                $this->orm->insert_data("cancion",$cancion);
+                
+                if($n == 1){
+                    if(CamposVacios_C($cancion) == 1){
+                        $this->engine->assign("cargar","faltantePC()");
+                        $flag = -1;
+                        break;
+                    } 
+                } else{
+                    if(CamposVacios_C($cancion) == 1){
+                        $this->engine->assign("cargar","faltanteRC()");
+                        $flag = -1;
+                        break;
+                    } 
+                }
+                
+                 array_push($song , $cancion); 
             }   
+            
+            if($flag == 1){
+                $this->orm->insert_data("album",$album);
+                $this->orm->insert_data("edicion",$edicion);
+                
+                for($n=0; $n<$this->post->nca; $n++){
+                    $this->orm->insert_data("cancion",$song[$n]);
+                }
+            }
             $this->orm->close();
         }
     }
@@ -126,7 +150,6 @@ class c_ingresarediciones extends super_controller {
     public function display()                
     {		
         $this->engine->assign('title',"Ingresar Ediciones");
-        $this->engine->display('headera.tpl');
         $this->engine->display('ingresarediciones.tpl');
         $this->engine->display('footerd.tpl');
     }
