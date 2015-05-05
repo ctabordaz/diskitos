@@ -116,9 +116,9 @@
                          +ediciones[n].titulo+
                          "</td><td>"
                          +ediciones[n].cantidad+
-                         "</td><td><input type='number' min=0  max="+ediciones[n].cantidad+" name='"+ediciones[n].cod+"' onChange='valort(this.value);' class='mytext'></td><td>"
+                         "</td><td><input type='number' min=0  max="+ediciones[n].cantidad+" name='"+ediciones[n].cod+"' onChange='valort(this.value,"+ediciones[n].precio+","+ediciones[n].cod+");' class='mytext'></td><td>"
                          +ediciones[n].precio+
-                         "</td><td><spam></spam></td><td>"
+                         "</td><td><spam class="+ediciones[n].cod+"></spam></td><td>"
                          +boton+
                          "</td></tr>");  
             }
@@ -132,10 +132,10 @@
              $(objFila).remove();
     });
     
-    function valort(cant){
-         alert(cant);
-        
+    function valort(cant,valor,sp){
          
+         total = cant*valor;
+         $("."+sp).text(total);
          
     };
     
