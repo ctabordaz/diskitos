@@ -68,6 +68,7 @@
                 <th>Unidades</th>
                 <th>Valor U</th>
                 <th>Valor T</th>
+                <th></th>
                 </tr>
                 
             </table>
@@ -92,9 +93,8 @@
 
 </div>
 <script type="text/javascript">
-    $("#agregar").click(function(){
-        
-        var ediciones = [];
+    
+    var ediciones = [];
         {foreach $edicion as $e}
                 var edicion = new Object();
                 edicion.cod = {$e->get('codigo_de_barras')};
@@ -103,12 +103,42 @@
                 edicion.titulo = "{$e->auxiliars['titulo']}-{$e->get('formato')}";
                 ediciones.push(edicion);
         {/foreach}
+    
+    $("#agregar").click(function(){
+        
+        
          var n = $("#ediciones option:selected").val();
          if(n !== ""){
-                 $("#tabla tr:last").after("<tr><td>"+ediciones[n].cod+"</td></tr>");  
+                  var boton = "<button  type='button' id='"+n+"' class='eliminarf btn btn-default btn-circle btn-lg'><i class='glyphicon glyphicon-minus'></i></button>";
+                 $("#tabla tr:last").after("<tr><td>"
+                         +ediciones[n].cod+
+                         "</td><td>"
+                         +ediciones[n].titulo+
+                         "</td><td>"
+                         +ediciones[n].cantidad+
+                         "</td><td><input type='number' min=0  max="+ediciones[n].cantidad+" name='"+ediciones[n].cod+"' onChange='valort(this.value);' class='mytext'></td><td>"
+                         +ediciones[n].precio+
+                         "</td><td><spam></spam></td><td>"
+                         +boton+
+                         "</td></tr>");  
             }
              
     });
+    
+    
+     $(document).on('click','.eliminarf',function(){
+            
+        var objFila=$(this).parents().get(1);
+             $(objFila).remove();
+    });
+    
+    function valort(cant){
+         alert(cant);
+        
+         
+         
+    };
+    
     
     
     

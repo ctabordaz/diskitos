@@ -24,7 +24,7 @@ class c_generarfactura extends super_controller {
             $this->orm->close();
 
             $this->engine->assign('edicion',  $this->edicion);
-            print_r2($this->edicion);
+            //print_r2($this->edicion);
             $this->engine->assign('title',"Generar Factura");
             $this->engine->display('headerc.tpl');
             $this->engine->display('generarfactura.tpl');

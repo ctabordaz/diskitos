@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-04 16:25:37
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-05 03:46:59
          compiled from "C:/wamp/www/diskitos/templates\generarfactura.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:369155479d813bb492-72018344%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2358855483d337b0803-31610997%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'aec8d670f986095ffac05111879c6beec0e21b72' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\generarfactura.tpl',
-      1 => 1430756732,
+      1 => 1430797615,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '369155479d813bb492-72018344',
+  'nocache_hash' => '2358855483d337b0803-31610997',
   'function' => 
   array (
   ),
@@ -121,6 +121,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                 <th>Unidades</th>
                 <th>Valor U</th>
                 <th>Valor T</th>
+                <th></th>
                 </tr>
                 
             </table>
@@ -145,9 +146,8 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 
 </div>
 <script type="text/javascript">
-    $("#agregar").click(function(){
-        
-        var ediciones = [];
+    
+    var ediciones = [];
         <?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable;
  $_from = $_smarty_tpl->getVariable('edicion')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 if ($_smarty_tpl->_count($_from) > 0){
@@ -165,12 +165,42 @@ if ($_smarty_tpl->_count($_from) > 0){
 ";
                 ediciones.push(edicion);
         <?php }} ?>
+    
+    $("#agregar").click(function(){
+        
+        
          var n = $("#ediciones option:selected").val();
          if(n !== ""){
-                 $("#tabla tr:last").after("<tr><td>"+ediciones[n].cod+"</td></tr>");  
+                  var boton = "<button  type='button' id='"+n+"' class='eliminarf btn btn-default btn-circle btn-lg'><i class='glyphicon glyphicon-minus'></i></button>";
+                 $("#tabla tr:last").after("<tr><td>"
+                         +ediciones[n].cod+
+                         "</td><td>"
+                         +ediciones[n].titulo+
+                         "</td><td>"
+                         +ediciones[n].cantidad+
+                         "</td><td><input type='number' min=0  max="+ediciones[n].cantidad+" name='"+ediciones[n].cod+"' onChange='valort(this.value);' class='mytext'></td><td>"
+                         +ediciones[n].precio+
+                         "</td><td><spam></spam></td><td>"
+                         +boton+
+                         "</td></tr>");  
             }
              
     });
+    
+    
+     $(document).on('click','.eliminarf',function(){
+            
+        var objFila=$(this).parents().get(1);
+             $(objFila).remove();
+    });
+    
+    function valort(cant){
+         alert(cant);
+        
+         
+         
+    };
+    
     
     
     

@@ -87,12 +87,7 @@ managerScreen = {
        }
     },
     
-    insertar: function(){
-     
-        
-        
-        
-    }
+   
   
     
 };
