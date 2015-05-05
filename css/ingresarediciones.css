@@ -101,6 +101,12 @@ span{
     overflow-y: scroll;
 }
 
+#factura{
+    width: 850px;
+    height: 260px;
+    overflow-y: scroll;
+}
+
 #cantidad { 
     width: 150%;
     margin-left: -25px;
@@ -172,4 +178,16 @@ span{
 
 .mytext {
     width: 60px;
+}
+
+
+.total{
+
+    background-color: #FFF;
+    border-style: solid ;
+    border-width: 1px;
+    border-color: #000;
+    font-size: 21px;
+   
+    
 }

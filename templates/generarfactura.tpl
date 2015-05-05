@@ -48,7 +48,7 @@
                                              {assign var="j" value=$j+1}
                                         {/section}
 					
-				</select>
+                    </select>
 			
 		</div>
             </div>
@@ -60,6 +60,7 @@
         </div>
         <br>                                
         <div class="row">
+            <div id="factura">
             <table  id="tabla" class="table table-striped">
                 <tr>
                 <th>Código de barras</th>
@@ -72,7 +73,22 @@
                 </tr>
                 
             </table>
+            </div>
             
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-5 col-md-offset-7">
+                <div class="col-md-5">
+                         <b>Total:  </b>
+                </div>
+                <div class="col-md-5 col-md-offset-2" >
+                        <spam class="total">0</spam>
+                </div>
+              
+            
+                
+            </div>
         </div>
               
                                         
@@ -109,8 +125,18 @@
         
          var n = $("#ediciones option:selected").val();
          if(n !== ""){
+             var flag=0;
+             $(".codb").each(function(){
+                 if($(this).text() == ediciones[n].cod){
+                      flag = 1;
+                 }
+    
+             });
+             
+             if(flag !== 1){
+             
                   var boton = "<button  type='button' id='"+n+"' class='eliminarf btn btn-default btn-circle btn-lg'><i class='glyphicon glyphicon-minus'></i></button>";
-                 $("#tabla tr:last").after("<tr><td>"
+                 $("#tabla tr:last").after("<tr><td class='codb'>"
                          +ediciones[n].cod+
                          "</td><td>"
                          +ediciones[n].titulo+
@@ -118,10 +144,10 @@
                          +ediciones[n].cantidad+
                          "</td><td><input type='number' min=0  max="+ediciones[n].cantidad+" name='"+ediciones[n].cod+"' onChange='valort(this.value,"+ediciones[n].precio+","+ediciones[n].cod+");' class='mytext'></td><td>"
                          +ediciones[n].precio+
-                         "</td><td><spam class="+ediciones[n].cod+"></spam></td><td>"
+                         "</td><td><spam  class='"+ediciones[n].cod+" vt'"+"></spam></td><td>"
                          +boton+
                          "</td></tr>");  
-            }
+            }}
              
     });
     
@@ -130,12 +156,30 @@
             
         var objFila=$(this).parents().get(1);
              $(objFila).remove();
+             
+       total = 0;
+	$(".vt").each(
+		function(index, value) {
+			total = total + eval(Number($(this).text()));
+		}
+	);
+	 $(".total").text(total);
+             
     });
     
     function valort(cant,valor,sp){
          
          total = cant*valor;
          $("."+sp).text(total);
+         
+         totalf=0;
+         $(".vt").each(
+		function(index, value) {
+			totalf = totalf + eval(Number($(this).text()));
+		}
+	);
+	 $(".total").text(totalf);
+         
          
     };
     

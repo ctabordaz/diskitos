@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-05 03:59:49
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-05 14:44:50
          compiled from "C:/wamp/www/diskitos/templates\generarfactura.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2370554840353c0df8-78070499%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:258025548d7625a9651-77106754%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'aec8d670f986095ffac05111879c6beec0e21b72' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\generarfactura.tpl',
-      1 => 1430798144,
+      1 => 1430837085,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2370554840353c0df8-78070499',
+  'nocache_hash' => '258025548d7625a9651-77106754',
   'function' => 
   array (
   ),
@@ -101,7 +101,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                                              <?php $_smarty_tpl->tpl_vars["j"] = new Smarty_variable($_smarty_tpl->getVariable('j')->value+1, null, null);?>
                                         <?php endfor; endif; ?>
 					
-				</select>
+                    </select>
 			
 		</div>
             </div>
@@ -113,6 +113,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
         </div>
         <br>                                
         <div class="row">
+            <div id="factura">
             <table  id="tabla" class="table table-striped">
                 <tr>
                 <th>Código de barras</th>
@@ -125,7 +126,22 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                 </tr>
                 
             </table>
+            </div>
             
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-5 col-md-offset-7">
+                <div class="col-md-5">
+                         <b>Total:  </b>
+                </div>
+                <div class="col-md-5 col-md-offset-2" >
+                        <spam class="total">0</spam>
+                </div>
+              
+            
+                
+            </div>
         </div>
               
                                         
@@ -171,8 +187,18 @@ if ($_smarty_tpl->_count($_from) > 0){
         
          var n = $("#ediciones option:selected").val();
          if(n !== ""){
+             var flag=0;
+             $(".codb").each(function(){
+                 if($(this).text() == ediciones[n].cod){
+                      flag = 1;
+                 }
+    
+             });
+             
+             if(flag !== 1){
+             
                   var boton = "<button  type='button' id='"+n+"' class='eliminarf btn btn-default btn-circle btn-lg'><i class='glyphicon glyphicon-minus'></i></button>";
-                 $("#tabla tr:last").after("<tr><td>"
+                 $("#tabla tr:last").after("<tr><td class='codb'>"
                          +ediciones[n].cod+
                          "</td><td>"
                          +ediciones[n].titulo+
@@ -180,10 +206,10 @@ if ($_smarty_tpl->_count($_from) > 0){
                          +ediciones[n].cantidad+
                          "</td><td><input type='number' min=0  max="+ediciones[n].cantidad+" name='"+ediciones[n].cod+"' onChange='valort(this.value,"+ediciones[n].precio+","+ediciones[n].cod+");' class='mytext'></td><td>"
                          +ediciones[n].precio+
-                         "</td><td><spam class="+ediciones[n].cod+"></spam></td><td>"
+                         "</td><td><spam  class='"+ediciones[n].cod+" vt'"+"></spam></td><td>"
                          +boton+
                          "</td></tr>");  
-            }
+            }}
              
     });
     
@@ -192,12 +218,30 @@ if ($_smarty_tpl->_count($_from) > 0){
             
         var objFila=$(this).parents().get(1);
              $(objFila).remove();
+             
+       total = 0;
+	$(".vt").each(
+		function(index, value) {
+			total = total + eval(Number($(this).text()));
+		}
+	);
+	 $(".total").text(total);
+             
     });
     
     function valort(cant,valor,sp){
          
          total = cant*valor;
          $("."+sp).text(total);
+         
+         totalf=0;
+         $(".vt").each(
+		function(index, value) {
+			totalf = totalf + eval(Number($(this).text()));
+		}
+	);
+	 $(".total").text(totalf);
+         
          
     };
     
