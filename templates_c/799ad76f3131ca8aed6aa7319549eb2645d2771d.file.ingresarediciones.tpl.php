@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-05 01:58:59
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-05 02:10:49
          compiled from "C:/xampp/htdocs/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:11591554807c3505af1-48451925%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:338255480a8974e212-41513108%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '799ad76f3131ca8aed6aa7319549eb2645d2771d' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1430783935,
+      1 => 1430784259,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '11591554807c3505af1-48451925',
+  'nocache_hash' => '338255480a8974e212-41513108',
   'function' => 
   array (
   ),
@@ -173,7 +173,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                                         <p>Nombre: </p>
                                     </div>
                                     <div class="col-md-2">
-                                        <input  type="text" name="ncancion1" id="ncancion1" />
+                                        <input  type="text" name="ncancion1" id="ncancion1" required/>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -181,7 +181,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                                         <p>Compositor: </p>
                                     </div>
                                     <div class="col-md-2">
-                                        <input  type="text" name="ccancion1" id="ccancion1" />
+                                        <input  type="text" name="ccancion1" id="ccancion1" required/>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -189,11 +189,11 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                                         <p>Duración: </p>
                                     </div>
                                     <div class="col-md-offset-1 col-md-2">
-                                        <input  type="number" class="duracion" min="0" max="10" name="duraciona1" id="duraciona1" />
+                                        <input  type="number" class="duracion" min="0" max="10" name="duraciona1" id="duraciona1" required/>
                                     </div>
 
                                     <div class="col-md-2">
-                                        <input  type="number" class="duracion" min="0" max="59" name="duracionb1" id="duracionb1" />
+                                        <input  type="number" class="duracion" min="0" max="59" name="duracionb1" id="duracionb1" required/>
                                     </div>
                                 </div>
                             </div>

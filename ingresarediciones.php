@@ -5,7 +5,8 @@ require('configs/include.php');
 class c_ingresarediciones extends super_controller {
         
     public function ingresar(){
-
+        
+        // verificar que no se inserte un album ya registrado
         function verificarClaves($objeto, $nc)
         {
             $objeto->orm->connect();
@@ -76,6 +77,37 @@ class c_ingresarediciones extends super_controller {
                 return 0;
             }
         }
+        
+        function ValoresNumericos_EA($album, $edicion)
+        {
+            if( is_numeric($album->get("nro_catalogo")) && 
+                is_numeric($album->get("ano_publicacion")) &&
+                is_numeric($edicion->get("cantidad")) &&
+                is_numeric($edicion->get("precio")) ){            
+                return 0;                
+            } else{
+                return 1;
+            }
+        }
+        
+        function ValoresNumericos_C($minutes, $seconds)
+        {
+            if( is_numeric($minutes) && 
+                is_numeric($seconds) ){               
+                return 0;                
+            } else{
+                return 1;
+            }
+        }
+        
+        function VerificarRangoTemporal($minutes, $seconds)
+        {
+            if( $minutes>=0 && $minutes<=59 && $seconds>=0 && $seconds<=59 ){               
+                return 0;                
+            } else{
+                return 1;
+            }
+        }
 
         $extension = extensionFile($_FILES["caratula"]["name"]);
         $nr = aprobarCaratula($extension);
@@ -95,6 +127,8 @@ class c_ingresarediciones extends super_controller {
 
         if(CamposVacios_EA($album, $edicion) == 1){
             $this->engine->assign("cargar","faltanteEA()");
+        } elseif(ValoresNumericos_EA($album, $edicion) == 1){
+            $this->engine->assign("cargar","numericosEA()");
         } else{
         
             $this->orm->connect();            
@@ -123,7 +157,7 @@ class c_ingresarediciones extends super_controller {
                         $this->engine->assign("cargar","faltantePC()");
                         $flag = -1;
                         break;
-                    } 
+                    }
                 } else{
                     if(CamposVacios_C($cancion) == 1){
                         $this->engine->assign("cargar","faltanteRC()");
@@ -132,7 +166,13 @@ class c_ingresarediciones extends super_controller {
                     } 
                 }
                 
-                 array_push($song , $cancion); 
+                if(ValoresNumericos_C($this->post->$da, $this->post->$db) == 1){
+                    $this->engine->assign("cargar","numericosC()");
+                    $flag = -1;
+                    break;
+                }
+                
+                array_push($song , $cancion); 
             }   
             
             if($flag == 1){

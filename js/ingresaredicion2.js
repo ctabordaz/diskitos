@@ -12,3 +12,13 @@ function faltanteRC(){
         alertify.set('notifier','position', 'top-right');
         alertify.error("Se deben completar los datos de todas las canciones agregadas",60);    
 }
+
+function numericosEA(){
+        alertify.set('notifier','position', 'top-right');
+        alertify.error("Los campos: Cantidad, Precio, Nro de Catalogo y Año de publicacion, deben ser numéricos",60);    
+}
+
+function numericosC(){
+        alertify.set('notifier','position', 'top-right');
+        alertify.error("La duración de las canciones debe ser numérica",60);    
+}
