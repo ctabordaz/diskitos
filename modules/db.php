@@ -257,7 +257,9 @@ class db
                                     $keyword = mysqli_real_escape_string($this->cn, $data['keyword']);
                                     $info=$this->get_data("SELECT e.*,a.* FROM edicion e, album a WHERE a.nro_catalogo = e.album AND (a.titulo LIKE '$keyword');");
                                     break;
-                                
+                                case "all": 
+                                     $info=$this->get_data("select e.*,a.* from edicion e, album a where a.nro_catalogo = e.album;");
+                                    break;
                             }
 			break;
                     
