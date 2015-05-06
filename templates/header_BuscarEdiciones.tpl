@@ -2,6 +2,9 @@
     <head>
         <title>{$title}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+        <link rel="stylesheet" href="./js/alertifyjs/css/alertify.min.css"/>
+        <link rel="stylesheet" href="./js/alertifyjs/css/themes/default.min.css"/>
         <link rel="shortcut icon" href="{$gvar.l_global}disk.ico" />
         <link rel="stylesheet"  href="./css/bootstrap.min.css">
         <link rel="stylesheet"  href="./css/buscarediciones.css">

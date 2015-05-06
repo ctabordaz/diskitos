@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-21 05:01:03
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 16:07:14
          compiled from "C:/xampp/htdocs/diskitos/templates\buscarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:224545535bd6fe17193-42142286%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:28728554a201253a5b0-68387798%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '33df546d76293be7772084a3fb6c4791cc43ec36' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\buscarediciones.tpl',
-      1 => 1429585261,
+      1 => 1430921024,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '224545535bd6fe17193-42142286',
+  'nocache_hash' => '28728554a201253a5b0-68387798',
   'function' => 
   array (
   ),
@@ -44,7 +44,7 @@ buscarediciones.php?option=consultar" method="POST">
                    
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-text-size"></i></span>
-                        <input id="palabra" type="text" class="form-control" name="palabra" value="" placeholder="Titulo, Autor o Cancion">                                        
+                        <input id="palabra" type="text" class="form-control" name="palabra" value="" placeholder="Titulo, Autor o Cancion" required>                                        
                     </div>                                                               
 
                     <div class="form-group">

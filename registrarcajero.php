@@ -1,6 +1,7 @@
 <?php
 
 require('configs/include.php');
+require('modules/m_phpass/PasswordHash.php');
 
 class c_registrarcajero extends super_controller {
     
@@ -103,7 +104,11 @@ class c_registrarcajero extends super_controller {
         }
         
         $this->post->tipo = "C";
-        $this->post->cedula = $this->cedula; 
+        
+        $hasher = new PasswordHash(8, FALSE);
+        $pass = $hasher->HashPassword($this->post->contraseña);
+        $this->post->contraseña = $pass; 
+        
         $emp = new empleado($this->post);
         
         if(CamposVacios($emp) == 1){
@@ -130,6 +135,7 @@ class c_registrarcajero extends super_controller {
                 $this->engine->display('registrarcajero.tpl');            
             }
             else{                
+                $this->engine->assign("ide", $this->cedula);
                 $this->engine->display('registrarcajero2.tpl');
             }
             $this->engine->display('footer_regcaj.tpl');

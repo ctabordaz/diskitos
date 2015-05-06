@@ -33,7 +33,7 @@
                                 <div class="form-group">
                                     <input type="number" name="salario" id="salario" min="0" class="form-control input-lg" placeholder="Salario" tabindex="6" required />
                                     <input type="hidden" name="tipo" id="tipo" />
-                                    <input type="hidden" name="cedulo" id="cedula" />
+                                    <input type="hidden" name="cedula" id="cedula" value="{$ide}"/>
                                 </div>
                             </div>
                         </div>
