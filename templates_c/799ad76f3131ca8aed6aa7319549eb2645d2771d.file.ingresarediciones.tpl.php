@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-05 02:10:49
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 14:04:37
          compiled from "C:/xampp/htdocs/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:338255480a8974e212-41513108%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:32599554a03558f39e8-04945952%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '799ad76f3131ca8aed6aa7319549eb2645d2771d' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1430784259,
+      1 => 1430913667,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '338255480a8974e212-41513108',
+  'nocache_hash' => '32599554a03558f39e8-04945952',
   'function' => 
   array (
   ),
@@ -22,21 +22,14 @@ $_smarty_tpl->decodeProperties(array (
         <meta charset="UTF-8">
         <title>Ingresar Ediciones</title>
         
-        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-        
-        <script src="./js/alertifyjs/alertify.min.js"></script>
         <link rel="stylesheet" href="./js/alertifyjs/css/alertify.min.css"/>
         <link rel="stylesheet" href="./js/alertifyjs/css/themes/default.min.css"/>
-
         <link rel="shortcut icon" href="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
 disk.ico" />
-
         <link rel="stylesheet"  href="./css/bootstrap.min.css">
         <link rel="stylesheet"  href="./css/ingresarediciones.css">        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
         
-        <script src="./js/ingresaredicion2.js"></script>
     </head>
     <body <?php if (isset($_smarty_tpl->getVariable('cargar',null,true,false)->value)){?>onload="<?php echo $_smarty_tpl->getVariable('cargar')->value;?>
 "<?php }?>>
@@ -54,13 +47,16 @@ disk.ico" />
             <hr />
             <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
 ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-data">
+                
                 <div class="row">
                     <div class="col-md-4">
                         <div class="col-md-5">
                             <p id="formato">Código de Barras:</p>
                         </div>
-                        <div class="col-md-7">
-                            <input type="text" name="codigo_de_barras" id="codigo_de_barras" class="form-control input-md chat-input" required />
+                        <div class="col-md-7 required3">
+                            <input type="text" name="codigo_de_barras" id="codigo_de_barras" class="form-control input-md chat-input" required/>
+                            <input type="hidden" name="funcion_error" value="<?php echo $_smarty_tpl->getVariable('cargar')->value;?>
+">
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -79,7 +75,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                         <div class="col-md-4">
                             <p id="formato" class="atredi2">Cantidad:</p>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 required3">
                             <input type="number" min="0" name="cantidad" id="cantidad" class="form-control input-md chat-input" placeholder="0" required/>
                         </div>
                     </div>
@@ -87,7 +83,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                         <div class="col-md-4">
                             <p id="formato" class="atredi">Precio:</p>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 required3">
                             <input type="number" name="precio" min="0" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
                         </div>
                     </div>
@@ -102,15 +98,15 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                             <div class="col-md-4">
                                 <p>Título:</p>
                             </div>
-                            <div class="col-md-8">
-                                <input  type="text" name="titulo" id="titulo" required />
+                            <div class="col-md-8 required">
+                                <input type="text" name="titulo" id="titulo" required />
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <p>Intérprete:</p>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-8 required">
                                 <input  type="text" name="interprete" id="interprete" required/>
                             </div>
                         </div>
@@ -118,7 +114,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                             <div class="col-md-4">
                                 <p>Nro Catálogo:</p>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-8 required">
                                 <input  type="number" name="nro_catalogo" min="0" id="catalogo" required/>
                                 <input  type="hidden" name="album"/>
                             </div>
@@ -127,7 +123,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                             <div class="col-md-4">
                                 <p>País de Origen:</p>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-8 required">
                                 <input  type="text" name="pais_origen" id="paisorigen" required/>
                             </div>
                         </div>
@@ -135,7 +131,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                             <div class="col-md-4">
                                 <p>Disquera:</p>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-8 required">
                                 <input  type="text" name="disquera" id="disquera" required/>
                             </div>
                         </div>
@@ -143,7 +139,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                             <div class="col-md-4">
                                 <p>Año de publicación:</p>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-8 required">
                                 <input  type="number" min="0" max="2020" name="ano_publicacion" id="agepublicacion" required/>
                             </div>
                         </div>
@@ -151,14 +147,14 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                             <div class="col-md-4">
                                 <p>Género:</p>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-8 required">
                                 <input  type="text" name="genero" id="genero" required/>
                             </div>
                         </div>
                         <div class="row">
                             <p id="caratula1">Carátula:</p>
                         </div>
-                        <div class="row">
+                        <div class="row required">
                             <input id="caratula2" type="file" name="caratula">
                         </div>
                     </div>
@@ -172,7 +168,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                                     <div class="col-md-2">
                                         <p>Nombre: </p>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-10 required">
                                         <input  type="text" name="ncancion1" id="ncancion1" required/>
                                     </div>
                                 </div>
@@ -180,7 +176,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                                      <div class="col-md-2">
                                         <p>Compositor: </p>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-10 required">
                                         <input  type="text" name="ccancion1" id="ccancion1" required/>
                                     </div>
                                 </div>
@@ -188,11 +184,11 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                                      <div class=" col-md-1 ">
                                         <p>Duración: </p>
                                     </div>
-                                    <div class="col-md-offset-1 col-md-2">
+                                    <div class="col-md-offset-1 col-md-3 required2">
                                         <input  type="number" class="duracion" min="0" max="10" name="duraciona1" id="duraciona1" required/>
                                     </div>
 
-                                    <div class="col-md-2">
+                                    <div class="col-md-5 required">
                                         <input  type="number" class="duracion" min="0" max="59" name="duracionb1" id="duracionb1" required/>
                                     </div>
                                 </div>
@@ -227,5 +223,16 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
                 </div>
             </form>
         </div>
+        
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="./js/alertifyjs/alertify.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+        <script src="./js/ingresaredicion2.js"></script>
+        <script src="./js/jquery.backstretch.min.js"></script>
+        <script src="./js/ingresaredicion.js"></script>
+        
+        <script>
+            $.backstretch(["./images/Admin/Tocadiscos2.jpg"]);
+        </script>
     </body>
 </html>

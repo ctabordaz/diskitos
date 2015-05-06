@@ -29,30 +29,37 @@ class c_ingresarediciones extends super_controller {
             }
         }
 
-        function extensionFile($nameFile)
+        function extensionFile($objeto)
         {
-            $nueva_dir = "./images/caratulas/";
-            $nueva_ruta = $nueva_dir . basename($nameFile);
-            $imageFileType = pathinfo($nueva_ruta,PATHINFO_EXTENSION);
+            $tmp_name = $objeto->files->caratula['tmp_name'];
+            
+            if($tmp_name==""){
+                $imageFileType = "";
+            } else{
+                $imageFileType = exif_imagetype($tmp_name);
+            }
             
             return $imageFileType;
         }
 
-        function aprobarCaratula($ext)
+        function aprobarCaratula($ext, $nameFile)
         {
             $nueva_dir = "./images/caratulas/";
             
-            if($ext == "jpg" || $ext == "png" || $ext == "jpeg" || $ext == "gif") {                
+            if (($ext == IMAGETYPE_JPEG) || ($ext == IMAGETYPE_PNG) || ($ext == IMAGETYPE_GIF)
+             || ($ext == IMAGETYPE_BMP)) {
+             
                 $nueva_ruta = $nueva_dir . basename($nameFile);
                 $ruta_temporal = $_FILES['caratula']['tmp_name'];                
-                move_uploaded_file($ruta_temporal,  $nueva_ruta);                
-            } else {
+                move_uploaded_file($ruta_temporal,  $nueva_ruta);
+                
+            }else {
                 $nueva_ruta = $nueva_dir . "sin_caratula.gif";
             }
             
             return $nueva_ruta;
         }
-
+        
         function CamposVacios_EA($album, $edicion)
         {
             if( $album->get("titulo")       == "" || $album->get("interprete")      == "" || 
@@ -108,15 +115,20 @@ class c_ingresarediciones extends super_controller {
                 return 1;
             }
         }
-
-        $extension = extensionFile($_FILES["caratula"]["name"]);
-        $nr = aprobarCaratula($extension);
+        
+        $extension = extensionFile($this);
+        
+        if($extension==""){
+            $nr = aprobarCaratula($extension, "");
+        }else{
+            $nr = aprobarCaratula($extension, $_FILES["caratula"]["name"]);
+        }
+        
 
         if(verificarClaves($this, $this->post->nro_catalogo) == 1){
 
             $nc = $this->post->nro_catalogo; 
-            echo "<script languaje='javascript'>alert('Ya existe un album con número de catalogo = ' + $nc)</script>";
-            // no ejecutar el resto y recargar la pagina con todos los valores
+            $this->engine->assign("cargar","AlbumDB($nc)");
         }
 
         $this->post->caratula = $nr;
@@ -182,13 +194,20 @@ class c_ingresarediciones extends super_controller {
                 for($n=0; $n<$this->post->nca; $n++){
                     $this->orm->insert_data("cancion",$song[$n]);
                 }
+                
+                $this->engine->assign("cargar",""); 
             }
             $this->orm->close();
         }
     }
 
     public function display()                
-    {		
+    {   
+        if(@$this->post->funcion_error != ""){
+            
+            // Se lanzó un error: no debería recargarse la página
+        }
+        
         $this->engine->assign('title',"Ingresar Ediciones");
         $this->engine->display('ingresarediciones.tpl');
         $this->engine->display('footerd.tpl');

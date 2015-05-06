@@ -23,7 +23,7 @@ managerScreen = {
             class: "col-md-2"
         }).append($("<p>Nombre: </p>")),
         $("<div>",{
-            class: "col-md-2"
+            class: "col-md-10 required"
         }).append($("<input>",{
             name: "ncancion" + n,
             id: "ncancion" + n ,
@@ -35,7 +35,7 @@ managerScreen = {
             class: "col-md-2"
         }).append($("<p>Compositor: </p>")),
         $("<div>",{
-            class: "col-md-2"
+            class: "col-md-10 required"
         }).append($("<input>",{
             name: "ccancion" + n,
             id: "ccancion" + n ,
@@ -47,7 +47,7 @@ managerScreen = {
             class: " col-md-1"
         }).append($("<p>Duración: </p>")),
         $("<div>",{
-            class: "col-md-offset-1 col-md-2"
+            class: "col-md-offset-1 col-md-3 required2"
         }).append($("<input>", {
             name: "duraciona" + n,
             id: "duraciona" + n ,
@@ -58,7 +58,7 @@ managerScreen = {
             required: "true"
         }).append($("<p>:</p>"))),
         $("<div>",{
-            class: "col-md-2"
+            class: "col-md-5 required"
         }).append($("<input>",{
             name: "duracionb" + n,
             id: "duracionb" + n ,
@@ -93,4 +93,3 @@ managerScreen = {
 };
 
 var ms = managerScreen;
-

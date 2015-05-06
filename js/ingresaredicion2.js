@@ -1,6 +1,11 @@
+function AlbumDB(nc){
+        alertify.set('notifier','position', 'top-right');
+        alertify.error("Ya existe un album con número de catalogo = " + nc,60);
+}
+
 function faltanteEA(){
         alertify.set('notifier','position', 'top-right');
-        alertify.error("No se ha completado todos los campos",60);    
+        alertify.error("No se ha completado todos los campos",60);
 }
 
 function faltantePC(){
