@@ -255,6 +255,10 @@ class db
                                     
                                     $info=$this->get_data("SELECT * FROM empleado WHERE cedula='$cc';");
                                     break;
+                                case "count_by_ced" :
+                                    $ced = mysqli_real_escape_string($this->cn,$data['cedula']);                            
+                                    $info = $this->get_data("SELECT COUNT(*) AS contador FROM empleado WHERE cedula='$ced';");
+                                    break;
                             }
                         break;    
                     

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-29 18:45:39
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 14:24:49
          compiled from "C:/xampp/htdocs/diskitos/templates\registrarcajero2.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2702755410ab35cbd01-74708871%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:25815554a081125c303-12257738%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '668c39d34aa2d580cd5f5588743129fcd28f1991' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\registrarcajero2.tpl',
-      1 => 1430325934,
+      1 => 1430914714,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2702755410ab35cbd01-74708871',
+  'nocache_hash' => '25815554a081125c303-12257738',
   'function' => 
   array (
   ),

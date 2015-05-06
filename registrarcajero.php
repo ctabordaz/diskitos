@@ -16,7 +16,7 @@ class c_registrarcajero extends super_controller {
 
             $cod['empleado']['cedula'] = $ced;
             $options['empleado']['lvl2']="count_by_ced";
-            $objeto->orm->read_data(array("cedula"),$options,$cod);
+            $objeto->orm->read_data(array("empleado"),$options,$cod);
 
             $datos = $objeto->orm->data;
             $resultado = $datos['empleado'][0];
@@ -26,9 +26,9 @@ class c_registrarcajero extends super_controller {
 
             if($contador ==  1)
             {
-                return 1;
+                return 1; // Existe la persona
             } else {
-                return 0;
+                return 0; // No existe
             }
         }
         
@@ -54,17 +54,17 @@ class c_registrarcajero extends super_controller {
             $ide = $this->post->cedula; 
             $this->engine->assign("cargar","yaExiste($ide)");
             $this->flag = -1;
-        }
-        
-        if(CampoVacio($this->post->cedula) == 1){
-            $this->engine->assign("cargar","faltante()");
-            $this->flag = -1;
-        } elseif(ValorNumerico($this->post->cedula) == 1){
-            $this->engine->assign("cargar","noNumerico()");
-            $this->flag = -1;
-        } else{
-            $this->cedula = $this->post->cedula; 
-            $this->flag = 1;
+        } else{        
+            if(CampoVacio($this->post->cedula) == 1){
+                $this->engine->assign("cargar","faltante()");
+                $this->flag = -1;
+            } elseif(ValorNumerico($this->post->cedula) == 1){
+                $this->engine->assign("cargar","noNumerico()");
+                $this->flag = -1;
+            } else{
+                $this->cedula = $this->post->cedula; 
+                $this->flag = 1;
+            }
         }
     }
     
@@ -93,7 +93,9 @@ class c_registrarcajero extends super_controller {
         
         function ValidarCorreo($empleado)
         {
-            if( $empleado->get("correo") ){            
+            if(strpos($empleado->get("correo"), '@') !== false &&
+               strpos($empleado->get("correo"), '.') !== false &&
+               stripos($empleado->get("correo"), '@') < stripos($empleado->get("correo"), '.')){            
                 return 0;                
             } else{
                 return 1;
@@ -105,11 +107,11 @@ class c_registrarcajero extends super_controller {
         $emp = new empleado($this->post);
         
         if(CamposVacios($emp) == 1){
-            $this->engine->assign("cargar","faltantes_E()");
+            $this->engine->assign("cargar2","faltantes_E()");
         } elseif(ValoresNumericos($emp) == 1){
-            $this->engine->assign("cargar","noNumericos_E()");
+            $this->engine->assign("cargar2","noNumericos_E()");
         } elseif(ValidarCorreo($emp) == 1){
-            $this->engine->assign("cargar","formatoInvalido()");
+            $this->engine->assign("cargar2","formatoInvalido()");
         } else{
             $this->orm->connect();
             $this->orm->insert_data("empleado",$emp);
