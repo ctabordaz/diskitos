@@ -25,6 +25,8 @@ function edicionSeleccionada(event, ui)
 	//cantidad = parseInt(cantidad, 10); // convierte este valor en un entero base 10 (un numero cualquiera)
 	//if (isNaN(cantidad)) cantidad = 0;
 	
+        document.getElementById("lblTitulo").className = "nonhidden";
+        
 	$("#lblTitulo").text("Título: "+edicion.titulo);
 	$("#lblInterprete").text("Intérprete: "+edicion.interprete);
 	$("#lblAnno").text("Año: "+edicion.ano_publicacion);

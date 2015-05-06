@@ -154,6 +154,23 @@ class db
                                         break;
 				}
 				break;
+                        
+                        case "cliente":
+				switch($options['lvl2'])
+				{
+                                    case "cliente":
+                                       
+                                        $nombre = mysqli_real_escape_string($this->cn,$object->get('nombre'));
+                                        $cedula = mysqli_real_escape_string($this->cn, $object->get('cedula'));
+                                        $telefono = mysqli_real_escape_string($this->cn,$object->get('telefono'));
+                                        $correo = mysqli_real_escape_string($this->cn,$object->get('correo'));
+                                        $direccion = mysqli_real_escape_string($this->cn,$object->get('direccion'));
+                                        
+                                        $this->do_operation("INSERT INTO cliente VALUES ('$cedula', '$nombre', "
+                                                . "'$telefono', '$direccion', '$correo');");
+                                        break;
+				}
+				break;
 			
 			default: break;
 		}
@@ -226,6 +243,10 @@ class db
                             {
                                 case "all": 
                                      $info=$this->get_data("SELECT * FROM cliente;");
+                                    break;
+                                case "count_by_ced" :
+                                    $ced = mysqli_real_escape_string($this->cn,$data['cedula']);                            
+                                    $info = $this->get_data("SELECT COUNT(*) AS contador FROM cliente WHERE cedula='$ced';");
                                     break;
                             }
 			break;

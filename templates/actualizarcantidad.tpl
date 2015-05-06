@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link rel="stylesheet" type="text/css" href="css/jquery.ui.css"/>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/ingresarediciones.css" />
-  <script type="text/javascript" src="js/jquery.1.7.1.js"></script>
-  <script type="text/javascript" src="js/jquery.ui.1.8.16.js"></script>
-  <script type="text/javascript" src="js/sc.js"></script>
-  <link rel="shortcut icon" href="{$gvar.l_global}disk.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.ui.css"/>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./js/alertifyjs/css/alertify.min.css"/>
+    <link rel="stylesheet" href="./js/alertifyjs/css/themes/default.min.css"/>
+    <link rel="stylesheet" href="css/ingresarediciones.css" />
+    <link rel="stylesheet" href="css/actualizarcantidad.css" />
+    <script type="text/javascript" src="js/jquery.1.7.1.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.1.8.16.js"></script>
+    <script src="./js/alertifyjs/alertify.min.js"></script>
+    <script src="./js/actualizarcantidad.js"></script>
+    <script type="text/javascript" src="js/sc.js"></script>
+    <link rel="shortcut icon" href="{$gvar.l_global}disk.ico" />
 </head>
-<body>
+<body {if isset($cargar)}onload="{$cargar}"{/if}>
 
   <div id="content">
               
@@ -22,16 +28,17 @@
       <form action="{$gvar.l_global}actualizarcantidad.php?option=actualizar" method="post" enctype="multipart/form-data">
           <div class="row">
              
-              <div class="col-md-4">
+              <div>
                   <div class="row">
-                      <div class="col-md-8">
-                          <h4>Ingresar Edición:</h4>
-                      </div>
-                      <div class="col-md-8">
-                          <div class="input_container">
-                              <input type="text" id="txtEdicion" class="form-control input-md chat-input"/>
-                          </div>
-                      </div>
+                      <table class="table1">
+                            <tr>
+                                <th>Ingresar Edición:</th>
+                                <td class="td_puntos">....</td>
+                                <td>
+                                  <input type="text" id="txtEdicion" class="form-control input-md chat-input"/>
+                                </td>
+                            </tr>
+                      </table>  
                   </div>
               </div>
               
@@ -48,7 +55,7 @@
                   </div>
                 </td>
                 <td>
-                  <div class="col-md-8">
+                  <div class="col-md-12">
                     <div class="row">
                       <label id="lblTitulo">Título: </label>
                     </div>
@@ -81,15 +88,16 @@
                 <td>
                   <label>Cantidad a aumentar: </label>
                 </td>
+                <td class="td_puntos">....</td>
                 <td>
-                  <input type="number" id="cantidad_aumentar" name="cantidad">
+                  <input type="number" class="form-control input-md chat-input" id="cantidad_aumentar" name="cantidad">
                 </td>
               </tr>
             </table>
           <hr />
 
           <div class="row">
-              <button id="actualizar" type="submit" class="btn  btn-sm btn-login">
+              <button id="actualizar" type="submit" class="btn  btn-sm btn-login" >
                   <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Actualizar
               </button>
           </div>

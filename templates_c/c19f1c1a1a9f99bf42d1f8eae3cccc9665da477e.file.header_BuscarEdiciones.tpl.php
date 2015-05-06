@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-21 05:05:27
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 17:52:11
          compiled from "C:/xampp/htdocs/diskitos/templates\header_BuscarEdiciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:245005535be77da2834-53282436%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:21759554a38ab6d6b30-44329846%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'c19f1c1a1a9f99bf42d1f8eae3cccc9665da477e' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\header_BuscarEdiciones.tpl',
-      1 => 1429585525,
+      1 => 1430921494,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '245005535be77da2834-53282436',
+  'nocache_hash' => '21759554a38ab6d6b30-44329846',
   'function' => 
   array (
   ),
@@ -22,6 +22,9 @@ $_smarty_tpl->decodeProperties(array (
         <title><?php echo $_smarty_tpl->getVariable('title')->value;?>
 </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+        <link rel="stylesheet" href="./js/alertifyjs/css/alertify.min.css"/>
+        <link rel="stylesheet" href="./js/alertifyjs/css/themes/default.min.css"/>
         <link rel="shortcut icon" href="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
 disk.ico" />
         <link rel="stylesheet"  href="./css/bootstrap.min.css">

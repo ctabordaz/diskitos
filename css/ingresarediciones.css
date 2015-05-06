@@ -199,6 +199,8 @@ span{
     border-width: 1px;
     border-color: #000;
     font-size: 21px;
-   
-    
+}
+
+.nonhidden {
+   visibility: visible;
 }

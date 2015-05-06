@@ -1,66 +1,68 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 16:07:14
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 17:52:11
          compiled from "C:/xampp/htdocs/diskitos/templates\buscarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:28728554a201253a5b0-68387798%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:4812554a38ab73ca00-17418000%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '33df546d76293be7772084a3fb6c4791cc43ec36' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\buscarediciones.tpl',
-      1 => 1430921024,
+      1 => 1430921366,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '28728554a201253a5b0-68387798',
+  'nocache_hash' => '4812554a38ab73ca00-17418000',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
-            
-<div class="container">    
-    <br><br><br><br>    
-    <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3"> 
-        
-        <div class="row">                
-            <div class="iconmelon">
-              <svg viewBox="0 0 32 32">
-                <g filter="">
-                  <use xlink:href="#git"></use>
-                </g>
-              </svg>
+<body <?php if (isset($_smarty_tpl->getVariable('cargar',null,true,false)->value)){?>onload="<?php echo $_smarty_tpl->getVariable('cargar')->value;?>
+"<?php }?>>            
+    <div class="container">    
+        <br><br><br><br>    
+        <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3"> 
+
+            <div class="row">                
+                <div class="iconmelon">
+                  <svg viewBox="0 0 32 32">
+                    <g filter="">
+                      <use xlink:href="#git"></use>
+                    </g>
+                  </svg>
+                </div>
             </div>
-        </div>
-        
-        <div class="panel panel-default" >
-            <div class="panel-heading">
-                <div class="panel-title text-center">Buscar Edición:</div>
-            </div>     
 
-            <div class="panel-body" >
+            <div class="panel panel-default" >
+                <div class="panel-heading">
+                    <div class="panel-title text-center">Buscar Edición:</div>
+                </div>     
 
-                <form name="form" id="form" class="form-horizontal" enctype="multipart/form-data" action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
+                <div class="panel-body" >
+
+                    <form name="form" id="form" class="form-horizontal" enctype="multipart/form-data" action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
 buscarediciones.php?option=consultar" method="POST">
-                   
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-text-size"></i></span>
-                        <input id="palabra" type="text" class="form-control" name="palabra" value="" placeholder="Titulo, Autor o Cancion" required>                                        
-                    </div>                                                               
 
-                    <div class="form-group">
-                        <!-- Button -->
-                        <div class="col-sm-12 controls">
-                            <input type="submit" class="btn btn-primary pull-right" value="Buscar" name="Buscar">                         
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-text-size"></i></span>
+                            <input id="palabra" type="text" class="form-control" name="palabra" value="" placeholder="Titulo, Autor o Cancion" required>                                        
+                        </div>                                                               
+
+                        <div class="form-group">
+                            <!-- Button -->
+                            <div class="col-sm-12 controls">
+                                <input type="submit" class="btn btn-primary pull-right" value="Buscar" name="Buscar">                         
+                            </div>
                         </div>
-                    </div>
 
-                </form>     
+                    </form>     
 
-            </div>                     
-        </div>  
+                </div>                     
+            </div>  
+        </div>
     </div>
-</div>
-
+</body>
+                
 <div id="particles"></div>
 
 <svg id="svg-source" height="0" version="1.1" 

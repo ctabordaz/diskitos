@@ -31,7 +31,7 @@ class object_standard
 	{
 		foreach ($this->metadata() as $key => $attribute)
 		{
-			if(!is_empty($data->$key)){$this->set($key,$data->$key);}
+			if(!is_empty(@$data->$key)){@$this->set($key,$data->$key);}
 		}
 		
 		if($auxiliars != NULL)

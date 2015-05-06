@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 16:07:45
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 17:53:10
          compiled from "C:/xampp/htdocs/diskitos/templates\buscarediciones2.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2065554a2031b8d2c9-52209209%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:22310554a38e6823a02-03532036%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '18100e40a138aa6a465c67cdaa410e56fbd5dda5' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\buscarediciones2.tpl',
-      1 => 1430921050,
+      1 => 1430927566,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2065554a2031b8d2c9-52209209',
+  'nocache_hash' => '22310554a38e6823a02-03532036',
   'function' => 
   array (
   ),
@@ -80,5 +80,8 @@ if ($_smarty_tpl->_count($_from) > 0){
     <?php }} ?>
 </div>
 <input type="submit" value="Enviar" disabled align="center">
+    <script>
+        $.backstretch(["./images/mdna.jpg"]);
+    </script>
 </body>
 </html>

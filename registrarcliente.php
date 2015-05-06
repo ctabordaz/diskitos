@@ -102,11 +102,11 @@ class c_registrarcliente extends super_controller {
         
         $cl = new cliente($this->post);
         
-        if(CamposVacios($emp) == 1){
+        if(CamposVacios($cl) == 1){
             $this->engine->assign("cargar2","faltantes_C()");
-        } elseif(ValoresNumericos($emp) == 1){
+        } elseif(ValoresNumericos($cl) == 1){
             $this->engine->assign("cargar2","noNumerico_C()");
-        } elseif(ValidarCorreo($emp) == 1){
+        } elseif(ValidarCorreo($cl) == 1){
             $this->engine->assign("cargar2","formatoInvalido()");
         } else{
             $this->orm->connect();

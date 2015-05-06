@@ -10,10 +10,10 @@ class c_actualizarcantidad extends super_controller {
     public function actualizar(){
         $this->edicion = new edicion($this->post);
         if(is_empty($this->edicion->get('codigo_de_barras')) && is_empty($this->edicion->get('album'))) {
-            throw_exception("");
+            $this->engine->assign("cargar","camposVacios()");
         }
         if($this->edicion->get('cantidad')<0){
-            throw_exception("");
+            $this->engine->assign("cargar","cantidadNegativa()");
         }
         $this->orm->connect();
         $this->orm->update_data("one",$this->edicion);
