@@ -27,3 +27,8 @@ function numericosC(){
         alertify.set('notifier','position', 'top-right');
         alertify.error("La duración de las canciones debe ser numérica",60);    
 }
+
+function exitoso(){
+        alertify.set('notifier','position', 'top-right');
+        alertify.success("La Edición ha sido ingresada Correctamente",60);    
+}

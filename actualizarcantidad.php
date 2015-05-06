@@ -8,17 +8,19 @@ class c_actualizarcantidad extends super_controller {
     protected $edicion;
     
     public function actualizar(){
+        
         $this->edicion = new edicion($this->post);
+        
         if(is_empty($this->edicion->get('codigo_de_barras')) && is_empty($this->edicion->get('album'))) {
             $this->engine->assign("cargar","camposVacios()");
-        }
-        if($this->edicion->get('cantidad')<0){
+        } elseif($this->edicion->get('cantidad')<0){
             $this->engine->assign("cargar","cantidadNegativa()");
+        } else{
+            $this->engine->assign("cargar","exitoso()");
+            $this->orm->connect();
+            $this->orm->update_data("one",$this->edicion);
+            $this->orm->close();
         }
-        $this->orm->connect();
-        $this->orm->update_data("one",$this->edicion);
-        $this->orm->close();
-        
         /*
         $this->type_warning = "success";
         $this->msg_warning = "Edicion actualizada correctamente";

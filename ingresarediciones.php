@@ -195,7 +195,7 @@ class c_ingresarediciones extends super_controller {
                     $this->orm->insert_data("cancion",$song[$n]);
                 }
                 
-                $this->engine->assign("cargar",""); 
+                $this->engine->assign("cargar","exitoso()");
             }
             $this->orm->close();
         }
