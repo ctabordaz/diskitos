@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-28 22:59:54
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 04:53:21
          compiled from "C:/wamp/www/diskitos/templates\header_regcaj.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:24609553ff4cad4af42-68708694%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_smarty_tpl->decodeProperties(array (
     'b201c995e2b4af47c56dcc644a29c1d5747981a5' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\header_regcaj.tpl',
-      1 => 1430029612,
+      1 => 1430869641,
       2 => 'file',
     ),
   ),

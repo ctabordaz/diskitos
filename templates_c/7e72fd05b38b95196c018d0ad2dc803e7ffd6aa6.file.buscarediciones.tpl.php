@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-26 08:30:43
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 04:52:58
          compiled from "C:/wamp/www/diskitos/templates\buscarediciones.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:29369553535237ca873-45804790%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_smarty_tpl->decodeProperties(array (
     '7e72fd05b38b95196c018d0ad2dc803e7ffd6aa6' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\buscarediciones.tpl',
-      1 => 1430029613,
+      1 => 1430869641,
       2 => 'file',
     ),
   ),

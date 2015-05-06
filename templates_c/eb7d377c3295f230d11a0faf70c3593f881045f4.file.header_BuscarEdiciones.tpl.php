@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-04-26 08:30:43
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 04:52:58
          compiled from "C:/wamp/www/diskitos/templates\header_BuscarEdiciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:8171553802d382c846-48982637%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:78785549820a9af8d2-88019999%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'eb7d377c3295f230d11a0faf70c3593f881045f4' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\header_BuscarEdiciones.tpl',
-      1 => 1430029614,
+      1 => 1430869643,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '8171553802d382c846-48982637',
+  'nocache_hash' => '78785549820a9af8d2-88019999',
   'function' => 
   array (
   ),

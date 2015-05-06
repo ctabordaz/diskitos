@@ -172,6 +172,18 @@ class db
 					break;
 			}
 			break;
+                    
+                        case "edicion":
+			switch($options['lvl2'])
+			{
+				case "one":
+                                    $codigo_de_barras=mysqli_real_escape_string($this->cn,$object->get('codigo_de_barras'));
+                                    $cantidad=mysqli_real_escape_string($this->cn,$object->get('cantidad'));
+                                    $album=mysqli_real_escape_string($this->cn,$object->get('album'));
+                                    $this->do_operation("UPDATE edicion SET cantidad = cantidad + '$cantidad' WHERE codigo_de_barras = '$codigo_de_barras' AND album = '$album';");
+                                    break;
+			}
+			break;
 			
 			default: break;
 		}
@@ -220,8 +232,9 @@ class db
 			case "edicion":
                             switch($option['lvl2'])
                             {
-                                case "all": 
-                                     $info=$this->get_data("select e.*,a.* from edicion e, album a where a.nro_catalogo = e.album;");
+                                case "by_keyword": 
+                                    $keyword = mysqli_real_escape_string($this->cn, $data['keyword']);
+                                    $info=$this->get_data("SELECT e.*,a.* FROM edicion e, album a WHERE a.nro_catalogo = e.album AND (a.titulo LIKE '$keyword');");
                                     break;
                                 
                             }
