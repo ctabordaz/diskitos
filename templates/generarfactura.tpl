@@ -78,7 +78,10 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-md-5 col-md-offset-7">
+            <div class="col-md-4">
+                <button type="submit button" class="btn btn-primary">Generar</button>
+            </div>
+            <div class="col-md-5 col-md-offset-3">
                 <div class="col-md-5">
                          <b>Total:  </b>
                 </div>
@@ -92,22 +95,19 @@
         </div>
               
                                         
-                
+           </form>
+       
                 
 </div>
             
                                         
                                         
       
-    </form>
     
+  
     
-    
-    
-    
-       
-
-</div>
+ 
+ 
 <script type="text/javascript">
     
     var ediciones = [];

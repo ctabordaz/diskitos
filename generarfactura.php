@@ -3,8 +3,15 @@
 require('configs/include.php');
 
 class c_generarfactura extends super_controller {
+    
+        public function generar() {
+            print_r2($this->post);
+            foreach ($this->post as $key => $value){
+                print_r2( $key . ": " . $value . "\n");
+            }
+          }
 
-	public function display()
+    public function display()
 	{		
             
             $options['cliente']['lvl2'] = "all";
@@ -33,7 +40,19 @@ class c_generarfactura extends super_controller {
 	
 	public function run()
 	{
-            $this->display();
+            try{
+                if(isset($this->get->option)){
+                    $this->{$this->get->option}();
+                }
+                    
+                
+            }
+            catch (Exception $e){
+                $this->error=1; $this->msg_warning=$e->getMessage(); $this->temp_aux = 'message.tpl';
+                $this->engine->assign('type_warning',$this->type_warning); $this->engine->assign('msg_warning',$this->msg_warning);
+                
+            }
+                $this->display();
 	}
 }
 

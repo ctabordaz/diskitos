@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-05 14:44:50
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-07 14:06:20
          compiled from "C:/wamp/www/diskitos/templates\generarfactura.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:258025548d7625a9651-77106754%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:12908554b715c3b7577-05073683%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'aec8d670f986095ffac05111879c6beec0e21b72' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\generarfactura.tpl',
-      1 => 1430837085,
+      1 => 1431007569,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '258025548d7625a9651-77106754',
+  'nocache_hash' => '12908554b715c3b7577-05073683',
   'function' => 
   array (
   ),
@@ -131,7 +131,10 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
         </div>
         <br>
         <div class="row">
-            <div class="col-md-5 col-md-offset-7">
+            <div class="col-md-4">
+                <button type="submit button" class="btn btn-primary">Generar</button>
+            </div>
+            <div class="col-md-5 col-md-offset-3">
                 <div class="col-md-5">
                          <b>Total:  </b>
                 </div>
@@ -145,22 +148,19 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
         </div>
               
                                         
-                
+           </form>
+       
                 
 </div>
             
                                         
                                         
       
-    </form>
     
+  
     
-    
-    
-    
-       
-
-</div>
+ 
+ 
 <script type="text/javascript">
     
     var ediciones = [];
