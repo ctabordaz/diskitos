@@ -20,7 +20,7 @@
             
             <div class="col-md-4">
                 <div class="side-by-side clearfix">
-                    <select data-placeholder="Seleccione un cliente..." class="chosen-select" style="width:350px;" tabindex="2">
+                    <select name="cliente" data-placeholder="Seleccione un cliente..." class="chosen-select" style="width:350px;" tabindex="2">
                                          <option value=""></option>
                                         {foreach $clientes as $e}
                                             <option value="{$e->get('cedula')}">{$e->get('cedula')}-{$e->get('nombre')}</option>

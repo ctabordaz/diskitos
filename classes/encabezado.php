@@ -19,7 +19,7 @@ class encabezado extends object_standard
 	{
 		return array("factura" => array("foreign_name" => "e_f", "foreign" => "factura", "foreign_attribute" => "codigo"),
                     "fecha" => array(),
-                    "cajero" => array("foreign_name" => "c_e", "foreign" => "cajero", "foreign_attribute" => "cedula")); 
+                    "cliente" => array("foreign_name" => "c_e", "foreign" => "cliente", "foreign_attribute" => "cedula")); 
 	}
 
 	public function primary_key()
@@ -32,11 +32,11 @@ class encabezado extends object_standard
 		switch($class)
 		{	
                     
-                    case "cajero":
+                    case "cliente":
 				switch($rel_name)
 				{
 					case "c_e":
-					return array("cajero");
+					return array("cliente");
 					break;
 				}
                     case "factura":

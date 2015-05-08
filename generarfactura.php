@@ -5,11 +5,46 @@ require('configs/include.php');
 class c_generarfactura extends super_controller {
     
         public function generar() {
-            print_r2($this->post);
-            foreach ($this->post as $key => $value){
-                print_r2( $key . ": " . $value . "\n");
-            }
-          }
+            
+            
+            
+            settype($data, 'object');
+            $data->codigo = 1;
+            $data->cajero = $_SESSION['empleado']['cedula'];
+
+            $factura = new factura($data);
+           
+            //inserta la factura
+                $this->orm->connect();
+               // $this->orm->insert_data("normal", $factura);
+                $this->orm->close();
+
+        //busca la facura insertada
+                $options['factura']['lvl2'] = "max";
+                $this->orm->connect();
+                $this->orm->read_data(array("factura"), $options);
+                $maxf = $this->orm->get_objects("factura");
+                $this->orm->close();
+
+                //insertar encabezado
+             settype($data, 'object');
+             
+             $data->factura = $maxf[0]->get('codigo');
+             
+             $data->cliente = $this->post->cliente;
+            
+             $encabezado = new encabezado($data);
+             $this->orm->connect();
+             
+             $this->orm->insert_data("normal", $encabezado);
+             
+             $this->orm->close();
+             //insertar detaller
+         
+             
+            
+            
+    }
 
     public function display()
 	{		

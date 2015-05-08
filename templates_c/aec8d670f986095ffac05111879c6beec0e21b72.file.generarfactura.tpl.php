@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-07 14:06:20
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-08 19:36:19
          compiled from "C:/wamp/www/diskitos/templates\generarfactura.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:12908554b715c3b7577-05073683%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:12571554d10332e9f96-85355602%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'aec8d670f986095ffac05111879c6beec0e21b72' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\generarfactura.tpl',
-      1 => 1431007569,
+      1 => 1431113766,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12908554b715c3b7577-05073683',
+  'nocache_hash' => '12571554d10332e9f96-85355602',
   'function' => 
   array (
   ),
@@ -40,7 +40,7 @@ generarfactura.php?option=generar" method="POST">
             
             <div class="col-md-4">
                 <div class="side-by-side clearfix">
-                    <select data-placeholder="Seleccione un cliente..." class="chosen-select" style="width:350px;" tabindex="2">
+                    <select name="cliente" data-placeholder="Seleccione un cliente..." class="chosen-select" style="width:350px;" tabindex="2">
                                          <option value=""></option>
                                         <?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable;
  $_from = $_smarty_tpl->getVariable('clientes')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

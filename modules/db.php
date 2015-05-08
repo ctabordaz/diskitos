@@ -89,6 +89,26 @@ class db
 					break;
 			}
 			break;
+			case "factura":
+			switch($options['lvl2'])
+			{
+				case "normal":
+                                    $cajero=mysqli_real_escape_string($this->cn,$object->get('cajero'));
+                                    
+                                    $this->do_operation("INSERT INTO factura (cajero) VALUES ('$cajero')");
+				break;
+			}
+			case "encabezado":
+			switch($options['lvl2'])
+			{
+				case "normal":
+                                    $factura=mysqli_real_escape_string($this->cn,$object->get('factura'));
+                                    $cliente=mysqli_real_escape_string($this->cn,$object->get('cliente'));
+                                    
+                                    $this->do_operation("INSERT INTO encabezado (factura,cliente) VALUES ('$factura','$cliente')");
+				break;
+			}
+			break;
                         case "album":
 				switch($options['lvl2'])
 				{
@@ -235,6 +255,15 @@ class db
                             {
                                 case "all": 
                                     //
+                                    break;
+                            }
+			break;
+			
+			case "factura":
+                            switch($option['lvl2'])
+                            {
+                                case "max": 
+                                     $info=$this->get_data("SELECT MAX(codigo) AS codigo FROM  factura LIMIT 0 , 1;");
                                     break;
                             }
 			break;
