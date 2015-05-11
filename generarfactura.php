@@ -16,7 +16,7 @@ class c_generarfactura extends super_controller {
            
             //inserta la factura
                 $this->orm->connect();
-               // $this->orm->insert_data("normal", $factura);
+                $this->orm->insert_data("normal", $factura);
                 $this->orm->close();
 
         //busca la facura insertada
@@ -40,7 +40,7 @@ class c_generarfactura extends super_controller {
              
              $this->orm->close();
              //insertar detaller
-         
+             print_r2($this->post);
              
             
             

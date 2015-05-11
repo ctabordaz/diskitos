@@ -98,6 +98,7 @@ class db
                                     $this->do_operation("INSERT INTO factura (cajero) VALUES ('$cajero')");
 				break;
 			}
+                        break;
 			case "encabezado":
 			switch($options['lvl2'])
 			{
