@@ -40,8 +40,17 @@ class c_generarfactura extends super_controller {
              
              $this->orm->close();
              //insertar detaller
-             print_r2($this->post);
+                     
              
+             foreach ($this->post as $clave => $valor){
+               
+                 if($clave !== 'cliente'){
+                     print_r2($clave." ".$valor);
+                    
+                }
+                 
+                 
+             }
             
             
     }
