@@ -1,10 +1,11 @@
 ﻿<?php
 
 require('configs/include.php');
+require('modules/fpdf/fpdf.php');
 
 class c_generarfactura extends super_controller {
     
-        public function generar() {
+        public function generar(){
             
             
             
@@ -40,18 +41,34 @@ class c_generarfactura extends super_controller {
              
              $this->orm->close();
              //insertar detaller
-                     
+                  
+             
+
+
              
              foreach ($this->post as $clave => $valor){
                
                  if($clave !== 'cliente'){
-                     print_r2($clave." ".$valor);
+                     
+                       settype($data, 'object');
+                       $data->factura = $maxf[0]->get('codigo');
+                       $data->edicion = $clave;
+                       $data->cantidad = $valor;
+                       
+                       $detalle = new detalle($data);
+                       
+                        $this->orm->connect();
+
+                        $this->orm->insert_data("normal", $detalle);
+
+                        $this->orm->close();
+                       
+                       
                     
                 }
                  
                  
              }
-            
             
     }
 

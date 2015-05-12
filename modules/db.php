@@ -110,6 +110,18 @@ class db
 				break;
 			}
 			break;
+			case "detalle":
+			switch($options['lvl2'])
+			{
+				case "normal":
+                                    $factura=mysqli_real_escape_string($this->cn,$object->get('factura'));
+                                    $edicion=mysqli_real_escape_string($this->cn,$object->get('edicion'));
+                                    $cantidad=mysqli_real_escape_string($this->cn,$object->get('cantidad'));
+                                    
+                                    $this->do_operation("INSERT INTO detalle (factura,edicion,cantidad) VALUES ('$factura','$edicion','$cantidad')");
+				break;
+			}
+			break;
                         case "album":
 				switch($options['lvl2'])
 				{
