@@ -41,34 +41,9 @@ class c_generarfactura extends super_controller {
              
              $this->orm->close();
              //insertar detaller
-                  
+             print_r2($this->post);
              
-
-
-             
-             foreach ($this->post as $clave => $valor){
-               
-                 if($clave !== 'cliente'){
-                     
-                       settype($data, 'object');
-                       $data->factura = $maxf[0]->get('codigo');
-                       $data->edicion = $clave;
-                       $data->cantidad = $valor;
-                       
-                       $detalle = new detalle($data);
-                       
-                        $this->orm->connect();
-
-                        $this->orm->insert_data("normal", $detalle);
-
-                        $this->orm->close();
-                       
-                       
-                    
-                }
-                 
-                 
-             }
+            
             
     }
 
