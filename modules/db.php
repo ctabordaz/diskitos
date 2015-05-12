@@ -280,7 +280,15 @@ class db
                                     break;
                             }
 			break;
-			case "cliente":
+			 case "empresa":
+                            switch($option['lvl2'])
+                            {
+                                case "datos": 
+                                     $info=$this->get_data("SELECT * FROM  empresa LIMIT 0 , 1;");
+                                    break;
+                            }
+                        break;
+                        case "cliente":
                             switch($option['lvl2'])
                             {
                                 case "all": 
@@ -290,14 +298,22 @@ class db
                                     $ced = mysqli_real_escape_string($this->cn,$data['cedula']);                            
                                     $info = $this->get_data("SELECT COUNT(*) AS contador FROM cliente WHERE cedula='$ced';");
                                     break;
+                                case "factura" :
+                                    $ced = mysqli_real_escape_string($this->cn,$data['cedula']);                            
+                                    $info = $this->get_data("SELECT * FROM cliente WHERE cedula='$ced';");
+                                    break;
                             }
-			break;
+                         break;
 			case "edicion":
                             switch($option['lvl2'])
                             {
                                 case "by_keyword": 
                                     $keyword = mysqli_real_escape_string($this->cn, $data['keyword']);
                                     $info=$this->get_data("SELECT e.*,a.* FROM edicion e, album a WHERE a.nro_catalogo = e.album AND (a.titulo LIKE '$keyword');");
+                                    break;
+                                case "factura": 
+                                    $cod = mysqli_real_escape_string($this->cn, $data['codigo_de_barras']);
+                                    $info=$this->get_data("SELECT * FROM edicion WHERE codigo_de_barras = '$cod';");
                                     break;
                                 case "all": 
                                      $info=$this->get_data("select e.*,a.* from edicion e, album a where a.nro_catalogo = e.album;");
