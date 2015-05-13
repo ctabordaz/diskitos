@@ -21,6 +21,7 @@ class c_generarfactura extends super_controller {
                 $this->orm->close();
 
         //busca la facura insertada
+                
                 $options['factura']['lvl2'] = "max";
                 $this->orm->connect();
                 $this->orm->read_data(array("factura"), $options);
@@ -66,7 +67,9 @@ class c_generarfactura extends super_controller {
                 $pdf->SetFont('Arial','B',14);
                 $pdf->Cell(190, 10, "FACTURA", 0, 2, "C");
                 $pdf->SetFont('Arial','B',10);
-                $pdf->MultiCell(190,5, "Numero de factura: ".$maxf[0]->get('codigo'), 0, "C", false);
+                $pdf->MultiCell(190,5, "Numero de factura: ".$maxf[0]->get('codigo')."\n"."Fecha: ", 0, "C", false);
+                
+                
                 $pdf->Ln(2);
                 
                 
@@ -112,10 +115,12 @@ class c_generarfactura extends super_controller {
             $pdf->SetXY(25, $top_productos);
             $pdf->Cell(40, 5, 'CODIGO DE BARRAS', 0, 1, 'C');
             $pdf->SetXY(60, $top_productos);
-            $pdf->Cell(40, 5, 'CANTIDAD', 0, 1, 'C');
+            $pdf->Cell(40, 5, 'EDICION', 0, 1, 'C');
             $pdf->SetXY(95, $top_productos);
-            $pdf->Cell(40, 5, 'VALOR UNIDAD', 0, 1, 'C');  
-            $pdf->SetXY(125, $top_productos);
+            $pdf->Cell(40, 5, 'CANTIDAD', 0, 1, 'C');  
+            $pdf->SetXY(115, $top_productos);
+            $pdf->Cell(40, 5, 'VALOR C/U', 0, 1, 'C');  
+            $pdf->SetXY(145, $top_productos);
             $pdf->Cell(40, 5, 'VALOR TOTAL', 0, 1, 'C');  
 
 
@@ -134,12 +139,13 @@ class c_generarfactura extends super_controller {
                      
                      
                         $cod['edicion']['codigo_de_barras'] = $key;
+                        $auxiliars['edicion']=array("titulo"); 
                         $options['edicion']['lvl2'] = "factura";
                         $this->orm->connect();
                         $this->orm->read_data(array("edicion"), $options, $cod);
-                        $edicion = $this->orm->get_objects("edicion");
+                        $edicion = $this->orm->get_objects("edicion",NULL,$auxiliars);
 
-                     
+                        
                      
                     $this->orm->connect();
              
@@ -152,18 +158,25 @@ class c_generarfactura extends super_controller {
                     $pdf->SetXY(25, $y);
                     $pdf->Cell(40, 5, $key, 0, 1, 'C');
                     $pdf->SetXY(60, $y);
-                    $pdf->Cell(40, 5, $val, 0, 1, 'C');
+                    $pdf->Cell(40, 5, $edicion[0]->auxiliars['titulo']."-".$edicion[0]->get('formato'), 0, 1, 'C');
                     $pdf->SetXY(95, $y);
-                    $pdf->Cell(40, 5,$edicion[0]->get('precio'), 0, 1, 'C');  
-                    $pdf->SetXY(125, $y);
+                    $pdf->Cell(40, 5,$val, 0, 1, 'C');  
+                    $pdf->SetXY(115, $y);
+                    $pdf->Cell(40, 5,$edicion[0]->get('precio'), 0, 1, 'C'); 
+                    $pdf->SetXY(145, $y);
                     $pdf->Cell(40, 5,$edicion[0]->get('precio')*$val, 0, 1, 'C'); 
 
                  
                     $y = $y + 5;
-                     
+                    $total = $total+ ($edicion[0]->get('precio')*$val);
                      
                  }
              }
+             
+            $pdf->Ln(2);
+            $pdf->SetFont('Arial','B',10);
+            $pdf->Cell(190, 5, "TOTAL: $ $total ", 0, 1, "C");
+            
              
              
             $pdf->Output($archivo_de_salida);//cierra el objeto pdf
@@ -183,7 +196,7 @@ class c_generarfactura extends super_controller {
 
     public function display()
 	{		
-            
+        
             $options['cliente']['lvl2'] = "all";
             
             $this->orm->connect();

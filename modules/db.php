@@ -313,7 +313,7 @@ class db
                                     break;
                                 case "factura": 
                                     $cod = mysqli_real_escape_string($this->cn, $data['codigo_de_barras']);
-                                    $info=$this->get_data("SELECT * FROM edicion WHERE codigo_de_barras = '$cod';");
+                                    $info=$this->get_data("SELECT e.*,a.* FROM edicion e, album a where a.nro_catalogo = e.album AND e.codigo_de_barras = '$cod';");
                                     break;
                                 case "all": 
                                      $info=$this->get_data("select e.*,a.* from edicion e, album a where a.nro_catalogo = e.album;");
