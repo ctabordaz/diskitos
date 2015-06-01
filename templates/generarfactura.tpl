@@ -15,7 +15,7 @@
     <form action="{$gvar.l_global}generarfactura.php?option=generar" method="POST">
         <div class="row">
             <div class="col-md-3">
-                <b>Nombre:</b>
+                <h5><b>Nombre:</b></h5>
             </div>
             
             <div class="col-md-4">
@@ -34,7 +34,7 @@
         
         <div class="row">            
             <div class="col-md-3">
-                <b>Agregar Edición:</b>
+                <h5><b>Agregar Edición:</b></h5>
             </div>
             
             <div class="col-md-5">

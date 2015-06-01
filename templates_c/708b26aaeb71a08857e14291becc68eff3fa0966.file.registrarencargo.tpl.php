@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 01:38:11
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 01:54:17
          compiled from "C:/wamp/www/diskitos/templates\registrarencargo.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:26006556cece343f307-60763779%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2052556cf0a9cc9029-26844861%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '708b26aaeb71a08857e14291becc68eff3fa0966' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\registrarencargo.tpl',
-      1 => 1433201887,
+      1 => 1433202856,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '26006556cece343f307-60763779',
+  'nocache_hash' => '2052556cf0a9cc9029-26844861',
   'function' => 
   array (
   ),
@@ -51,12 +51,12 @@ registrarencargo.php?option=registrar" method="post" enctype="multipart/form-dat
                 
                 <div class="row">
                     <div class="col-md-2">
-                        <label>Cliente:</label>
+                        <h4>Cliente:</h4>
                     </div>
                     
                     <div class="col-md-4">
                         <div class="side-by-side clearfix">
-                            <select name="cliente" data-placeholder="Seleccione un cliente..." class="chosen-select" style="width:350px;" tabindex="2">
+                            <select name="cliente" data-placeholder="Seleccione un cliente..." class="chosen-select" style="width:350px" tabindex="2">
                                 <option value=""></option>
                                 <?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable;
  $_from = $_smarty_tpl->getVariable('clientes')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -78,7 +78,7 @@ if ($_smarty_tpl->_count($_from) > 0){
                     <div class="col-md-5">
                         <div class="row">
                             <h4 id="caratula1">Álbum</h4>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <p>Título:</p>
                             </div>
                             <div class="col-md-8 required">
@@ -87,7 +87,7 @@ if ($_smarty_tpl->_count($_from) > 0){
                         </div>
                         
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <p>Género:</p>
                             </div>
                             <div class="col-md-8 required">
@@ -97,6 +97,9 @@ if ($_smarty_tpl->_count($_from) > 0){
 
                         <div class="row">
                             <h4 id="caratula1">Formato</h4>
+                            <div class="col-md-1">
+                                
+                            </div>
                             <div class="col-md-5">
                                 <select class="form-control" name="formato" type="text" id="formatot" placeholder="Formato">
                                     <option value ="cd">CD</option>
@@ -112,7 +115,7 @@ if ($_smarty_tpl->_count($_from) > 0){
                             <br>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <p>Intérprete:</p>
                             </div>
                             <div class="col-md-8 required">

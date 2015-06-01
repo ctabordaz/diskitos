@@ -30,12 +30,12 @@
                 
                 <div class="row">
                     <div class="col-md-2">
-                        <label>Cliente:</label>
+                        <h4>Cliente:</h4>
                     </div>
                     
                     <div class="col-md-4">
                         <div class="side-by-side clearfix">
-                            <select name="cliente" data-placeholder="Seleccione un cliente..." class="chosen-select" style="width:350px;" tabindex="2">
+                            <select name="cliente" data-placeholder="Seleccione un cliente..." class="chosen-select" style="width:350px" tabindex="2">
                                 <option value=""></option>
                                 {foreach $clientes as $e}
                                     <option value="{$e->get('cedula')}">{$e->get('cedula')} - {$e->get('nombre')}</option>
@@ -50,7 +50,7 @@
                     <div class="col-md-5">
                         <div class="row">
                             <h4 id="caratula1">Álbum</h4>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <p>Título:</p>
                             </div>
                             <div class="col-md-8 required">
@@ -59,7 +59,7 @@
                         </div>
                         
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <p>Género:</p>
                             </div>
                             <div class="col-md-8 required">
@@ -69,6 +69,9 @@
 
                         <div class="row">
                             <h4 id="caratula1">Formato</h4>
+                            <div class="col-md-1">
+                                
+                            </div>
                             <div class="col-md-5">
                                 <select class="form-control" name="formato" type="text" id="formatot" placeholder="Formato">
                                     <option value ="cd">CD</option>
@@ -84,7 +87,7 @@
                             <br>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <p>Intérprete:</p>
                             </div>
                             <div class="col-md-8 required">

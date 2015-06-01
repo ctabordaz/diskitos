@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 01:39:05
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 01:57:31
          compiled from "C:/wamp/www/diskitos/templates\generarfactura.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:17984556ced19c9b3b0-51395908%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:21568556cf16ba9c101-23616765%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'aec8d670f986095ffac05111879c6beec0e21b72' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\generarfactura.tpl',
-      1 => 1433201944,
+      1 => 1433203050,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '17984556ced19c9b3b0-51395908',
+  'nocache_hash' => '21568556cf16ba9c101-23616765',
   'function' => 
   array (
   ),
@@ -35,7 +35,7 @@ $_smarty_tpl->decodeProperties(array (
 generarfactura.php?option=generar" method="POST">
         <div class="row">
             <div class="col-md-3">
-                <b>Nombre:</b>
+                <h5><b>Nombre:</b></h5>
             </div>
             
             <div class="col-md-4">
@@ -61,7 +61,7 @@ if ($_smarty_tpl->_count($_from) > 0){
         
         <div class="row">            
             <div class="col-md-3">
-                <b>Agregar Edición:</b>
+                <h5><b>Agregar Edición:</b></h5>
             </div>
             
             <div class="col-md-5">
