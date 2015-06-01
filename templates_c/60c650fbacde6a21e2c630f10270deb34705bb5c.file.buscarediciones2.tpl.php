@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-01 02:45:49
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-01 04:18:56
          compiled from "C:/wamp/www/diskitos/templates\buscarediciones2.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:3156556bab3de49792-98839228%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:18587556bc110f08d41-82084955%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '60c650fbacde6a21e2c630f10270deb34705bb5c' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\buscarediciones2.tpl',
-      1 => 1433118097,
+      1 => 1433124992,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3156556bab3de49792-98839228',
+  'nocache_hash' => '18587556bc110f08d41-82084955',
   'function' => 
   array (
   ),
@@ -34,14 +34,17 @@ $_smarty_tpl->decodeProperties(array (
 if ($_smarty_tpl->_count($_from) > 0){
     foreach ($_from as $_smarty_tpl->tpl_vars['rc']->key => $_smarty_tpl->tpl_vars['rc']->value){
 ?>
+            <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
+buscarediciones.php?option=cancionero" method="post">
         <div class="row" id='<?php echo $_smarty_tpl->getVariable('rc')->value->codigo_de_barras;?>
 '>
             <div class="col-sm-3">
                 <!-- B -->
-                <input name="<?php echo $_smarty_tpl->getVariable('rc')->value->codigo_de_barras;?>
-" type="checkbox" id="<?php echo $_smarty_tpl->getVariable('rc')->value->codigo_de_barras;?>
-" value="<?php echo $_smarty_tpl->getVariable('rc')->value->codigo_de_barras;?>
-" disabled/>
+                <a href="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
+buscarediciones.php?option=cancionero&album=<?php echo $_smarty_tpl->getVariable('rc')->value->album;?>
+" onclick="javascript:void window.open('<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
+buscarediciones.php?option=cancionero&album=<?php echo $_smarty_tpl->getVariable('rc')->value->album;?>
+','1433123817331','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');return false;">Canciones</a>
                 <img  class="caratula" src="<?php echo $_smarty_tpl->getVariable('rc')->value->caratula;?>
 " alt="todo murio" />
             </div>
@@ -77,9 +80,9 @@ if ($_smarty_tpl->_count($_from) > 0){
             </div>
         </div>
                         <br>
+            </form>
         <?php }} ?>
     </div>
-    <input type="submit" value="Enviar" disabled align="center">
-
+    
     </body>
 </html>

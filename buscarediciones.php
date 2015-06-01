@@ -5,6 +5,24 @@ require('configs/include.php');
 class c_buscarediciones extends super_controller {
 
     var $resulconsul;
+    var $lascanciones;
+    var $labandera = 0;
+    
+    public function cancionero(){
+               
+        $aconsultar['cancion']['album'] = $this->get->album;
+        $options['cancion']['lvl2']= "las_canciones";
+        $this->orm->connect();
+        $this->orm->read_data(array("cancion"), $options,$aconsultar);
+        $this->lascanciones = $this->orm->data['cancion'];
+        $this->orm->close();
+        $this->labandera = 1;
+        
+        $this->engine->assign("lascanciones",$this->lascanciones);
+        
+    }
+    
+    
     public function consultar(){
         //Generación de la consulta por nombre de la canción
         $loqueconsulto = $this->post->palabra;
@@ -41,7 +59,7 @@ class c_buscarediciones extends super_controller {
             //print_r2($todojunto);
             //elimina resultados duplicados en las consultas y lo deja en un solo array
             $resultado = array_unique($todojunto,SORT_REGULAR);
-           // print_r2($resultado);
+            //print_r2($resultado);
             $this->engine->assign('resulconsul',$resultado);
             $this->resulconsul = $resultado;
           //  print_r2($this->session);
@@ -56,7 +74,7 @@ class c_buscarediciones extends super_controller {
 
     public function display()
 	{	
-            if(!is_empty($this->session)){
+            if(!is_empty($this->session) ){
                 
                 if($_SESSION['empleado']['tipo'] == 'A'){
                      $this->engine->assign('elusu'," Administrador ");
@@ -65,16 +83,27 @@ class c_buscarediciones extends super_controller {
                      $this->engine->assign('elusu'," Cajero ");
                 }
                 
-                if(is_empty($this->resulconsul)){
+                if(is_empty($this->resulconsul)&& $this->labandera != 1){
                     $this->engine->assign('title',"Buscar Ediciones");
                     $this->engine->display('header_BuscarEdiciones.tpl');
                     $this->engine->display('buscarediciones.tpl');
                     $this->engine->display('footer_BuscarEdiciones.tpl');
-                }else{
+                }
+                else{
+                    
+                    if($this->labandera != 1){
                     $this->engine->assign('title',"Buscar Ediciones");
                     $this->engine->display('header_BuscarEdiciones.tpl');
                     $this->engine->display('buscarediciones2.tpl');
                     $this->engine->display('footer_BuscarEdiciones.tpl');
+                    
+                    }else{
+                        
+                    $this->engine->assign('title',"Canciones");
+                    $this->engine->display('buscarediciones3.tpl');
+                    
+                    }
+                    
                 }
             }else{
                 $this->engine->display('noautorizado.tpl');

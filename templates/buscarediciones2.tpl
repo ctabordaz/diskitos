@@ -11,10 +11,11 @@
             <h1>Resultados de la Busqueda</h1><br><br>
         </div>
         {foreach $resulconsul as $rc}
+            <form action="{$gvar.l_global}buscarediciones.php?option=cancionero" method="post">
         <div class="row" id='{$rc->codigo_de_barras}'>
             <div class="col-sm-3">
                 <!-- B -->
-                <input name="{$rc->codigo_de_barras}" type="checkbox" id="{$rc->codigo_de_barras}" value="{$rc->codigo_de_barras}" disabled/>
+                <a href="{$gvar.l_global}buscarediciones.php?option=cancionero&album={$rc->album}" onclick="javascript:void window.open('{$gvar.l_global}buscarediciones.php?option=cancionero&album={$rc->album}','1433123817331','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');return false;">Canciones</a>
                 <img  class="caratula" src="{$rc->caratula}" alt="todo murio" />
             </div>
             <div class="col-sm-9">
@@ -44,9 +45,9 @@
             </div>
         </div>
                         <br>
+            </form>
         {/foreach}
     </div>
-    <input type="submit" value="Enviar" disabled align="center">
-
+    
     </body>
 </html>

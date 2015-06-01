@@ -356,7 +356,7 @@ class db
                                         $txt1 = strtolower($texto);
                                         $txt2 = ucfirst($txt1);
                                         $txt3 = strtoupper($texto);
-                                        $info = $this->get_data("SELECT DISTINCT e.codigo_de_barras, a.interprete, a.titulo, e.formato, e.precio, e.cantidad, a.ano_publicacion,  a.caratula
+                                        $info = $this->get_data("SELECT DISTINCT e.codigo_de_barras, a.interprete, a.titulo, e.formato, e.precio, e.cantidad, a.ano_publicacion,  a.caratula, e.album
                                                                  FROM album a, edicion e
                                                                  WHERE (INSTR(a.titulo,'$txt1') >0 OR INSTR(a.titulo,'$txt2')>0 OR INSTR(a.titulo,'$txt3')>0)
                                                                  AND e.album=a.nro_catalogo;");
@@ -368,7 +368,7 @@ class db
                                         $txt1 = strtolower($texto);
                                         $txt2 = ucfirst($txt1);
                                         $txt3 = strtoupper($texto);
-                                        $info = $this->get_data("SELECT  e.codigo_de_barras, a.titulo, a.interprete, e.formato, e.precio, e.cantidad, a.ano_publicacion,  a.caratula
+                                        $info = $this->get_data("SELECT  e.codigo_de_barras, a.titulo, a.interprete, e.formato, e.precio, e.cantidad, a.ano_publicacion,  a.caratula, e.album
                                                                  FROM album a, edicion e
                                                                  WHERE (INSTR(a.interprete,'$txt1') >0 OR INSTR(a.interprete,'$txt2')>0 OR INSTR(a.interprete,'$txt3')>0)
                                                                  AND e.album=a.nro_catalogo;");
@@ -385,10 +385,16 @@ class db
                                         $txt1 = strtolower($texto);
                                         $txt2 = ucfirst($txt1);
                                         $txt3 = strtoupper($texto);
-                                        $info = $this->get_data("SELECT DISTINCT e.codigo_de_barras,a.interprete, a.titulo, e.formato, e.precio, e.cantidad, a.ano_publicacion,  a.caratula
+                                        $info = $this->get_data("SELECT DISTINCT e.codigo_de_barras,a.interprete, a.titulo, e.formato, e.precio, e.cantidad, a.ano_publicacion,  a.caratula, e.album
                                                                  FROM cancion c, album a, edicion e
                                                                  WHERE (INSTR(c.nombre,'$txt1') >0 OR INSTR(c.nombre,'$txt2')>0 OR INSTR(c.nombre,'$txt3')>0)
                                                                  AND c.album=a.nro_catalogo AND e.album=a.nro_catalogo;");
+                                        break;
+                                    
+                                    case "las_canciones":
+                                        $album = mysqli_real_escape_string($this->cn,$data['album']);                            
+                                        $info = $this->get_data("SELECT * FROM cancion WHERE album='$album';");
+                                                                           
                                         break;
                                 }
                         break;
