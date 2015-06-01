@@ -57,6 +57,14 @@ class c_buscarediciones extends super_controller {
     public function display()
 	{	
             if(!is_empty($this->session)){
+                
+                if($_SESSION['empleado']['tipo'] == 'A'){
+                     $this->engine->assign('elusu'," Administrador ");
+                }
+                 if($_SESSION['empleado']['tipo'] == 'C'){
+                     $this->engine->assign('elusu'," Cajero ");
+                }
+                
                 if(is_empty($this->resulconsul)){
                     $this->engine->assign('title',"Buscar Ediciones");
                     $this->engine->display('header_BuscarEdiciones.tpl');
