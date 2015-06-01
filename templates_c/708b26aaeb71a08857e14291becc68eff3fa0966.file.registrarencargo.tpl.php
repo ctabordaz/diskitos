@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-01 17:38:37
-         compiled from "C:/wamp/www/diskitos/templates\ingresarediciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:12087554b7081846271-50830198%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-01 18:57:17
+         compiled from "C:/wamp/www/diskitos/templates\registrarencargo.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1461556c8eed1ec183-24911797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '5fbeaa4487a49278af959d94d05a9cdfef8af6a3' => 
+    '708b26aaeb71a08857e14291becc68eff3fa0966' => 
     array (
-      0 => 'C:/wamp/www/diskitos/templates\\ingresarediciones.tpl',
-      1 => 1433170840,
+      0 => 'C:/wamp/www/diskitos/templates\\registrarencargo.tpl',
+      1 => 1433177834,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12087554b7081846271-50830198',
+  'nocache_hash' => '1461556c8eed1ec183-24911797',
   'function' => 
   array (
   ),
@@ -20,7 +20,7 @@ $_smarty_tpl->decodeProperties(array (
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Ingresar Ediciones</title>
+        <title>Registrar Encargo</title>
         
         <link rel="stylesheet" href="./js/alertifyjs/css/alertify.min.css"/>
         <link rel="stylesheet" href="./js/alertifyjs/css/themes/default.min.css"/>
@@ -29,14 +29,15 @@ disk.ico" />
         <link rel="stylesheet"  href="./css/bootstrap.min.css">
         <link rel="stylesheet"  href="./css/ingresarediciones.css">        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./js/chosen/docsupport/prism.css">
+        <link rel="stylesheet" href="./js/chosen/chosen.css">
         
     </head>
-    <body <?php if (isset($_smarty_tpl->getVariable('cargar',null,true,false)->value)){?>onload="<?php echo $_smarty_tpl->getVariable('cargar')->value;?>
-"<?php }?>>
+    <body>
         
         <ul class="nav nav-tabs cabeza navbar-fixed-top">
             <li role="presentation"  ><a class="c" href="iniciarsesion.php">Regresar a Menú</a></li>
-            <li role="presentation" class=" active navbar-right"><a class="bl"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>Administrador</a></li>
+            <li role="presentation" class=" active navbar-right"><a class="bl"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>Cajero</a></li>
         </ul>
         
         <div id="content">
@@ -46,49 +47,31 @@ disk.ico" />
 
             <hr />
             <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
-ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-data">
+registrarencargo.php?option=registrar" method="post" enctype="multipart/form-data">
                 
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="col-md-5">
-                            <p id="formato">Código de Barras:</p>
-                        </div>
-                        <div class="col-md-7 required3">
-                            <input type="text" name="codigo_de_barras" id="codigo_de_barras" class="form-control input-md chat-input" required/>
-                            <input type="hidden" name="funcion_error" value="<?php echo $_smarty_tpl->getVariable('cargar')->value;?>
-">
-                        </div>
+                    <div class="col-md-2">
+                        <h4>Cliente:</h4>
                     </div>
-                    <div class="col-md-3">
-                        <div class="col-md-4">
-                            <p id="formato" class="atredi">Formato:</p>
-                        </div>
-                        <div class="col-md-8">
-                            <select class="form-control" name="formato" type="text" id="formatot" placeholder="Formato">
-                                <option value ="cd">CD</option>
-                                <option value ="dvd">DVD</option>
-                                <option value ="lp">LP</option>
+                    
+                    <div class="col-md-4">
+                        <div class="side-by-side clearfix">
+                            <select name="cliente" data-placeholder="Seleccione un cliente..." class="chosen-select" style="width:350px;" tabindex="2">
+                                <option value=""></option>
+                                <?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('clientes')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['e']->key => $_smarty_tpl->tpl_vars['e']->value){
+?>
+                                    <option value="<?php echo $_smarty_tpl->getVariable('e')->value->get('cedula');?>
+"><?php echo $_smarty_tpl->getVariable('e')->value->get('cedula');?>
+-<?php echo $_smarty_tpl->getVariable('e')->value->get('nombre');?>
+</option>
+                                <?php }} ?>
                             </select>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="col-md-4">
-                            <p id="formato" class="atredi2">Cantidad:</p>
-                        </div>
-                        <div class="col-md-8 required3">
-                            <input type="number" min="0" name="cantidad" id="cantidad" class="form-control input-md chat-input" placeholder="0" required/>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="col-md-4">
-                            <p id="formato" class="atredi">Precio:</p>
-                        </div>
-                        <div class="col-md-8 required3">
-                            <input type="number" name="precio" min="0" id="precio" class="form-control input-md chat-input" placeholder="0" required/>
-                        </div>
-                    </div>
+                    </div>                 
                 </div>
-
                 <hr />
 
                 <div class="row">
@@ -218,7 +201,7 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
 
                 <div class="row">
                     <button id="ingresar" type="submit" class="btn  btn-sm btn-login">
-                        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Ingresar 
+                        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  Registrar 
                     </button>
                 </div>
             </form>
@@ -226,13 +209,121 @@ ingresarediciones.php?option=ingresar" method="post" enctype="multipart/form-dat
         
         <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         <script src="./js/alertifyjs/alertify.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
-        <script src="./js/ingresaredicion2.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script src="./js/jquery.backstretch.min.js"></script>
-        <script src="./js/ingresaredicion.js"></script>
         
         <script>
             $.backstretch(["./images/Admin/Tocadiscos2.jpg"]);
         </script>
+
+        <script type="text/javascript">
+            
+            var ediciones = [];
+                <?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('edicion')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['e']->key => $_smarty_tpl->tpl_vars['e']->value){
+?>
+                        var edicion = new Object();
+                        edicion.cod = <?php echo $_smarty_tpl->getVariable('e')->value->get('codigo_de_barras');?>
+;
+                        edicion.cantidad = <?php echo $_smarty_tpl->getVariable('e')->value->get('cantidad');?>
+;
+                        edicion.precio = <?php echo $_smarty_tpl->getVariable('e')->value->get('precio');?>
+;
+                        edicion.titulo = "<?php echo $_smarty_tpl->getVariable('e')->value->auxiliars['titulo'];?>
+-<?php echo $_smarty_tpl->getVariable('e')->value->get('formato');?>
+";
+                        ediciones.push(edicion);
+                <?php }} ?>
+            
+            $("#agregar").click(function(){
+                
+                
+                 var n = $("#ediciones option:selected").val();
+                 if(n !== ""){
+                     var flag=0;
+                     $(".codb").each(function(){
+                         if($(this).text() == ediciones[n].cod){
+                              flag = 1;
+                         }
+            
+                     });
+                     
+                     if(flag !== 1){
+                     
+                          var boton = "<button  type='button' id='"+n+"' class='eliminarf btn btn-default btn-circle btn-lg'><i class='glyphicon glyphicon-minus'></i></button>";
+                         $("#tabla tr:last").after("<tr><td class='codb'>"
+                                 +ediciones[n].cod+
+                                 "</td><td>"
+                                 +ediciones[n].titulo+
+                                 "</td><td>"
+                                 +ediciones[n].cantidad+
+                                 "</td><td><input type='number' min=0  max="+ediciones[n].cantidad+" name='"+ediciones[n].cod+"' onChange='valort(this.value,"+ediciones[n].precio+","+ediciones[n].cod+");' class='mytext'></td><td>"
+                                 +ediciones[n].precio+
+                                 "</td><td><spam  class='"+ediciones[n].cod+" vt'"+"></spam></td><td>"
+                                 +boton+
+                                 "</td></tr>");  
+                    }}
+                     
+            });
+            
+            
+             $(document).on('click','.eliminarf',function(){
+                    
+                var objFila=$(this).parents().get(1);
+                     $(objFila).remove();
+                     
+               total = 0;
+            $(".vt").each(
+                function(index, value) {
+                    total = total + eval(Number($(this).text()));
+                }
+            );
+             $(".total").text(total);
+                     
+            });
+            
+            function valort(cant,valor,sp){
+                 
+                 total = cant*valor;
+                 $("."+sp).text(total);
+                 
+                 totalf=0;
+                 $(".vt").each(
+                function(index, value) {
+                    totalf = totalf + eval(Number($(this).text()));
+                }
+            );
+             $(".total").text(totalf);
+                 
+                 
+            };
+            
+            
+            
+            
+            
+        </script>  
+        <script src="./js/chosen/chosen.jquery.js" type="text/javascript"></script>
+        <script src="./js/chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+          var config = {
+            '.chosen-select'           : {
+            },
+            '.chosen-select-deselect'  : {
+                allow_single_deselect:true},
+            '.chosen-select-no-single' : {
+                disable_search_threshold:10},
+            '.chosen-select-no-results': {
+                no_results_text:'Oops, nothing found!'},
+            '.chosen-select-width'     : {
+                width:"95%"}
+          }
+          for (var selector in config) {
+            $(selector).chosen(config[selector]);
+          }
+        </script>
+
     </body>
 </html>

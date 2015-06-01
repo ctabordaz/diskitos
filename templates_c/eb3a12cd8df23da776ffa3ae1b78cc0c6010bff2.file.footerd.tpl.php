@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 01:48:15
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-01 17:38:37
          compiled from "C:/wamp/www/diskitos/templates\footerd.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2223555466df0172840-73214652%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_smarty_tpl->decodeProperties(array (
     'eb3a12cd8df23da776ffa3ae1b78cc0c6010bff2' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\footerd.tpl',
-      1 => 1430869641,
+      1 => 1433170840,
       2 => 'file',
     ),
   ),
