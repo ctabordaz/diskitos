@@ -57,7 +57,16 @@ class c_registrarencargo extends super_controller {
     }
 
         public function display()
-	{	
+	{
+            $options['cliente']['lvl2'] = "all";
+            
+            $this->orm->connect();
+            $this->orm->read_data(array("cliente"), $options);
+            $this->clientes = $this->orm->get_objects("cliente");
+            $this->orm->close();
+            
+            $this->engine->assign('clientes', $this->clientes);            
+            
             if(@$this->post->funcion_error != ""){
                 // Se lanzó un error: no debería recargarse la página
             }

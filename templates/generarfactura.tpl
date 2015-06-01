@@ -23,7 +23,7 @@
                     <select name="cliente" data-placeholder="Seleccione un cliente..." class="chosen-select" style="width:350px;" tabindex="2">
                                          <option value=""></option>
                                         {foreach $clientes as $e}
-                                            <option value="{$e->get('cedula')}">{$e->get('cedula')}-{$e->get('nombre')}</option>
+                                            <option value="{$e->get('cedula')}">{$e->get('cedula')} - {$e->get('nombre')}</option>
                                         {/foreach}
 					
                     </select>
@@ -50,8 +50,8 @@
 					
                     </select>
 			
-		</div>
-            </div>
+		  </div>
+        </div>
 
             <div class="col-md-1 ">
                 <button type="button" id="agregar" class="btn btn-default btn-circle btn-lg"><i class="glyphicon glyphicon-plus-sign"></i></button>

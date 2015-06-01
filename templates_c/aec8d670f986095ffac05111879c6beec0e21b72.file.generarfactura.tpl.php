@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-08 19:36:19
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 01:39:05
          compiled from "C:/wamp/www/diskitos/templates\generarfactura.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:12571554d10332e9f96-85355602%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:17984556ced19c9b3b0-51395908%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'aec8d670f986095ffac05111879c6beec0e21b72' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\generarfactura.tpl',
-      1 => 1431113766,
+      1 => 1433201944,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12571554d10332e9f96-85355602',
+  'nocache_hash' => '17984556ced19c9b3b0-51395908',
   'function' => 
   array (
   ),
@@ -49,7 +49,7 @@ if ($_smarty_tpl->_count($_from) > 0){
 ?>
                                             <option value="<?php echo $_smarty_tpl->getVariable('e')->value->get('cedula');?>
 "><?php echo $_smarty_tpl->getVariable('e')->value->get('cedula');?>
--<?php echo $_smarty_tpl->getVariable('e')->value->get('nombre');?>
+ - <?php echo $_smarty_tpl->getVariable('e')->value->get('nombre');?>
 </option>
                                         <?php }} ?>
 					
@@ -103,8 +103,8 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 					
                     </select>
 			
-		</div>
-            </div>
+		  </div>
+        </div>
 
             <div class="col-md-1 ">
                 <button type="button" id="agregar" class="btn btn-default btn-circle btn-lg"><i class="glyphicon glyphicon-plus-sign"></i></button>
