@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 03:23:35
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 19:45:12
          compiled from "C:/wamp/www/diskitos/templates\actualizarcantidad.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11819556d0597b30d61-39478897%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_smarty_tpl->decodeProperties(array (
     '9fa4e5e1c9270fa697cfccefaa25a06eeca03ef3' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\actualizarcantidad.tpl',
-      1 => 1433208212,
+      1 => 1433266044,
       2 => 'file',
     ),
   ),
@@ -31,9 +31,11 @@ disk.ico" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <link rel="stylesheet" href="./js/chosen/docsupport/prism.css">
         <link rel="stylesheet" href="./js/chosen/chosen.css">
+        <script type="text/javascript" src="js/sc.js"></script>
         
     </head>
-    <body>
+    <body <?php if (isset($_smarty_tpl->getVariable('cargar',null,true,false)->value)){?>onload="<?php echo $_smarty_tpl->getVariable('cargar')->value;?>
+"<?php }?>>
         
         <div id="content">
             <div class="row">
@@ -101,13 +103,9 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                     <div class="col-md-4">
                       <table>
                         <tr>
-                          <td> 
-                              .
-                          </td>
-                        </tr>
-                        <tr>
-                          <td> 
-                              <label id="lblTitulo">Título: </label>
+                          <td>
+                              <br>
+                              <label id="lblTitulo"></label>
                           </td>
                         </tr>
                         <tr>
@@ -166,47 +164,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
         <script src="./js/chosen/chosen.jquery.js" type="text/javascript"></script>
         <script src="./js/chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript">
-          var ediciones = [];
-          <?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable;
- $_from = $_smarty_tpl->getVariable('edicion')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-if ($_smarty_tpl->_count($_from) > 0){
-    foreach ($_from as $_smarty_tpl->tpl_vars['e']->key => $_smarty_tpl->tpl_vars['e']->value){
-?>
-                  var edicion = new Object();
-                  edicion.caratula = <?php echo $_smarty_tpl->getVariable('e')->value->auxiliars['caratula'];?>
-;
-                  edicion.titulo = <?php echo $_smarty_tpl->getVariable('e')->value->auxiliars['titulo'];?>
-;
-                  edicion.interprete = <?php echo $_smarty_tpl->getVariable('e')->value->auxiliars['interprete'];?>
-;
-                  edicion.ano_publicacion = <?php echo $_smarty_tpl->getVariable('e')->value->auxiliars['ano_publicacion'];?>
-;
-                  edicion.formato = <?php echo $_smarty_tpl->getVariable('e')->value->get('formato');?>
-;
-                  edicion.cantidad = <?php echo $_smarty_tpl->getVariable('e')->value->get('cantidad');?>
-;
-                  edicion.cod = <?php echo $_smarty_tpl->getVariable('e')->value->get('codigo_de_barras');?>
-;
-                  edicion.album = <?php echo $_smarty_tpl->getVariable('e')->value->auxiliars['nro_catalogo'];?>
-;
-                  ediciones.push(edicion);
-          <?php }} ?>
-
-          $("#ediciones").click(function(){
-            var n = $("#ediciones option:selected").val();
-            if(n !== ""){
-              $("#lblTitulo").text("Título: "+ediciones[n].titulo);
-              $("#lblInterprete").text("Intérprete: "+ediciones[n].interprete);
-              $("#lblAnno").text("Año: "+ediciones[n].ano_publicacion);
-              $("#lblFormato").text("Formato: "+ediciones[n].formato);
-              $("#lblCantidad").text("Cantidad: "+ediciones[n].cantidad);
-
-              document.getElementById("caratula").src = ediciones[n].caratula;
-
-              $("#codigo_de_barras").val(ediciones[n].cod);
-              $("#album").val(ediciones[n].album);
-            }
-          }
+          
         </script> 
         <script type="text/javascript">
           var config = {

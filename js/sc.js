@@ -1,46 +1,34 @@
 // esta rutina se ejecuta cuando jquery esta listo para trabajar
 $(function() 
 {
-	$("#txtEdicion").autocomplete({
-		source: "actCant_refresh.php", 				/* este es el formulario que realiza la busqueda */
-		minLength: 1,									/* le decimos que espere hasta que haya 1 caracteres escritos */
-		select: edicionSeleccionada,	/* esta es la rutina que extrae la informacion del registro seleccionado */
-		focus: edicionMarcada
-	});
+	var ediciones = [];
+	/*{foreach $edicion as $e}
+	      var edicion = new Object();
+	      edicion.caratula = {$e->auxiliars['caratula']};
+	      edicion.titulo = {$e->auxiliars['titulo']};
+	      edicion.interprete = {$e->auxiliars['interprete']};
+	      edicion.ano_publicacion = {$e->auxiliars['ano_publicacion']};
+	      edicion.formato = {$e->get('formato')};
+	      edicion.cantidad = {$e->get('cantidad')};
+	      edicion.cod = {$e->get('codigo_de_barras')};
+	      edicion.album = {$e->auxiliars['nro_catalogo']};
+	      ediciones.push(edicion);
+	{/foreach}*/
 });
 
-function edicionMarcada(event, ui)
-{
-	var edicion = ui.item.value;
-	$("#txtEdicion").val(edicion.titulo+"-"+edicion.formato);
-	event.preventDefault();
-}
+$("#ediciones").chosen().change(function(){
+	var n = $("#ediciones option:selected").val();
+	$("#lblTitulo").text("Título: ");
+	if(n !== ""){
+	  $("#lblTitulo").text("Título: "+ediciones[n].titulo);
+	  $("#lblInterprete").text("Intérprete: "+ediciones[n].interprete);
+	  $("#lblAnno").text("Año: "+ediciones[n].ano_publicacion);
+	  $("#lblFormato").text("Formato: "+ediciones[n].formato);
+	  $("#lblCantidad").text("Cantidad: "+ediciones[n].cantidad);
 
-function edicionSeleccionada(event, ui)
-{
-	var edicion = ui.item.value;
-	//var cantidad = $("#txtCantidad").val();
-	
-	// vamos a validar la cantidad con un procedimiento muy simple
-	//cantidad = parseInt(cantidad, 10); // convierte este valor en un entero base 10 (un numero cualquiera)
-	//if (isNaN(cantidad)) cantidad = 0;
-	
-        document.getElementById("lblTitulo").className = "nonhidden";
-        
-	$("#lblTitulo").text("Título: "+edicion.titulo);
-	$("#lblInterprete").text("Intérprete: "+edicion.interprete);
-	$("#lblAnno").text("Año: "+edicion.ano_publicacion);
-	$("#lblFormato").text("Formato: "+edicion.formato);
-	$("#lblCantidad").text("Cantidad: "+edicion.cantidad);
-	//$("caratula").src(edicion.caratula);
-	//document.getElementById("caratula").src = "./images/caratulas/35047.jpg";
+	  document.getElementById("caratula").src = ediciones[n].caratula;
 
-	document.getElementById("caratula").src = edicion.caratula;
-	//document.getElementById("codigo_de_barras").value = edicion.codigo_de_barras;
-	//document.getElementById("album").value = edicion.album;
-	$("#codigo_de_barras").val(edicion.codigo_de_barras);
-	$("#album").val(edicion.album);
-
-	$("#txtEdicion").val(edicion.titulo+"-"+edicion.formato);
-	event.preventDefault();
-}
+	  $("#codigo_de_barras").val(ediciones[n].cod);
+	  $("#album").val(ediciones[n].album);
+	}
+});

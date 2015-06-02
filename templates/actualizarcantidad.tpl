@@ -11,9 +11,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <link rel="stylesheet" href="./js/chosen/docsupport/prism.css">
         <link rel="stylesheet" href="./js/chosen/chosen.css">
+        <script type="text/javascript" src="js/sc.js"></script>
         
     </head>
-    <body>
+    <body {if isset($cargar)}onload="{$cargar}"{/if}>
         
         <div id="content">
             <div class="row">
@@ -54,13 +55,9 @@
                     <div class="col-md-4">
                       <table>
                         <tr>
-                          <td> 
-                              .
-                          </td>
-                        </tr>
-                        <tr>
-                          <td> 
-                              <label id="lblTitulo">Título: </label>
+                          <td>
+                              <br>
+                              <label id="lblTitulo"></label>
                           </td>
                         </tr>
                         <tr>
@@ -119,35 +116,7 @@
         <script src="./js/chosen/chosen.jquery.js" type="text/javascript"></script>
         <script src="./js/chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript">
-          var ediciones = [];
-          {foreach $edicion as $e}
-                  var edicion = new Object();
-                  edicion.caratula = {$e->auxiliars['caratula']};
-                  edicion.titulo = {$e->auxiliars['titulo']};
-                  edicion.interprete = {$e->auxiliars['interprete']};
-                  edicion.ano_publicacion = {$e->auxiliars['ano_publicacion']};
-                  edicion.formato = {$e->get('formato')};
-                  edicion.cantidad = {$e->get('cantidad')};
-                  edicion.cod = {$e->get('codigo_de_barras')};
-                  edicion.album = {$e->auxiliars['nro_catalogo']};
-                  ediciones.push(edicion);
-          {/foreach}
-
-          $("#ediciones").click(function(){
-            var n = $("#ediciones option:selected").val();
-            if(n !== ""){
-              $("#lblTitulo").text("Título: "+ediciones[n].titulo);
-              $("#lblInterprete").text("Intérprete: "+ediciones[n].interprete);
-              $("#lblAnno").text("Año: "+ediciones[n].ano_publicacion);
-              $("#lblFormato").text("Formato: "+ediciones[n].formato);
-              $("#lblCantidad").text("Cantidad: "+ediciones[n].cantidad);
-
-              document.getElementById("caratula").src = ediciones[n].caratula;
-
-              $("#codigo_de_barras").val(ediciones[n].cod);
-              $("#album").val(ediciones[n].album);
-            }
-          }
+          
         </script> 
         <script type="text/javascript">
           var config = {
