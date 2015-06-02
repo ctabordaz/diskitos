@@ -86,6 +86,27 @@ managerScreen = {
         }
        }
     },
+    cliente: function(){
+        alertify.set('notifier','position', 'top-right');
+        alertify.error("El cliente no existe",60);
+        
+        
+        
+    },
+    edicionN: function(n){
+        alertify.set('notifier','position', 'top-right');
+        alertify.error("La edicion " + n + " no existe",60);
+        
+        
+        
+    },
+    edicionC: function(n, v){
+        alertify.set('notifier','position', 'top-right');
+        alertify.error("La edicion " + n + " tiene más de " + v +" cantidades",60);
+        
+        
+        
+    }
     
    
   

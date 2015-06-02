@@ -5,10 +5,48 @@ require('modules/fpdf/fpdf.php');
 
 class c_generarfactura extends super_controller {
     
+        public function verificarC($id){
+            $cod['cliente']['cedula'] = $id;
+                $options['cliente']['lvl2'] = "factura";
+                $this->orm->connect();
+                $this->orm->read_data(array("cliente"), $options, $cod);
+                $this->cliente = $this->orm->get_objects("cliente");
+                if(is_empty($this->cliente)){
+                     throw_exception("ms.cliente()");
+                }else{
+                    return $this->cliente;
+                }
+        }
+        public function veriicarEdiciones($ediciones){
+             foreach($ediciones as $key=>$val){
+                if($key !== "cliente"){
+                         $cod['edicion']['codigo_de_barras'] = $key;
+                        $auxiliars['edicion']=array("titulo"); 
+                        $options['edicion']['lvl2'] = "factura";
+                        $this->orm->connect();
+                        $this->orm->read_data(array("edicion"), $options, $cod);
+                        $edicion = $this->orm->get_objects("edicion",NULL,$auxiliars);
+                        if(is_empty($edicion)){
+                            throw_exception("ms.edicionN($key)");
+                        }else{
+                            
+                            if($edicion[0]->get('cantidad')< 1 || $edicion[0]->get('cantidad')< $val){
+                                $cant = $edicion[0]->get('cantidad');
+                                throw_exception("ms.edicionC($key,$cant)");
+                            }
+                        }
+                }
+             
+             }
+            
+            
+        }
+    
         public function generar(){
             
             
-            
+            $cliente = $this->verificarC($this->post->cliente);
+            $this->veriicarEdiciones($this->post);
             settype($data, 'object');
             $data->codigo = 1;
             $data->cajero = $_SESSION['empleado']['cedula'];
@@ -49,13 +87,8 @@ class c_generarfactura extends super_controller {
                 $datos = $this->orm->get_objects("empresa");
                 $this->orm->close();
                 
+                               
                 
-                $cod['cliente']['cedula'] = $this->post->cliente;
-                $options['cliente']['lvl2'] = "factura";
-                $this->orm->connect();
-                $this->orm->read_data(array("cliente"), $options, $cod);
-                $cliente = $this->orm->get_objects("cliente");
-
 
                 $archivo="factura-".$maxf[0]->get('codigo').".pdf";
                 $archivo_de_salida=$archivo;
@@ -231,9 +264,7 @@ class c_generarfactura extends super_controller {
                 
             }
             catch (Exception $e){
-                $this->error=1; $this->msg_warning=$e->getMessage(); $this->temp_aux = 'message.tpl';
-                $this->engine->assign('type_warning',$this->type_warning); $this->engine->assign('msg_warning',$this->msg_warning);
-                
+                $this->engine->assign('cargar',$e->getMessage())  ; 
             }
                 $this->display();
 	}

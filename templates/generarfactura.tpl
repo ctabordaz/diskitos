@@ -142,7 +142,7 @@
                          +ediciones[n].titulo+
                          "</td><td>"
                          +ediciones[n].cantidad+
-                         "</td><td><input type='number' min=0  max="+ediciones[n].cantidad+" name='"+ediciones[n].cod+"' onChange='valort(this.value,"+ediciones[n].precio+","+ediciones[n].cod+");' class='mytext'></td><td>"
+                         "</td><td><input type='number' min=1 value='1' max="+ediciones[n].cantidad+" name='"+ediciones[n].cod+"' onChange='valort(this.value,"+ediciones[n].precio+","+ediciones[n].cod+");' class='mytext'></td><td>"
                          +ediciones[n].precio+
                          "</td><td><spam  class='"+ediciones[n].cod+" vt'"+"></spam></td><td>"
                          +boton+

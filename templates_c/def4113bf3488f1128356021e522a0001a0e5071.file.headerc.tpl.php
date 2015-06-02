@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 01:00:46
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 13:48:00
          compiled from "C:/wamp/www/diskitos/templates\headerc.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:856556ce41e99c7a1-18998425%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:17423556db4103197e7-03627829%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'def4113bf3488f1128356021e522a0001a0e5071' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\headerc.tpl',
-      1 => 1433170842,
+      1 => 1433252847,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '856556ce41e99c7a1-18998425',
+  'nocache_hash' => '17423556db4103197e7-03627829',
   'function' => 
   array (
   ),
@@ -30,11 +30,14 @@ disk.ico" />
         <link rel="stylesheet"  href="./css/bootstrap.min.css">
         <link rel="stylesheet"  href="./css/ingresarediciones.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	
+	<script src="./js/alertifyjs/alertify.min.js"></script>
+        <link rel="stylesheet" href="./js/alertifyjs/css/alertify.min.css"/>
+        <link rel="stylesheet" href="./js/alertifyjs/css/themes/default.min.css"/>
      
         
 </head>
-<body>
+<body <?php if (isset($_smarty_tpl->getVariable('cargar',null,true,false)->value)){?>onload="<?php echo $_smarty_tpl->getVariable('cargar')->value;?>
+"<?php }?>>
        <ul class="nav nav-tabs cabeza navbar-fixed-top">
             <li role="presentation"  ><a class="c" href="iniciarsesion.php">Regresar a Menú</a></li>
             <li role="presentation" class=" active navbar-right"><a class="bl"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>Cajero</a></li>

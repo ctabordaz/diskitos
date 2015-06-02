@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 01:57:31
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 13:25:56
          compiled from "C:/wamp/www/diskitos/templates\generarfactura.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:21568556cf16ba9c101-23616765%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:8768556daee4499594-44701096%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'aec8d670f986095ffac05111879c6beec0e21b72' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\generarfactura.tpl',
-      1 => 1433203050,
+      1 => 1433251550,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '21568556cf16ba9c101-23616765',
+  'nocache_hash' => '8768556daee4499594-44701096',
   'function' => 
   array (
   ),
@@ -204,7 +204,7 @@ if ($_smarty_tpl->_count($_from) > 0){
                          +ediciones[n].titulo+
                          "</td><td>"
                          +ediciones[n].cantidad+
-                         "</td><td><input type='number' min=0  max="+ediciones[n].cantidad+" name='"+ediciones[n].cod+"' onChange='valort(this.value,"+ediciones[n].precio+","+ediciones[n].cod+");' class='mytext'></td><td>"
+                         "</td><td><input type='number' min=1 value='1' max="+ediciones[n].cantidad+" name='"+ediciones[n].cod+"' onChange='valort(this.value,"+ediciones[n].precio+","+ediciones[n].cod+");' class='mytext'></td><td>"
                          +ediciones[n].precio+
                          "</td><td><spam  class='"+ediciones[n].cod+" vt'"+"></spam></td><td>"
                          +boton+
