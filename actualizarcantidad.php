@@ -32,7 +32,16 @@ class c_actualizarcantidad extends super_controller {
     }
 
     public function display()
-	{                
+	{       
+                $options['edicion']['lvl2']= "all";
+                $auxiliars['edicion']=array("nro_catalogo","titulo","interprete","genero","ano_publicacion","caratula");  
+                $this->orm->connect();
+                $this->orm->read_data(array("edicion"), $options);
+                $this->edicion = $this->orm->get_objects("edicion",null,$auxiliars);
+                $this->orm->close();
+
+                $this->engine->assign('edicion', $this->edicion);
+        
 		$this->engine->assign('title',"Actualizar Cantidad");
 		$this->engine->display('headera.tpl');
 		$this->engine->display('actualizarcantidad.tpl');
