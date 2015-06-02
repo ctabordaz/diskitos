@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 13:25:56
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 20:01:48
          compiled from "C:/wamp/www/diskitos/templates\generarfactura.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:8768556daee4499594-44701096%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:15516556e0bac422820-47993223%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'aec8d670f986095ffac05111879c6beec0e21b72' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\generarfactura.tpl',
-      1 => 1433251550,
+      1 => 1433275301,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '8768556daee4499594-44701096',
+  'nocache_hash' => '15516556e0bac422820-47993223',
   'function' => 
   array (
   ),
@@ -94,11 +94,13 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index_next'] = $_smarty
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == 1);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total']);
 ?>
+                                            <?php if ($_smarty_tpl->getVariable('edicion')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('cantidad')>0){?>
                                             <option value="<?php echo $_smarty_tpl->getVariable('j')->value;?>
 "><?php echo $_smarty_tpl->getVariable('edicion')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->auxiliars['titulo'];?>
 -<?php echo $_smarty_tpl->getVariable('edicion')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('formato');?>
 </option>
                                              <?php $_smarty_tpl->tpl_vars["j"] = new Smarty_variable($_smarty_tpl->getVariable('j')->value+1, null, null);?>
+                                             <?php }?>
                                         <?php endfor; endif; ?>
 					
                     </select>

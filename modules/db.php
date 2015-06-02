@@ -119,7 +119,8 @@ class db
                                     $cantidad=mysqli_real_escape_string($this->cn,$object->get('cantidad'));
                                     
                                     $this->do_operation("INSERT INTO detalle (factura,edicion,cantidad) VALUES ('$factura','$edicion','$cantidad')");
-				break;
+                                    $this->do_operation("UPDATE edicion SET cantidad = cantidad - '$cantidad' WHERE codigo_de_barras = '$edicion';");
+                                    break;
 			}
 			break;
                         case "album":

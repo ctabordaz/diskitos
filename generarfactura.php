@@ -224,6 +224,8 @@ class c_generarfactura extends super_controller {
 
             //Eliminación del archivo en el servidor
             unlink($archivo);
+            $this->engine->assign('cargar', "ms.generado()");
+            throw_exception("ms.generado()");
             
     }
 

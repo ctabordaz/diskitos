@@ -44,8 +44,10 @@
                                          <option value=""></option>
                                          {assign var="j" value=0}
                                         {section name=i loop=$edicion}
+                                            {if $edicion[i]->get('cantidad') > 0 }
                                             <option value="{$j}">{$edicion[i]->auxiliars['titulo']}-{$edicion[i]->get('formato')}</option>
                                              {assign var="j" value=$j+1}
+                                             {/if}
                                         {/section}
 					
                     </select>

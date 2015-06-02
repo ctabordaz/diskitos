@@ -102,15 +102,17 @@ managerScreen = {
     },
     edicionC: function(n, v){
         alertify.set('notifier','position', 'top-right');
-        alertify.error("La edicion " + n + " tiene más de " + v +" cantidades",60);
-        
+        alertify.error("La edicion " + n + " no puede tener " + v +" cantidades",60);
+     
+    },
+    generado: function(){
+         alertify.set('notifier','position', 'top-right');
+        alertify.success("Factura generada correctamente",60);
         
         
     }
     
    
-  
-    
 };
 
 var ms = managerScreen;
