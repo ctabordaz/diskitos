@@ -111,10 +111,6 @@
         <script src="./js/alertifyjs/alertify.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script src="./js/jquery.backstretch.min.js"></script>
-        
-        <script>
-            $.backstretch(["./images/Admin/Tocadiscos2.jpg"]);
-        </script>
         <script src="./js/chosen/chosen.jquery.js" type="text/javascript"></script>
         <script src="./js/chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript">

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 01:54:17
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-02 02:07:18
          compiled from "C:/wamp/www/diskitos/templates\registrarencargo.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2052556cf0a9cc9029-26844861%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:23999556cf3b6409c89-95286263%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '708b26aaeb71a08857e14291becc68eff3fa0966' => 
     array (
       0 => 'C:/wamp/www/diskitos/templates\\registrarencargo.tpl',
-      1 => 1433202856,
+      1 => 1433203637,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2052556cf0a9cc9029-26844861',
+  'nocache_hash' => '23999556cf3b6409c89-95286263',
   'function' => 
   array (
   ),
@@ -139,10 +139,6 @@ if ($_smarty_tpl->_count($_from) > 0){
         <script src="./js/alertifyjs/alertify.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script src="./js/jquery.backstretch.min.js"></script>
-        
-        <script>
-            $.backstretch(["./images/Admin/Tocadiscos2.jpg"]);
-        </script>
         <script src="./js/chosen/chosen.jquery.js" type="text/javascript"></script>
         <script src="./js/chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript">

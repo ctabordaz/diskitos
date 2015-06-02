@@ -73,7 +73,7 @@ class c_registrarencargo extends super_controller {
 
             $this->engine->assign('title',"Registrar Encargo");
             $this->engine->display('registrarencargo.tpl');
-            $this->engine->display('footerd.tpl');
+            $this->engine->display('footer_RegistrarEncargo.tpl');
 	}
 	
 	public function run()
