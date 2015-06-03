@@ -319,6 +319,10 @@ class db
                                 case "all": 
                                      $info=$this->get_data("select e.*,a.* from edicion e, album a where a.nro_catalogo = e.album;");
                                     break;
+                                case "all_ea": 
+                                    $cod = mysqli_real_escape_string($this->cn, $data['codigo_de_barras']);
+                                    $info=$this->get_data("select e.*,a.* from edicion e, album a where a.nro_catalogo = e.album AND e.codigo_de_barras = '$cod';");
+                                    break;
                             }
 			break;
                     

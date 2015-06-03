@@ -12,3 +12,27 @@
 .c2 {
     font-size: 15px;
 }
+
+.dummy-header{
+    text-align: center; 
+    vertical-align: middle;
+    padding-top: 15px;
+    font-size: small; 
+}
+
+#det{
+    text-align: left;
+    padding-top: 13px;
+}
+
+#detalle{
+    text-align: left;
+}
+
+.botonPedir{
+    height: 43px;
+}
+
+#resumen{
+    padding-left: 30px;
+}
