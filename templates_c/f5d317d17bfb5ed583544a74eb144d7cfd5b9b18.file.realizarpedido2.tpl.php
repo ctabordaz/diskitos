@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-03 09:04:45
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-03 09:50:05
          compiled from "C:/xampp/htdocs/diskitos/templates\realizarpedido2.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:28962556ea70d65a929-42590429%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3484556eb1adb8ac70-09843590%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f5d317d17bfb5ed583544a74eb144d7cfd5b9b18' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\realizarpedido2.tpl',
-      1 => 1433315075,
+      1 => 1433317760,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '28962556ea70d65a929-42590429',
+  'nocache_hash' => '3484556eb1adb8ac70-09843590',
   'function' => 
   array (
   ),
@@ -66,7 +66,11 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
  | <?php echo $_smarty_tpl->getVariable('cantidades')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']];?>
  unidades ........... $<?php echo $_smarty_tpl->getVariable('ediciones')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('precio')*0.8*$_smarty_tpl->getVariable('cantidades')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']];?>
 </li>
-
+                    <input type="hidden" name="albumes[]" value="<?php echo $_smarty_tpl->getVariable('ediciones')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('album');?>
+" />
+                    <input type="hidden" name="barras[]" value="<?php echo $_smarty_tpl->getVariable('ediciones')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('codigo_de_barras');?>
+" />
+                    
                     <?php $_smarty_tpl->tpl_vars['total'] = new Smarty_variable($_smarty_tpl->getVariable('total')->value+$_smarty_tpl->getVariable('ediciones')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('precio')*0.8*$_smarty_tpl->getVariable('cantidades')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']], null, null);?>
                     
                     <?php if ($_smarty_tpl->getVariable('prov')->value=="x_x"){?>

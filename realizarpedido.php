@@ -6,13 +6,30 @@ class c_realizarpedido extends super_controller {
     
     public function enviar()
     {
+        
         $this->post->fecha = date('Y-m-d');
         $this->post->empleado = $_SESSION['empleado']['cedula'];
         
         $pedid = new pedido($this->post);
         $this->orm->connect();
         $this->orm->insert_data("pedido",$pedid);
+        $ide = $this->orm->db->cn->insert_id;
         $this->orm->close();
+        
+        for($i = 0; $i < sizeof($this->post->albumes); $i++)
+        {
+            settype($data,'object');
+
+            $data->fecha = date('Y-m-d');
+            $data->pedido = $ide;
+            $data->edicion_barras = $this->post->barras[$i];
+            $data->edicion_alb = $this->post->albumes[$i];
+            $envio = new envio($data);
+            
+            $this->orm->connect();
+            $this->orm->insert_data("envio",$envio);
+            $this->orm->close();
+        }
         
         header('Location: realizarpedido.php');
     }

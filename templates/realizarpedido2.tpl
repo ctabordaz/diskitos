@@ -19,7 +19,9 @@
                     {$ed = $ediciones[i]->get('auxiliars')}
 
                     <li>{$ed['titulo']} - {$ed['interprete']} | {$cantidades[i]} unidades ........... ${$ediciones[i]->get('precio')*0.8*$cantidades[i]}</li>
-
+                    <input type="hidden" name="albumes[]" value="{$ediciones[i]->get('album')}" />
+                    <input type="hidden" name="barras[]" value="{$ediciones[i]->get('codigo_de_barras')}" />
+                    
                     {$total = $total + $ediciones[i]->get('precio')*0.8*$cantidades[i]}
                     
                     {if $prov eq "x_x"}

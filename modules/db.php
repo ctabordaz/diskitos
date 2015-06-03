@@ -236,6 +236,20 @@ class db
                                         break;
 				}
 				break;
+                            
+                        case "envio":
+				switch($options['lvl2'])
+				{
+                                    case "envio":
+                                        $fecha=mysqli_real_escape_string($this->cn,$object->get('fecha'));
+                                        $pedido=mysqli_real_escape_string($this->cn,$object->get('pedido'));
+                                        $eb=mysqli_real_escape_string($this->cn, $object->get('edicion_barras'));
+                                        $ea=mysqli_real_escape_string($this->cn, $object->get('edicion_alb'));
+
+                                        $this->do_operation("INSERT INTO envio VALUES ('$fecha', '$pedido', '$eb', '$ea');");
+                                        break;
+				}
+				break;
 			
 			default: break;
 		}
