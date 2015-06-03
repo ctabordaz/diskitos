@@ -11,7 +11,7 @@ class c_actualizarcantidad extends super_controller {
         
         $this->edicion = new edicion($this->post);
         
-        if(is_empty($this->edicion->get('codigo_de_barras')) && is_empty($this->edicion->get('album'))) {
+        if(is_empty($this->edicion->get('codigo_de_barras')) || is_empty($this->edicion->get('cantidad'))) {
             $this->engine->assign("cargar","camposVacios()");
         } elseif($this->edicion->get('cantidad')<0){
             $this->engine->assign("cargar","cantidadNegativa()");
@@ -21,13 +21,6 @@ class c_actualizarcantidad extends super_controller {
             $this->orm->update_data("one",$this->edicion);
             $this->orm->close();
         }
-        /*
-        $this->type_warning = "success";
-        $this->msg_warning = "Edicion actualizada correctamente";
-
-        $this->temp_aux = 'message.tpl';
-        $this->engine->assign('type_warning',$this->type_warning);
-        $this->engine->assign('msg_warning',$this->msg_warning);*/
         
     }
 
@@ -50,17 +43,21 @@ class c_actualizarcantidad extends super_controller {
 	
 	public function run()
 	{
-            try{
-                if (isset($this->get->option)){
-                   $this->{$this->get->option}();
-                }
+            if($_SESSION['empleado']['tipo'] != 'A'){
+                header('Location: iniciarsesion.php');
+            }else{
+               try{
+                    if (isset($this->get->option)){
+                        $this->{$this->get->option}();
+                    }
+               }
+               catch (Exception $e){
+                   $this->error=1; $this->msg_warning=$e->getMessage(); $this->temp_aux = 'message.tpl';
+                   $this->engine->assign('type_warning',$this->type_warning); $this->engine->assign('msg_warning',$this->msg_warning);
+               }
+
+               $this->display();
             }
-            catch (Exception $e){
-                $this->error=1; $this->msg_warning=$e->getMessage(); $this->temp_aux = 'message.tpl';
-                $this->engine->assign('type_warning',$this->type_warning); $this->engine->assign('msg_warning',$this->msg_warning);
-            }
-            
-            $this->display();
 	}
 }
 

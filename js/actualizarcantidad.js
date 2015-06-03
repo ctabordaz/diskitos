@@ -1,14 +1,14 @@
 function camposVacios(c){
         alertify.set('notifier','position', 'top-right');
-        alertify.error("Debe ingresar una Edicion",60);
+        alertify.error("Existen campos obligatorios vacíos!",60);
 }
 
 function cantidadNegativa(){
         alertify.set('notifier','position', 'top-right');
-        alertify.error("Cantidad debe ser mayor o igual a cero",60);
+        alertify.error("La cantidad a aumentar debe ser mayor o igual a cero",60);
 }
 
 function exitoso(){
         alertify.set('notifier','position', 'top-right');
-        alertify.success("La Cantidad ha sido actualizada Correctamente",60);    
+        alertify.success("La cantidad ha sido actualizada correctamente!",60);    
 }

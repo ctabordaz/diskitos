@@ -1,3 +1,22 @@
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-03 06:03:48
+         compiled from "C:/wamp/www/diskitos/templates\actualizarcantidad.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:31234556e7ca4e55bd1-49181253%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '9fa4e5e1c9270fa697cfccefaa25a06eeca03ef3' => 
+    array (
+      0 => 'C:/wamp/www/diskitos/templates\\actualizarcantidad.tpl',
+      1 => 1433302363,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '31234556e7ca4e55bd1-49181253',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -5,7 +24,8 @@
         
         <link rel="stylesheet" href="./js/alertifyjs/css/alertify.min.css"/>
         <link rel="stylesheet" href="./js/alertifyjs/css/themes/default.min.css"/>
-        <link rel="shortcut icon" href="{$gvar.l_global}disk.ico" />
+        <link rel="shortcut icon" href="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
+disk.ico" />
         <link rel="stylesheet"  href="./css/bootstrap.min.css">
         <link rel="stylesheet"  href="./css/ingresarediciones.css">        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -14,7 +34,8 @@
         <script src="./js/actualizarcantidad.js"></script>
         
     </head>
-    <body {if isset($cargar)}onload="{$cargar}"{/if}>
+    <body <?php if (isset($_smarty_tpl->getVariable('cargar',null,true,false)->value)){?>onload="<?php echo $_smarty_tpl->getVariable('cargar')->value;?>
+"<?php }?>>
         
         <div id="content">
             <div class="row">
@@ -22,7 +43,8 @@
             </div>
 
             <hr />
-            <form action="{$gvar.l_global}actualizarcantidad.php?option=actualizar" method="post" enctype="multipart/form-data">
+            <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
+actualizarcantidad.php?option=actualizar" method="post" enctype="multipart/form-data">
                 
                 <div class="row">
                     <div class="col-md-2">
@@ -34,11 +56,37 @@
             
                             <select id="ediciones" data-placeholder="Seleccione una edición..." class="chosen-select" style="width:350px;" tabindex="2">
                                    <option value=""></option>
-                                   {assign var="j" value=0}
-                                  {section name=i loop=$edicion}
-                                      <option value="{$j}">{$edicion[i]->auxiliars['titulo']}-{$edicion[i]->get('formato')}</option>
-                                       {assign var="j" value=$j+1}
-                                  {/section}
+                                   <?php $_smarty_tpl->tpl_vars["j"] = new Smarty_variable(0, null, null);?>
+                                  <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['name'] = 'i';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->getVariable('edicion')->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['show'] = true;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['step'] = 1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'];
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['show'] = false;
+} else
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['show']):
+
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total']);
+?>
+                                      <option value="<?php echo $_smarty_tpl->getVariable('j')->value;?>
+"><?php echo $_smarty_tpl->getVariable('edicion')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->auxiliars['titulo'];?>
+-<?php echo $_smarty_tpl->getVariable('edicion')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('formato');?>
+</option>
+                                       <?php $_smarty_tpl->tpl_vars["j"] = new Smarty_variable($_smarty_tpl->getVariable('j')->value+1, null, null);?>
+                                  <?php endfor; endif; ?>
                             </select>
                         </div>
                     </div>          
@@ -121,18 +169,30 @@
 
             var ediciones = [];
 
-            {foreach $edicion as $e}
+            <?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('edicion')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['e']->key => $_smarty_tpl->tpl_vars['e']->value){
+?>
               var edicion = new Object();
-              edicion.caratula = "{$e->auxiliars['caratula']}";
-              edicion.titulo = "{$e->auxiliars['titulo']}";
-              edicion.interprete = "{$e->auxiliars['interprete']}";
-              edicion.ano_publicacion = "{$e->auxiliars['ano_publicacion']}";
-              edicion.formato = "{$e->get('formato')}";
-              edicion.cantidad = "{$e->get('cantidad')}";
-              edicion.cod = "{$e->get('codigo_de_barras')}";
-              edicion.album = "{$e->auxiliars['nro_catalogo']}";
+              edicion.caratula = "<?php echo $_smarty_tpl->getVariable('e')->value->auxiliars['caratula'];?>
+";
+              edicion.titulo = "<?php echo $_smarty_tpl->getVariable('e')->value->auxiliars['titulo'];?>
+";
+              edicion.interprete = "<?php echo $_smarty_tpl->getVariable('e')->value->auxiliars['interprete'];?>
+";
+              edicion.ano_publicacion = "<?php echo $_smarty_tpl->getVariable('e')->value->auxiliars['ano_publicacion'];?>
+";
+              edicion.formato = "<?php echo $_smarty_tpl->getVariable('e')->value->get('formato');?>
+";
+              edicion.cantidad = "<?php echo $_smarty_tpl->getVariable('e')->value->get('cantidad');?>
+";
+              edicion.cod = "<?php echo $_smarty_tpl->getVariable('e')->value->get('codigo_de_barras');?>
+";
+              edicion.album = "<?php echo $_smarty_tpl->getVariable('e')->value->auxiliars['nro_catalogo'];?>
+";
               ediciones.push(edicion);
-            {/foreach}
+            <?php }} ?>
 
             $("#ediciones").chosen().change(function(){
               var n = $("#ediciones option:selected").val();
