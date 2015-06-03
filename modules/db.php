@@ -222,6 +222,20 @@ class db
                                         break;
 				}
 				break;
+                        case "pedido":
+				switch($options['lvl2'])
+				{
+                                    case "pedido":
+                                        $codigo=mysqli_real_escape_string($this->cn,$object->get('codigo'));
+                                        $fecha=mysqli_real_escape_string($this->cn,$object->get('fecha'));
+                                        $precio=mysqli_real_escape_string($this->cn, $object->get('precio'));
+                                        $proveedor=mysqli_real_escape_string($this->cn, $object->get('proveedor'));
+                                        $administrador=mysqli_real_escape_string($this->cn, $object->get('administrador'));
+
+                                        $this->do_operation("INSERT INTO pedido VALUES ('$codigo', '$fecha', '$precio', '$proveedor', '$administrador');");
+                                        break;
+				}
+				break;
 			
 			default: break;
 		}

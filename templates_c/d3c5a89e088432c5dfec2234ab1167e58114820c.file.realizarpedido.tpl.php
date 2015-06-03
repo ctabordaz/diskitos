@@ -1,23 +1,22 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-03 04:53:49
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-03 08:10:44
          compiled from "C:/xampp/htdocs/diskitos/templates\realizarpedido.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:23459556e6c3d1402d4-74069350%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:6590556e9a6491eb04-08685964%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'd3c5a89e088432c5dfec2234ab1167e58114820c' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\realizarpedido.tpl',
-      1 => 1433299672,
+      1 => 1433311737,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '23459556e6c3d1402d4-74069350',
+  'nocache_hash' => '6590556e9a6491eb04-08685964',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
-<br><br>
 <div class="container">
         <header class="codrops-header">
                 <h1>Relizar Pedido <span>Solicite los albumes a sus proveedores</span></h1>

@@ -4,6 +4,19 @@ require('configs/include.php');
 
 class c_realizarpedido extends super_controller {
     
+    public function enviar()
+    {
+        $this->post->codigo = 0;
+        $this->post->fecha = 0;
+        $this->post->empleado = 0;
+        $this->post->proveedor = "";
+        
+        $pedid = new pedido($this->post);
+        $this->orm->connect();
+        $this->orm->insert_data("pedido",$pedid);
+        $this->orm->close();
+    }
+    
     public function pedir()
     {
         $pedidos = (array) $this->post;
