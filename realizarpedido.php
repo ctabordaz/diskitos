@@ -6,15 +6,16 @@ class c_realizarpedido extends super_controller {
     
     public function enviar()
     {
-        $this->post->codigo = 0;
         $this->post->fecha = 0;
-        $this->post->empleado = 0;
-        $this->post->proveedor = "";
+        $this->post->empleado = $_SESSION['empleado']['cedula'];
+        $this->post->proveedor = "XX";
         
         $pedid = new pedido($this->post);
         $this->orm->connect();
         $this->orm->insert_data("pedido",$pedid);
         $this->orm->close();
+        
+        header('Location: realizarpedido.php');
     }
     
     public function pedir()

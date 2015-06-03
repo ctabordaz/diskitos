@@ -24,6 +24,7 @@
                             "codigo" => array(), 
                             "fecha" => array(), 
                             "precio" => array(), 
+                            "proveedor" => array(),
                             "empleado" => array("foreign_name" => "a_em", "foreign" => "empleado", "foreign_attribute" => "cedula"));
 		}
 		
