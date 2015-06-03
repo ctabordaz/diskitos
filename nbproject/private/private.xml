@@ -3,12 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/diskitos/buscarediciones.php</file>
+            <file>file:/C:/wamp/www/diskitos/css/realizarpedido.css</file>
             <file>file:/C:/wamp/www/diskitos/templates/generarfactura.tpl</file>
+            <file>file:/C:/wamp/www/diskitos/templates/footer_BuscarEdiciones.tpl</file>
+            <file>file:/C:/wamp/www/diskitos/templates/buscarediciones2.tpl</file>
             <file>file:/C:/wamp/www/diskitos/modules/db.php</file>
+            <file>file:/C:/wamp/www/diskitos/templates/actualizarcantidad.tpl</file>
             <file>file:/C:/wamp/www/diskitos/generarfactura.php</file>
-            <file>file:/C:/wamp/www/diskitos/ingresarediciones.php</file>
-            <file>file:/C:/wamp/www/diskitos/js/ingresaredicion.js</file>
+            <file>file:/C:/wamp/www/diskitos/templates/iniciarsesion.tpl</file>
+            <file>file:/C:/wamp/www/diskitos/actualizarcantidad.php</file>
+            <file>file:/C:/wamp/www/diskitos/buscarediciones.php</file>
+            <file>file:/C:/wamp/www/diskitos/templates/buscarediciones3.tpl</file>
+            <file>file:/C:/wamp/www/diskitos/templates/header_BuscarEdiciones.tpl</file>
+            <file>file:/C:/wamp/www/diskitos/registrarencargo.php</file>
+            <file>file:/C:/wamp/www/diskitos/templates/funcionA.tpl</file>
+            <file>file:/C:/wamp/www/diskitos/templates/footerd.tpl</file>
+            <file>file:/C:/wamp/www/diskitos/templates/funcionC.tpl</file>
+            <file>file:/C:/wamp/www/diskitos/templates/buscarediciones.tpl</file>
+            <file>file:/C:/wamp/www/diskitos/files/DataBase.sql</file>
+            <file>file:/C:/wamp/www/diskitos/iniciarsesion.php</file>
         </group>
     </open-files>
 </project-private>

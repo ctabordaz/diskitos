@@ -253,3 +253,58 @@ ADD CONSTRAINT `p_en` FOREIGN KEY (`pedido`) REFERENCES `pedido` (`codigo`);
 --
 ALTER TABLE `pedido`
 ADD CONSTRAINT `a_em` FOREIGN KEY (`empleado`) REFERENCES `empleado` (`cedula`);
+
+
+CREATE TABLE empresa(
+	nit VARCHAR(30) PRIMARY KEY,
+	nombre VARCHAR(20) NOT NULL,
+	telefono INT(7) NOT NULL,
+	direccion VARCHAR(20) NOT NULL,
+	correo VARCHAR(20) NOT NULL	
+
+);
+
+INSERT INTO empresa VALUES('A1','Diskitos',4913174,'cll 48 a #21','dikitos@dkt.com')
+
+CREATE TABLE factura(
+	codigo INT(30) PRIMARY KEY AUTO_INCREMENT,
+	cajero INT(10) NOT NULL,
+	CONSTRAINT c_f FOREIGN KEY(cajero) REFERENCES empleado(cedula)
+
+);
+
+
+
+CREATE TABLE encabezado(
+	factura INT(30) PRIMARY KEY,
+	fecha TIMESTAMP NOT NULL,
+	cliente INT(10) NOT NULL,
+	CONSTRAINT e_f FOREIGN KEY(factura) REFERENCES factura(codigo),
+	CONSTRAINT c_e FOREIGN KEY(cliente) REFERENCES cliente(cedula)
+
+
+);
+
+
+CREATE TABLE detalle(
+	factura INT(30) ,
+	edicion INT(19) NOT NULL,
+	cantidad INT(10) NOT NULL,
+	PRIMARY KEY (factura, edicion);
+	CONSTRAINT d_e FOREIGN KEY(edicion) REFERENCES edicion(codigo_de_barras),
+	CONSTRAINT d_f FOREIGN KEY(factura) REFERENCES factura(codigo)
+);
+
+
+
+CREATE TABLE encargo (
+	codigo BIGINT(20) PRIMARY KEY,
+	fecha DATE NOT NULL,
+	titulo_enc VARCHAR(30) NOT NULL,
+	interprete_enc VARCHAR(30) NOT NULL,
+	formato_enc VARCHAR(30) NOT NULL,
+	cliente INT(15) NOT NULL,
+	CONSTRAINT c_e FOREIGN KEY(cliente) REFERENCES cliente(cedula)
+
+
+);

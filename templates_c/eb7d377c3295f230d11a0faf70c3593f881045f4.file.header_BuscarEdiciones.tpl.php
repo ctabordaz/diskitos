@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-03 17:15:16
-         compiled from "C:/wamp/www/diskitos/templates\headerc.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2522556f1a0495fda0-84231114%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-03 17:05:20
+         compiled from "C:/wamp/www/diskitos/templates\header_BuscarEdiciones.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:21778556f17b0d3c997-35093646%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'def4113bf3488f1128356021e522a0001a0e5071' => 
+    'eb7d377c3295f230d11a0faf70c3593f881045f4' => 
     array (
-      0 => 'C:/wamp/www/diskitos/templates\\headerc.tpl',
+      0 => 'C:/wamp/www/diskitos/templates\\header_BuscarEdiciones.tpl',
       1 => 1433343828,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2522556f1a0495fda0-84231114',
+  'nocache_hash' => '21778556f17b0d3c997-35093646',
   'function' => 
   array (
   ),
@@ -40,6 +40,8 @@ disk.ico" />
 "<?php }?>>
        <ul class="nav nav-tabs cabeza navbar-fixed-top">
             <li role="presentation"  ><a class="c" href="iniciarsesion.php">Regresar a Menú</a></li>
-            <li role="presentation" class=" active navbar-right"><a class="bl"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span>Cajero</a></li>
+            <li role="presentation" class=" active navbar-right"><a class="bl"><span class=" glyphicon glyphicon-user" aria-hidden="true"></span><?php echo $_smarty_tpl->getVariable('elusu')->value;?>
+</a></li>
         </ul>
 	
+        

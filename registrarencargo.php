@@ -43,9 +43,9 @@ class c_registrarencargo extends super_controller {
 	
 	public function run()
 	{
-            //if($_SESSION['empleado']['tipo'] != 'C'){
-            //    header('Location: iniciarsesion.php');
-            //}else{
+            if($_SESSION['empleado']['tipo'] != 'C'){
+               header('Location: iniciarsesion.php');
+           }else{
                try{
                     if (isset($this->get->option)){
                         $this->{$this->get->option}();
@@ -57,7 +57,7 @@ class c_registrarencargo extends super_controller {
                }
 
                $this->display();
-            //}
+            }
 	}
 }
 

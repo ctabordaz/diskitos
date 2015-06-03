@@ -98,15 +98,17 @@ class c_buscarediciones extends super_controller {
                     $this->engine->display('footer_BuscarEdiciones.tpl');
                     
                     }else{
-                        
-                    $this->engine->assign('title',"Canciones");
-                    $this->engine->display('buscarediciones3.tpl');
+
+                        $this->engine->assign('title',"Canciones");
+                        $this->engine->display('buscarediciones3.tpl');
+                        $this->engine->display('footer_BuscarEdiciones.tpl');
+                                         
                     
                     }
                     
                 }
             }else{
-                $this->engine->display('noautorizado.tpl');
+                 header('Location: iniciarsesion.php');
             }
 	}
 	
