@@ -231,7 +231,7 @@ class c_generarfactura extends super_controller {
 
     public function display()
 	{		
-        
+        if($_SESSION['empleado']['tipo'] == 'C'){
             $options['cliente']['lvl2'] = "all";
             
             $this->orm->connect();
@@ -254,6 +254,9 @@ class c_generarfactura extends super_controller {
             $this->engine->display('headerc.tpl');
             $this->engine->display('generarfactura.tpl');
             $this->engine->display('footerd.tpl');
+            }else{
+                 header('Location: iniciarsesion.php');
+            }
 	}
 	
 	public function run()
