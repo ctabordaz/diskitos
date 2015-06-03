@@ -34,5 +34,19 @@
 }
 
 #resumen{
-    padding-left: 30px;
+    padding-left: 40px;
+}
+
+.content-box-blue {
+    background-color: #d8ecf7;
+    border: 1px solid #afcde3;
+}
+
+.content-box-red {
+    background-color: #f9dbdb;
+    border: 1px solid #e9b3b3;
+}
+
+.punteado{
+    border-style: dotted; 
 }

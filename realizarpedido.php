@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 require('configs/include.php');
 
@@ -8,7 +8,6 @@ class c_realizarpedido extends super_controller {
     {
         $pedidos = (array) $this->post;
         $aux = array();
-        //echo '<br /><br /><br /><br />';
         
         foreach($pedidos as $key => $value)
         {
@@ -21,7 +20,8 @@ class c_realizarpedido extends super_controller {
         
         // aux tiene los codigos de barras de las ediciones que se eligieron
         
-        $cont = 1;
+        $edics = array();
+        $cants = array();
         
         foreach($aux as $key => $value)
         {
@@ -38,15 +38,15 @@ class c_realizarpedido extends super_controller {
                     $this->orm->connect();
                     $this->orm->read_data(array("edicion"), $options, $cod);
                     $ediciones2 = $this->orm->get_objects("edicion",null,$auxiliars);
-                    //print_r2($ediciones2);
                     $this->orm->close();
 
-                    $this->engine->assign('ediciones-'.$cont,$ediciones2);
-                    $this->engine->assign('cantidad-'.$cont,$value2);
-                    $cont = $cont + 1;
+                    array_push($edics, $ediciones2[0]);
+                    array_push($cants, $value2);
                 }
             }
         }
+        $this->engine->assign('ediciones', $edics);
+        $this->engine->assign('cantidades', $cants);
     }
     
     public function display()
@@ -55,7 +55,7 @@ class c_realizarpedido extends super_controller {
             
             $this->engine->display('header_rp.tpl');
             $this->engine->display('realizarpedido2.tpl');
-            $this->engine->display('footer_rp.tpl');
+            $this->engine->display('footer_rp2.tpl');
         }
         else{            
             $options['edicion']['lvl2']="all";
@@ -96,4 +96,3 @@ class c_realizarpedido extends super_controller {
 
 $call = new c_realizarpedido();
 $call->run();
-

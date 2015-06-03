@@ -1,4 +1,3 @@
-<br><br>
 <div class="container">
         <header class="codrops-header">
                 <h1>Relizar Pedido <span>Solicite los albumes a sus proveedores</span></h1>
