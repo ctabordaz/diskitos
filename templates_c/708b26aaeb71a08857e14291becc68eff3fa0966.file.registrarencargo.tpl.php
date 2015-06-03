@@ -1,3 +1,22 @@
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-03 07:20:07
+         compiled from "C:/wamp/www/diskitos/templates\registrarencargo.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:17803556e8e87bbdfb2-77394961%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '708b26aaeb71a08857e14291becc68eff3fa0966' => 
+    array (
+      0 => 'C:/wamp/www/diskitos/templates\\registrarencargo.tpl',
+      1 => 1433308788,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '17803556e8e87bbdfb2-77394961',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+)); /*/%%SmartyHeaderCode%%*/?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -5,7 +24,8 @@
         
         <link rel="stylesheet" href="./js/alertifyjs/css/alertify.min.css"/>
         <link rel="stylesheet" href="./js/alertifyjs/css/themes/default.min.css"/>
-        <link rel="shortcut icon" href="{$gvar.l_global}disk.ico" />
+        <link rel="shortcut icon" href="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
+disk.ico" />
         <link rel="stylesheet"  href="./css/bootstrap.min.css">
         <link rel="stylesheet"  href="./css/ingresarediciones.css">        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -14,7 +34,8 @@
         <script src="./js/registrarencargo.js"></script>
         
     </head>
-    <body {if isset($cargar)}onload="{$cargar}"{/if}>
+    <body <?php if (isset($_smarty_tpl->getVariable('cargar',null,true,false)->value)){?>onload="<?php echo $_smarty_tpl->getVariable('cargar')->value;?>
+"<?php }?>>
         
         <ul class="nav nav-tabs cabeza navbar-fixed-top">
             <li role="presentation"  ><a class="c" href="iniciarsesion.php">Regresar a Menú</a></li>
@@ -27,7 +48,8 @@
             </div>
 
             <hr />
-            <form action="{$gvar.l_global}registrarencargo.php?option=registrar" method="post" enctype="multipart/form-data">
+            <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
+registrarencargo.php?option=registrar" method="post" enctype="multipart/form-data">
                 
                 <div class="row">
                     <div class="col-md-2">
@@ -38,9 +60,16 @@
                         <div class="side-by-side clearfix">
                             <select id="clientes" data-placeholder="Seleccione un cliente..." class="chosen-select" style="width:350px" tabindex="2">
                                 <option value=""></option>
-                                {foreach $clientes as $e}
-                                    <option value="{$e->get('cedula')}">{$e->get('cedula')} - {$e->get('nombre')}</option>
-                                {/foreach}
+                                <?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('clientes')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['e']->key => $_smarty_tpl->tpl_vars['e']->value){
+?>
+                                    <option value="<?php echo $_smarty_tpl->getVariable('e')->value->get('cedula');?>
+"><?php echo $_smarty_tpl->getVariable('e')->value->get('cedula');?>
+ - <?php echo $_smarty_tpl->getVariable('e')->value->get('nombre');?>
+</option>
+                                <?php }} ?>
                             </select>
                         </div>
                     </div>                 

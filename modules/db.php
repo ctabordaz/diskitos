@@ -205,6 +205,23 @@ class db
                                         break;
 				}
 				break;
+                            
+                        case "encargo":
+				switch($options['lvl2'])
+				{
+                                    case "encargo":
+                                       
+                                        $titulo_enc = mysqli_real_escape_string($this->cn,$object->get('titulo_enc'));
+                                        $interprete_enc = mysqli_real_escape_string($this->cn,$object->get('interprete_enc'));
+                                        $formato_enc = mysqli_real_escape_string($this->cn,$object->get('formato_enc'));
+                                        $cliente = mysqli_real_escape_string($this->cn,$object->get('cliente'));
+
+                                        $this->do_operation("INSERT INTO encargo (fecha, titulo_enc, interprete_enc, "
+                                                . "formato_enc, cliente) VALUES (CURRENT_TIMESTAMP, '$titulo_enc', '$interprete_enc', "
+                                                . "'$formato_enc', '$cliente');");
+                                        break;
+				}
+				break;
 			
 			default: break;
 		}
