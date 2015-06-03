@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-03 09:19:36
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-03 10:26:02
          compiled from "C:/xampp/htdocs/diskitos/templates\realizarpedido.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:8854556eaa88cd0dc1-36444170%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:16115556eba1ad67385-24015148%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'd3c5a89e088432c5dfec2234ab1167e58114820c' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\realizarpedido.tpl',
-      1 => 1433314169,
+      1 => 1433319959,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '8854556eaa88cd0dc1-36444170',
+  'nocache_hash' => '16115556eba1ad67385-24015148',
   'function' => 
   array (
   ),
@@ -20,7 +20,7 @@ $_smarty_tpl->decodeProperties(array (
 <div class="container">
         <header class="codrops-header">
                 <br>
-                <h1>Relizar Pedido <span>Solicite los albumes a sus proveedores</span></h1>
+                <h1>Relizar Pedido <span>Solicite las ediciones a sus proveedores</span></h1>
         </header>
         <section class="content">
                 <div class="dummy-browser">
@@ -37,7 +37,7 @@ if ($_smarty_tpl->_count($_from) > 0){
     foreach ($_from as $_smarty_tpl->tpl_vars['edicion']->key => $_smarty_tpl->tpl_vars['edicion']->value){
 ?>
                                 <?php $_smarty_tpl->tpl_vars['ed'] = new Smarty_variable($_smarty_tpl->getVariable('edicion')->value->get('auxiliars'), null, null);?>
-
+                                
                                 <div class="dummy-grid__item">
                                     <img src="<?php echo $_smarty_tpl->getVariable('ed')->value['caratula'];?>
 " /><br>
@@ -47,9 +47,9 @@ if ($_smarty_tpl->_count($_from) > 0){
                                     <p id='detalle'>Formato: <?php echo $_smarty_tpl->getVariable('edicion')->value->get('formato');?>
  - Precio: <?php echo $_smarty_tpl->getVariable('edicion')->value->get('precio')*0.8;?>
 </p>
-                                    <p id='detalle'>Cantidad a Pedir: <input type="number" name="cantidad-<?php echo $_smarty_tpl->getVariable('edicion')->value->get('codigo_de_barras');?>
-" min="1"> </p>
-                                    <p id='detalle'>Proveedor ............ : <input type="text" name="proveedor-<?php echo $_smarty_tpl->getVariable('edicion')->value->get('codigo_de_barras');?>
+                                    <p id='detalle2'>Cantidad a Pedir: <input type="number" name="cantidad-<?php echo $_smarty_tpl->getVariable('edicion')->value->get('codigo_de_barras');?>
+" min="1"></p>
+                                    <p id='detalle2'>Proveedor ............ : <input type="text" name="proveedor-<?php echo $_smarty_tpl->getVariable('edicion')->value->get('codigo_de_barras');?>
 "> </p>
                                 </div>
 

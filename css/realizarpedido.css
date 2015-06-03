@@ -22,11 +22,20 @@
 
 #det{
     text-align: left;
-    padding-top: 13px;
+    padding-top: 13px;    
 }
 
 #detalle{
     text-align: left;
+}
+
+#detalle2{
+    text-align: left;
+    padding-top: 6px; 
+}
+
+.dummy-grid__item{
+    padding-bottom: 290px;    
 }
 
 .botonPedir{
