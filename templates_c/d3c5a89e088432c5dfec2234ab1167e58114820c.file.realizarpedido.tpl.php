@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-03 08:10:44
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-03 08:49:33
          compiled from "C:/xampp/htdocs/diskitos/templates\realizarpedido.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:6590556e9a6491eb04-08685964%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3330556ea37d33e660-51730296%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'd3c5a89e088432c5dfec2234ab1167e58114820c' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\realizarpedido.tpl',
-      1 => 1433311737,
+      1 => 1433314169,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '6590556e9a6491eb04-08685964',
+  'nocache_hash' => '3330556ea37d33e660-51730296',
   'function' => 
   array (
   ),
@@ -19,6 +19,7 @@ $_smarty_tpl->decodeProperties(array (
 )); /*/%%SmartyHeaderCode%%*/?>
 <div class="container">
         <header class="codrops-header">
+                <br>
                 <h1>Relizar Pedido <span>Solicite los albumes a sus proveedores</span></h1>
         </header>
         <section class="content">
@@ -48,6 +49,8 @@ if ($_smarty_tpl->_count($_from) > 0){
 </p>
                                     <p id='detalle'>Cantidad a Pedir: <input type="number" name="cantidad-<?php echo $_smarty_tpl->getVariable('edicion')->value->get('codigo_de_barras');?>
 " min="1"> </p>
+                                    <p id='detalle'>Proveedor ............ : <input type="text" name="proveedor-<?php echo $_smarty_tpl->getVariable('edicion')->value->get('codigo_de_barras');?>
+"> </p>
                                 </div>
 
                             <?php }} ?>

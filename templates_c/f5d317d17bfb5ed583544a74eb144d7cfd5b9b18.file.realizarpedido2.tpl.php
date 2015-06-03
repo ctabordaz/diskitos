@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-06-03 08:10:53
+<?php /* Smarty version Smarty-3.0.9, created on 2015-06-03 09:04:45
          compiled from "C:/xampp/htdocs/diskitos/templates\realizarpedido2.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:29036556e9a6d0c1689-13884660%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:28962556ea70d65a929-42590429%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f5d317d17bfb5ed583544a74eb144d7cfd5b9b18' => 
     array (
       0 => 'C:/xampp/htdocs/diskitos/templates\\realizarpedido2.tpl',
-      1 => 1433311618,
+      1 => 1433315075,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '29036556e9a6d0c1689-13884660',
+  'nocache_hash' => '28962556ea70d65a929-42590429',
   'function' => 
   array (
   ),
@@ -32,6 +32,7 @@ realizarpedido.php?option=enviar" method="post">
         </div>
         <div class="col-md-offset-1 col-md-9">
             <?php $_smarty_tpl->tpl_vars['total'] = new Smarty_variable(0, null, null);?>
+            <?php $_smarty_tpl->tpl_vars['prov'] = new Smarty_variable("x_x", null, null);?>
 
             <ol>        
                 <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
@@ -67,11 +68,17 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 </li>
 
                     <?php $_smarty_tpl->tpl_vars['total'] = new Smarty_variable($_smarty_tpl->getVariable('total')->value+$_smarty_tpl->getVariable('ediciones')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('precio')*0.8*$_smarty_tpl->getVariable('cantidades')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']], null, null);?>
+                    
+                    <?php if ($_smarty_tpl->getVariable('prov')->value=="x_x"){?>
+                        <?php $_smarty_tpl->tpl_vars['prov'] = new Smarty_variable($_smarty_tpl->getVariable('proveedores')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']], null, null);?>
+                    <?php }else{ ?>
+                        <?php $_smarty_tpl->tpl_vars['prov'] = new Smarty_variable(($_smarty_tpl->getVariable('prov')->value)." - ".($_smarty_tpl->getVariable('proveedores')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]), null, null);?>
+                    <?php }?>
                 <?php endfor; endif; ?>
             </ol>
         </div>
 
-            <br><br>
+            <br><br><br><br>
 
         <div class="row">
             <h5 id="resumen">---------------------------------------------------------------</h5>
@@ -94,6 +101,8 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
             
         <div class="col-md-offset-4 col-md-5">
             <input type="hidden" name="precio" value="<?php echo $_smarty_tpl->getVariable('total')->value;?>
+">
+            <input type="hidden" name="proveedor" value="<?php echo $_smarty_tpl->getVariable('prov')->value;?>
 ">
             <input type="submit" value="Realizar Pedido" class="btn btn-primary btn-block btn-small botonPedir" tabindex="5">
         </div>

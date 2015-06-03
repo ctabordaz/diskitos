@@ -6,9 +6,8 @@ class c_realizarpedido extends super_controller {
     
     public function enviar()
     {
-        $this->post->fecha = 0;
+        $this->post->fecha = date('Y-m-d');
         $this->post->empleado = $_SESSION['empleado']['cedula'];
-        $this->post->proveedor = "XX";
         
         $pedid = new pedido($this->post);
         $this->orm->connect();
@@ -35,6 +34,7 @@ class c_realizarpedido extends super_controller {
         // aux tiene los codigos de barras de las ediciones que se eligieron
         
         $edics = array();
+        $provs = array();
         $cants = array();
         
         foreach($aux as $key => $value)
@@ -55,12 +55,18 @@ class c_realizarpedido extends super_controller {
                     $this->orm->close();
 
                     array_push($edics, $ediciones2[0]);
-                    array_push($cants, $value2);
+                    array_push($cants, $value2);     
+                    
+                } else if($key2 == "proveedor-".$value){
+                    // value2 = nombre del proveedor
+                    
+                    array_push($provs, $value2);    
                 }
             }
         }
         $this->engine->assign('ediciones', $edics);
         $this->engine->assign('cantidades', $cants);
+        $this->engine->assign('proveedores', $provs);
     }
     
     public function display()
